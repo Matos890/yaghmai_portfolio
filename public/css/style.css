@@ -1,0 +1,127 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+html {
+  font-size: 10px;
+  height: fit-content;
+}
+body {
+  line-height: 1.5;
+  /* height: 26865px !important; */
+  overflow-x: hidden;
+  font-family: "Bodoni";
+  background-image: url("../img/background_home.png");
+}
+.libre-baskerville-regular {
+  font-family: "Bodoni Moda";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.crimson-text-regular {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.crimson-text-semibold {
+  font-family: "Crimson Text", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.crimson-text-bold {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.spanBookmark {
+  overflow-y: hidden !important;
+  height: 3vh;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+/* SECTION HERO */
+.heroSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.wrapperGrid{
+    width: 71.48%;
+    height: 58.2%;
+    display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 50% 50%; 
+  grid-template-rows: 17.45% 17.45% 1fr; 
+  gap: 0px 0px; 
+}
+.containerMattia{
+    grid-column: 1;
+    grid-row:1;
+    font-size: 12rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.containerYaghmai{
+    grid-column: 2;
+    grid-row:2;
+    font-size: 12rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.rectangle1{
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
+    width: 100%;
+    background-color: #ad7684;
+}
+.rectangle2{
+    grid-column: 1;
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    background-color: #ad7684;
+}
+span{
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+.WrapperTextHero{
+    margin-top:2vh;
+    display: flex;
+    grid-row: 3;
+    grid-column: 1;
+font-size: 3rem;
+width: 50%;
+}
