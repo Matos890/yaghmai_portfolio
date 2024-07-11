@@ -18,11 +18,14 @@ html {
 h2 {
   color: #ad7684;
 }
+a{
+  font-size:2rem !important;
+}
 body {
   line-height: 1.5;
   /* height: 26865px !important; */
   overflow-x: hidden;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "cormorant garamond", serif;
   font-weight: 300;
   /* background-image: url("../img/background_home.png"); */
 }
@@ -67,12 +70,74 @@ picture {
   display: flex;
   flex-direction: row;
 }
+.nav {
+  display: flex;
+  font-size: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+  width: 94vw;
+  z-index: 100;
+  position: absolute;
+  top:0;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  
+}
+
+/* nav and stickly class at the same time */
+.nav.sticky {
+  position: fixed;
+  background-color: #ffffed;
+}
+
+.nav__logo {
+  height: 4.5rem;
+  transition: all 0.3s;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav__item {
+  margin-left: 4rem;
+}
+
+.nav__link:link,
+.nav__link:visited {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s;
+}
+
+.nav__link--btn:link,
+.nav__link--btn:visited {
+  padding: 0.8rem 2.5rem;
+  border-radius: 3rem;
+  background-color: var(--color-primary);
+  color: #222;
+}
+
+.nav__link--btn:hover,
+.nav__link--btn:active {
+  color: inherit;
+  background-color: var(--color-primary-darker);
+  color: #333;
+}
+
 /* SECTION HERO */
 .heroSection {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  position: relative;
 }
 .wrapperGrid {
   width: 183rem;
@@ -124,7 +189,7 @@ span {
   display: flex;
   grid-row: 3;
   grid-column: 1;
-  font-size: 4rem;
+  font-size: 3rem;
   width: 64.5rem;
   letter-spacing: 0.2rem;
 }
