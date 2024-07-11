@@ -5,7 +5,8 @@ function scaleGrid() {
   let widthScreen = window.innerWidth;
   console.log(widthScreen);
   let heroSection = document.querySelector(".heroSection");
-  const grid = document.querySelector(".wrapperGrid");
+  const grid = document.querySelectorAll(".wrapperSection");
+  const section = document.querySelectorAll("section");
   heroSection.setAttribute("width", widthScreen);
   const scale = () => {
     let scaleSection = 0;
@@ -14,7 +15,13 @@ function scaleGrid() {
       return (scaleSection = widthScreen / 25.6 / 100);
     }
   };
-  grid.style.scale = `${scale()}`;
+  section.forEach((s)=>{
+  s.setAttribute("width", widthScreen);
+  })
+grid.forEach((sect)=>{
+  sect.style.scale = `${scale()}`;
+  
+})
 }
 window.addEventListener("resize", scaleGrid);
 scaleGrid();
