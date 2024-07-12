@@ -589,27 +589,29 @@ var _gsap = require("gsap");
 var _gsapDefault = parcelHelpers.interopDefault(_gsap);
 var _all = require("gsap/all");
 var _gsapCore = require("gsap/gsap-core");
-function scaleGrid() {
-    let widthScreen = window.innerWidth;
-    console.log(widthScreen);
-    let heroSection = document.querySelector(".heroSection");
-    const grid = document.querySelectorAll(".wrapperSection");
-    const section = document.querySelectorAll("section");
-    heroSection.setAttribute("width", widthScreen);
-    const scale = ()=>{
-        let scaleSection = 0;
-        if (widthScreen === 2560) return scaleSection = 1;
-        else return scaleSection = widthScreen / 25.6 / 100;
-    };
-    section.forEach((s)=>{
-        s.setAttribute("width", widthScreen);
-    });
-    grid.forEach((sect)=>{
-        sect.style.scale = `${scale()}`;
-    });
-}
-window.addEventListener("resize", scaleGrid);
-scaleGrid();
+// function scaleGrid() {
+//   let widthScreen = window.innerWidth;
+//   console.log(widthScreen);
+//   let heroSection = document.querySelector(".heroSection");
+//   const grid = document.querySelectorAll(".wrapperSection");
+//   const section = document.querySelectorAll("section");
+//   heroSection.setAttribute("width", widthScreen);
+//   const scale = () => {
+//     let scaleSection = 0;
+//     if (widthScreen === 2560) return (scaleSection = 1);
+//     else {
+//       return (scaleSection = widthScreen / 25.6 / 100);
+//     }
+//   };
+//   section.forEach((s) => {
+//     s.setAttribute("width", widthScreen);
+//   });
+//   grid.forEach((sect) => { 
+//     sect.style.scale = `${scale()}`;
+//   });
+// }
+// window.addEventListener("resize", scaleGrid);
+// scaleGrid();
 // MENU
 const handleHover = function(e) {
     if (e.target.classList.contains("nav__link")) {
@@ -640,6 +642,19 @@ const headerObserver = new IntersectionObserver(stickyNav, {
     rootMargin: `-${navHeight}px`
 });
 headerObserver.observe(header);
+///SCROLL INTO VIEW
+document.querySelector(".nav__links").addEventListener("click", function(e) {
+    e.preventDefault();
+    //matching strategy
+    if (e.target.classList.contains("nav__link")) {
+        console.log("Link");
+        const id = e.target.getAttribute("href");
+        console.log(id);
+        document.querySelector(id).scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+});
 
 },{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
