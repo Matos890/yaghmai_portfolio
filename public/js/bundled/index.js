@@ -664,17 +664,22 @@ const findCenter = ()=>{
 let nuovaPos = rectangle1Pos.y - rectangle2Pos.y;
 console.log(centerX, centerY);
 let { r1moveX, r1moveY, r2moveX, r2moveY } = findCenter();
-r2moveY = r2moveY - 20;
+r1moveX = r1moveX + 40;
+r2moveX = r2moveX + 40;
+r2moveY = r2moveY + 20;
 r1moveY = r1moveY - 20;
 (0, _gsapDefault.default).set(rectangle1, {
     x: r1moveX,
-    width: `183rem`,
+    width: `179rem`,
+    gridRow: 1,
+    // alignContent:'center',
     rotate: 0
 });
 (0, _gsapDefault.default).set(rectangle2, {
     x: r2moveX,
     y: nuovaPos,
-    width: `183rem`,
+    gridRow: 2,
+    width: `179rem`,
     // y:r2moveY,
     rotate: 0
 });
@@ -691,6 +696,15 @@ r1moveY = r1moveY - 20;
 //   rotate: 90,
 // });
 const openingHome = (0, _gsapDefault.default).timeline();
+openingHome.addLabel("firstShow");
+openingHome.from(rectangle1, {
+    x: "185rem",
+    duration: 1
+}, "firstShow");
+openingHome.from(rectangle2, {
+    x: "185rem",
+    duration: 1
+}, "firstShow");
 openingHome.addLabel("animRiga");
 // openingHome.set(rectangle1, {
 //   x: r1moveX,
@@ -701,49 +715,88 @@ openingHome.addLabel("animRiga");
 // )
 openingHome.fromTo(rectangle1, {
     x: ()=>r1moveX,
-    width: `183rem`,
     rotate: 0
 }, {
     rotate: -90,
-    // delay: 2,
-    duration: 0.2
+    delay: 0.8,
+    duration: 1
 }, "animRiga");
 openingHome.fromTo(rectangle2, {
     x: ()=>r2moveX,
     y: nuovaPos,
-    width: `183rem`,
     rotate: 0
 }, {
     rotate: -90,
-    // delay: 2,
-    duration: 0.2
+    delay: 0.8,
+    duration: 1
+}, "animRiga");
+openingHome.from(".containerMattiaTit", {
+    opacity: 0,
+    delay: 0.8,
+    duration: 1
+}, "animRiga");
+openingHome.from(".containerYaghmai", {
+    opacity: 0,
+    delay: 0.8,
+    duration: 1
 }, "animRiga");
 openingHome.set(rectangle1, {
-    // x:'0rem',
-    x: -53,
-    y: 0,
-    transformOrigin: "top left 50px",
-    width: "89rem"
+    // x:-7,
+    x: `-4rem`,
+    y: `9rem`,
+    transformOrigin: "0% 0%",
+    width: "89.5rem"
 });
 openingHome.set(rectangle2, {
     // x: 0,
-    x: 51.6,
-    y: 0,
-    transformOrigin: "bottom right 50px",
-    width: "89rem"
+    x: `4rem`,
+    y: `-9rem`,
+    transformOrigin: "100% 100%",
+    width: "89.5rem"
 });
-openingHome.addLabel("repositioning"); // openingHome.to(rectangle1, {
- //   delay:2,
- //   duration:2,
- //   // transformOrigin:'50% 50%',
- //   rotate:0
- // },'repositioning');
- // openingHome.to(rectangle2, {
- //   delay:2,
- //   // transformOrigin:'50% 50%',
- //   duration:2,
- //   rotate:0
- // }, "repositioning");
+openingHome.addLabel("repositioningY");
+openingHome.to(rectangle1, {
+    y: 0
+}, "repositioningY");
+openingHome.to(rectangle2, {
+    y: 0
+}, "repositioningY");
+openingHome.from(".containerYaghmai", {
+    y: `-9rem`
+}, "repositioningY");
+openingHome.addLabel("repositioning");
+openingHome.to(rectangle1, {
+    duration: 2,
+    // transformOrigin:'50% 50%',
+    rotate: 0
+}, "repositioning");
+openingHome.to(rectangle2, {
+    // transformOrigin:'50% 50%',
+    duration: 2,
+    rotate: 0
+}, "repositioning");
+openingHome.from(".WrapperTextHero", {
+    delay: 1.5,
+    opacity: 0,
+    duration: 2
+}, "repositioning");
+openingHome.addLabel("repositioningGrid"); // openingHome.to(
+ //   rectangle1,
+ //   {
+ //     x: 0,
+ //     duration: 1,
+ //   },
+ //   "repositioningGrid"
+ // );
+ // openingHome.to(
+ //   rectangle2,
+ //   {
+ //     x: 0,
+ //     duration: 1,
+ //     transformOrigin: "0% 0% ",
+ //   },
+ //   "repositioningGrid"
+ // );
 
 },{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

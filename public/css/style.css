@@ -44,9 +44,9 @@ h2 {
 article {
   font-size: 1.8rem;
 }
-a {
+/* a {
   font-size: 2rem !important;
-}
+} */
 body {
   line-height: 1.5;
   /* height: 26865px !important; */
@@ -134,7 +134,7 @@ picture {
 
 .nav__link:link,
 .nav__link:visited {
-  font-size: 1.7rem;
+  font-size: 2.7rem;
   font-weight: bold;
 
   color: inherit;
@@ -164,20 +164,25 @@ picture {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow-y: hidden;
 }
 .wrapperGrid {
   width: 100vw;
   /* height: 58.7rem; */
   display: flex;
   flex-direction: column;
+  height: auto;
+overflow-x: clip; 
+overflow-y: visible; 
   /* grid-template-columns: 39.3164rem 39.3164rem;
   grid-template-rows: 13rem 13rem 28.7rem; */
   /* justify-content: center; */
   align-items: center;
   padding: 2rem;
   margin-top: 10%;
+  position: relative;
 }
-.containerMattia {
+.containerMattiaTit {
   grid-column: 1;
   grid-row: 1;
   font-size: 4rem;
@@ -291,7 +296,7 @@ span {
   flex-direction: column;
   align-items: center;
   width: 80%;
-  margin-top: 30%;
+  margin-top: 15%;
   padding: 2rem;
 }
 /* .titleWebDev {
@@ -334,19 +339,20 @@ span {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
 .mapContainer {
   width: 80%;
   display: flex;
   flex-direction: column;
+  margin-top: 15%;
 }
 .videoContainer {
   width: 80%;
   display: flex;
   flex-direction: column;
-  margin-top: 1.8rem;
+  margin-top: 15%;
 }
 .mapBox {
   background-color: #ad7684;
@@ -395,10 +401,10 @@ footer {
     grid-template-columns: 39.3164rem 39.3164rem;
     grid-template-rows: 8rem 8rem auto;
     display: grid;
-    justify-content: center;
+    /* justify-content: center; */
     row-gap: 1rem;
   }
-  .containerMattia {
+  .containerMattiaTit {
     font-size: 5rem;
     justify-content: end;
   }
@@ -493,7 +499,7 @@ footer {
     column-gap: 2rem;
     margin-top: 9vh;
   }
-  .containerMattia {
+  .containerMattiaTit {
     font-size: 7rem;
     justify-content: end;
   }
@@ -548,7 +554,7 @@ footer {
     column-gap: 2rem;
     margin-top: 9vh;
   }
-  .containerMattia {
+  .containerMattiaTit {
     font-size: 9rem;
   }
   .containerYaghmai {
@@ -600,9 +606,10 @@ footer {
   }
   .wrapperGrid {
     width: 183rem;
+    height: auto;
     grid-template-columns: 89.5rem 89.5rem;
   }
-  .containerMattia {
+  .containerMattiaTit {
     font-size: 12rem;
   }
   .containerYaghmai {
