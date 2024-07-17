@@ -23,13 +23,20 @@ h2 {
 article {
   font-size: 1.8rem;
 }
-/* section {
-  min-height: 100vh;
-} */
+
+section {
+ width:calc(100vw - 40px);
+}
 html {
   font-size: 10px;
   height: fit-content;
-  background-color: #ffff;
+}
+.fixedOverlay{
+  position: fixed;
+  width: calc(100vw - 40px);
+  height: 100vh;
+  background-color: #ffffed;
+  z-index: -3;
 }
 h2 {
   color: #ad7684;
@@ -53,10 +60,26 @@ body {
   overflow-x: hidden;
   font-family: "cormorant garamond", serif;
   font-weight: 300;
+  height: 100vh;
+  padding: 20px;
+  background-color: #ffffed;
   /* background-image: url("../img/background_home.png"); */
+  width: calc(100vw - 40px);
 }
+body::after{
+content: "";
+  will-change: top left;
+  backface-visibility: hidden;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background:#ffffed; 
+  bottom:0;
+}
+
 .siteWrapper {
-  width: 100vw;
+  width: 98vw;
   /* height: 400vh; */
   /* background-image: url("../img/background_home.png"); */
   position: absolute;
@@ -69,13 +92,14 @@ div {
   margin: 0;
 }
 .overlaySite {
-  position: absolute;
-  width: 95vw;
+  position: fixed;
+  width: calc(100vw - 40px);
   background-image: url("../img/background_home.png");
-  height: 100%;
+  height: 100vh;
   z-index: -2;
-  mix-blend-mode: lighten;
+  mix-blend-mode: normal;
   opacity: 1;
+  left:20px
 }
 .libre-baskerville-regular {
   font-family: "Bodoni Moda";
@@ -97,7 +121,6 @@ picture {
   flex-direction: row;
 }
 .nav {
-  background-color: bisque;
   display: flex;
   font-size: 3rem;
   justify-content: space-between;
@@ -109,6 +132,17 @@ picture {
   top: 0;
   padding-left: 3rem;
   padding-right: 3rem;
+}
+.navBack{
+  background-color: bisque;
+  width: 100%;
+  height: 100%;
+  left:0%;
+  opacity: 0.6;
+  filter: blur(0.2px);
+  align-self: center;
+  position: absolute;
+  z-index: -1;
 }
 
 /* nav and stickly class at the same time */
@@ -304,6 +338,13 @@ span {
 /* font-size: 3rem; */
 /* width: 71rem; */
 /* } */
+.wrapperParagraph{
+  overflow-y: clip;
+}
+.titleWrapperMap,.titleWrapperVideo,.titleWrapperInfo,.titleWrapperWeb{
+
+  overflow-y: clip;
+}
 .containerBox {
   display: flex;
   flex-direction: column;
@@ -596,7 +637,7 @@ footer {
 
 @media (min-width: 1920px) {
   h2 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
   article {
     font-size: 2.8rem;

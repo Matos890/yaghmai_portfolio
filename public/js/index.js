@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Timeline } from "gsap/gsap-core";
+gsap.registerPlugin(ScrollTrigger);
 //////////////////////////////////////////////////////////////////////
 ////////////////////////////// MENU///////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -75,15 +76,15 @@ let nuovaPos = rectangle1Pos.y - rectangle2Pos.y;
 
 console.log(centerX, centerY);
 let { r1moveX, r1moveY, r2moveX, r2moveY } = findCenter();
-r1moveX = r1moveX+  (4* 10)  ;
+r1moveX = r1moveX + 4 * 10;
 
-r2moveX = r2moveX +(4*10) ;
+r2moveX = r2moveX + 4 * 10;
 r2moveY = r2moveY + 2 * 10;
 r1moveY = r1moveY - 2 * 10;
 gsap.set(rectangle1, {
   x: r1moveX,
   width: `179rem`,
-  gridRow:1,
+  gridRow: 1,
   // alignContent:'center',
   rotate: 0,
   // opacity:0
@@ -91,7 +92,7 @@ gsap.set(rectangle1, {
 gsap.set(rectangle2, {
   x: r2moveX,
   y: nuovaPos,
-  gridRow:2,
+  gridRow: 2,
   width: `179rem`,
   // y:r2moveY,
   rotate: 0,
@@ -109,15 +110,23 @@ gsap.set(rectangle2, {
 //   rotate: 90,
 // });
 const openingHome = gsap.timeline();
-openingHome.addLabel('firstShow');
-openingHome.from(rectangle1, {
-  x: '185rem', 
-  duration:1,
-}, 'firstShow')
-openingHome.from(rectangle2, {
-  x: '185rem',
-  duration:1,
-}, 'firstShow')
+openingHome.addLabel("firstShow");
+openingHome.from(
+  rectangle1,
+  {
+    x: "185rem",
+    duration: 1,
+  },
+  "firstShow"
+);
+openingHome.from(
+  rectangle2,
+  {
+    x: "185rem",
+    duration: 1,
+  },
+  "firstShow"
+);
 openingHome.addLabel("animRiga");
 // openingHome.set(rectangle1, {
 
@@ -257,3 +266,71 @@ openingHome.addLabel("repositioningGrid");
 //   },
 //   "repositioningGrid"
 // );
+////////////////////////////////////////////////////
+///////////////////////SCROLLING TITLES///////////////
+//////////////////////////////////////////////////////
+const titleInfo = document.querySelector(".titleInfo ");
+const titleWeb = document.querySelector(".titleWeb ");
+const titleMap = document.querySelector(".titleMap ");
+const titleVideo = document.querySelector(".titleVideo ");
+
+let scrollTween1 = gsap.from(titleInfo, {
+  y: -150,
+  duration: 0.5,
+  ease: "power1.inOut",
+  scrollTrigger: {
+    trigger: ".introduction",
+    start: "top center",
+    
+    markers:true,
+    end: "center center",
+  },
+});
+let scrollTween2 = gsap.from(titleWeb, {
+  y: -150,
+  duration: 0.1,
+  ease: "power1.inOut",
+  scrollTrigger: {
+    trigger: ".titleWrapperWeb",
+    start: "center center",
+    end: "center center",
+  },
+});
+let scrollTween3 = gsap.from(titleMap, {
+  y: -150,
+  duration: 0.5,
+  ease: "power1.inOut",
+  scrollTrigger: {
+    trigger: ".titleWrapperMap",
+    start: "center center",
+    end: "center center",
+  },
+});
+let scrollTween4 = gsap.from(titleVideo, {
+  y: -150,
+  duration: 0.5,
+  ease: "power1.inOut",
+  scrollTrigger: {
+    trigger: "WrapperMap",
+    start: "center center ",
+
+    end: "center center",
+  },
+});
+
+
+let paragraphs = gsap.utils.toArray('section');
+
+paragraphs.forEach((wrapper) => {
+  const paragraph = wrapper.querySelector('.wrapperParagraph');
+  if (paragraph) {
+    gsap.from(paragraph, {
+      y: -200,
+      scrollTrigger: {
+        trigger: wrapper,
+        start: 'center center',
+        toggleActions: 'play none none none'
+      }
+    });
+  }
+});
