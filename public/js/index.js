@@ -321,13 +321,15 @@ let scrollTween4 = gsap.from(titleVideo, {
 
 let paragraphs = gsap.utils.toArray('section');
 
-paragraphs.forEach((wrapper) => {
-  const paragraph = wrapper.querySelector('.wrapperParagraph');
+const titleII= document.querySelectorAll(`[class^="titleWrapper"]`);
+console.log(titleII)
+paragraphs.forEach((wrapper, i) => {
+  const paragraph = wrapper.querySelector('.testo');
   if (paragraph) {
     gsap.from(paragraph, {
       y: -200,
       scrollTrigger: {
-        trigger: wrapper,
+        trigger:titleII[i],
         start: 'center center',
         toggleActions: 'play none none none'
       }
