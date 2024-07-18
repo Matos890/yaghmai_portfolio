@@ -68,7 +68,6 @@ body {
 }
 body::after{
 content: "";
-  will-change: top left;
   backface-visibility: hidden;
   position: fixed;
   left: 0;
@@ -361,11 +360,13 @@ span {
 }
 .containerTexDev {
   width: 100%;
+  overflow-y: clip;
 }
 .textDev {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: clip;
 }
 .colDev {
   margin-right: 2vw;
@@ -380,7 +381,7 @@ span {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
 }
 .mapContainer {
@@ -505,6 +506,7 @@ footer {
     display: grid;
     grid-template-columns: 31.453125rem 15.7265625rem 31.453125rem;
     grid-template-rows: 20rem 65.9774rem;
+  align-items: unset;
   }
   .mapContainer {
     font-size: 2rem;

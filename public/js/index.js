@@ -55,6 +55,13 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 /////////////////////////////////////////////////
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
+let rectangledimension = document.querySelector(".rectangle1");
+let rDW = rectangledimension.getBoundingClientRect();
+let rectangledW = rDW.width;
+let rectangledH = rDW.height;
+let rigaHeight = rectangledH / 2;
+let rigaWidth = rectangledW * 2;
+console.log(`width`, rectangledW, rigaWidth,rectangledH, rigaHeight);
 const wrapGrid = document.querySelector(".wrapperGrid");
 const wrapGridPosx = wrapGrid.getBoundingClientRect();
 console.log(wrapGridPosx.x);
@@ -76,45 +83,30 @@ let nuovaPos = rectangle1Pos.y - rectangle2Pos.y;
 
 console.log(centerX, centerY);
 let { r1moveX, r1moveY, r2moveX, r2moveY } = findCenter();
-r1moveX = r1moveX + 4 * 10;
+r1moveX = r1moveX + rigaHeight;
 
-r2moveX = r2moveX + 4 * 10;
+r2moveX = r2moveX + rigaHeight;
 r2moveY = r2moveY + 2 * 10;
 r1moveY = r1moveY - 2 * 10;
 gsap.set(rectangle1, {
   x: r1moveX,
-  width: `179rem`,
+  width: () => rigaWidth,
   gridRow: 1,
-  // alignContent:'center',
   rotate: 0,
-  // opacity:0
 });
 gsap.set(rectangle2, {
   x: r2moveX,
   y: nuovaPos,
   gridRow: 2,
-  width: `179rem`,
-  // y:r2moveY,
+  width: () => rigaWidth,
   rotate: 0,
 });
-// gsap.from(rectangle1, {
-//   x: () => r1moveX,
-//   y: () => r1moveY,
-//   duration: 5,
-//   rotate: -90,
-// });
-// gsap.from(rectangle2, {
-//   x: () => r2moveX,
-//   y: () => r2moveY,
-//   duration: 5,
-//   rotate: 90,
-// });
 const openingHome = gsap.timeline();
 openingHome.addLabel("firstShow");
 openingHome.from(
   rectangle1,
   {
-    x: "185rem",
+    x: () => rigaWidth + 100,
     duration: 1,
   },
   "firstShow"
@@ -122,27 +114,17 @@ openingHome.from(
 openingHome.from(
   rectangle2,
   {
-    x: "185rem",
+    x: () => rigaWidth + 100,
     duration: 1,
   },
   "firstShow"
 );
 openingHome.addLabel("animRiga");
-// openingHome.set(rectangle1, {
-
-//   x: r1moveX,
-//   width: `183rem`,
-//   rotate: 0,
-// },
-
-//   "animRiga"
-// )
 openingHome.fromTo(
   rectangle1,
   {
     x: () => r1moveX,
     rotate: 0,
-    // opacity:0
   },
   {
     rotate: -90,
@@ -185,20 +167,18 @@ openingHome.from(
   "animRiga"
 );
 openingHome.set(rectangle1, {
-  // x:-7,
-  x: `-4rem`,
-  y: `9rem`,
+  x:()=> -rigaHeight,
+  y: ()=> rectangledH + 100,
 
   transformOrigin: "0% 0%",
-  width: "89.5rem",
+  width: () => rectangledW,
 });
 openingHome.set(rectangle2, {
-  // x: 0,
-  x: `4rem`,
+  x:()=> rigaHeight,
 
-  y: `-9rem`,
+  y: ()=> -(rectangledH + 100),
   transformOrigin: "100% 100%",
-  width: "89.5rem",
+  width: () => rectangledW,
 });
 openingHome.addLabel("repositioningY");
 openingHome.to(
@@ -218,7 +198,7 @@ openingHome.to(
 openingHome.from(
   ".containerYaghmai",
   {
-    y: `-9rem`,
+  y: ()=> -(rectangledH ),
   },
   "repositioningY"
 );
@@ -227,7 +207,6 @@ openingHome.to(
   rectangle1,
   {
     duration: 2,
-    // transformOrigin:'50% 50%',
     rotate: 0,
   },
   "repositioning"
@@ -235,7 +214,6 @@ openingHome.to(
 openingHome.to(
   rectangle2,
   {
-    // transformOrigin:'50% 50%',
     duration: 2,
 
     rotate: 0,
@@ -249,45 +227,38 @@ openingHome.from(
   "repositioning"
 );
 openingHome.addLabel("repositioningGrid");
-// openingHome.to(
-//   rectangle1,
-//   {
-//     x: 0,
-//     duration: 1,
-//   },
-//   "repositioningGrid"
-// );
-// openingHome.to(
-//   rectangle2,
-//   {
-//     x: 0,
-//     duration: 1,
-//     transformOrigin: "0% 0% ",
-//   },
-//   "repositioningGrid"
-// );
 ////////////////////////////////////////////////////
 ///////////////////////SCROLLING TITLES///////////////
 //////////////////////////////////////////////////////
 const titleInfo = document.querySelector(".titleInfo ");
+const titleWrapperInfo = document.querySelector('.titleWrapperInfo');
+let titleIH = titleWrapperInfo.getBoundingClientRect();
+titleIH = titleIH.height;
 const titleWeb = document.querySelector(".titleWeb ");
+const titleWrapperWeb = document.querySelector('.titleWrapperWeb');
+let titleWH = titleWrapperWeb.getBoundingClientRect();
+titleWH = (titleWH.height) ;
 const titleMap = document.querySelector(".titleMap ");
+const titleWrapperMap = document.querySelector(".titleWrapperMap ");
+let titleMH = titleWrapperMap.getBoundingClientRect();
+titleMH = titleMH.height;
 const titleVideo = document.querySelector(".titleVideo ");
+let titleVH = titleVideo.getBoundingClientRect();
+titleVH = titleVH.height;
 
 let scrollTween1 = gsap.from(titleInfo, {
-  y: -150,
+  y: ()=> - titleIH,
   duration: 0.5,
   ease: "power1.inOut",
   scrollTrigger: {
     trigger: ".introduction",
     start: "top center",
-    
-    markers:true,
+
     end: "center center",
   },
 });
 let scrollTween2 = gsap.from(titleWeb, {
-  y: -150,
+  y:()=> - titleWH,
   duration: 0.1,
   ease: "power1.inOut",
   scrollTrigger: {
@@ -297,7 +268,7 @@ let scrollTween2 = gsap.from(titleWeb, {
   },
 });
 let scrollTween3 = gsap.from(titleMap, {
-  y: -150,
+  y:()=> -titleMH,
   duration: 0.5,
   ease: "power1.inOut",
   scrollTrigger: {
@@ -307,32 +278,33 @@ let scrollTween3 = gsap.from(titleMap, {
   },
 });
 let scrollTween4 = gsap.from(titleVideo, {
-  y: -150,
+  y:()=> -titleMH,
   duration: 0.5,
   ease: "power1.inOut",
   scrollTrigger: {
-    trigger: "WrapperMap",
+    trigger: ".titleWrapperMap",
     start: "center center ",
 
     end: "center center",
   },
 });
 
+let paragraphs = gsap.utils.toArray("section");
 
-let paragraphs = gsap.utils.toArray('section');
+let sections = gsap.utils.toArray("section");
 
-const titleII= document.querySelectorAll(`[class^="titleWrapper"]`);
-console.log(titleII)
-paragraphs.forEach((wrapper, i) => {
-  const paragraph = wrapper.querySelector('.testo');
-  if (paragraph) {
+sections.forEach((section) => {
+  let paragraphs = section.querySelectorAll(".testo");
+  paragraphs.forEach((paragraph) => {
     gsap.from(paragraph, {
       y: -200,
       scrollTrigger: {
-        trigger:titleII[i],
-        start: 'center center',
-        toggleActions: 'play none none none'
-      }
+        trigger: paragraph,
+        start: "center center",
+        toggleActions: "play none none none",
+      },
     });
-  }
+    console.log(paragraph);
+  });
 });
+
