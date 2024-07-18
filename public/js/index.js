@@ -51,193 +51,237 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
   }
 });
 ////////////////////////////////////////////////////////////
-/////////////////ANIMATION/////////////////////////
-/////////////////////////////////////////////////
-const screenWidth = window.innerWidth;
-const screenHeight = window.innerHeight;
-let rectangledimension = document.querySelector(".rectangle1");
-let rDW = rectangledimension.getBoundingClientRect();
-let rectangledW = rDW.width;
-let rectangledH = rDW.height;
-let rigaHeight = rectangledH / 2;
-let rigaWidth = rectangledW * 2;
-console.log(`width`, rectangledW, rigaWidth,rectangledH, rigaHeight);
-const wrapGrid = document.querySelector(".wrapperGrid");
-const wrapGridPosx = wrapGrid.getBoundingClientRect();
-console.log(wrapGridPosx.x);
-const centerX = screenWidth / 3;
-const centerY = screenHeight / 2;
-const rectangle1 = document.querySelector(".rectangle1");
-const rectangle2 = document.querySelector(".rectangle2");
-const rectangle1Pos = rectangle1.getBoundingClientRect();
-const rectangle2Pos = rectangle2.getBoundingClientRect();
-console.log(rectangle1Pos.x);
-const findCenter = () => {
-  let r1moveX = wrapGridPosx.x - rectangle1Pos.x;
+/////////////////ANIMATION FUNCTION/////////////////////////
+////////////////////////////////////////////////////////////
+
+  let openingHome = gsap.timeline(); // Create a new timeline
+const measures = function () {
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  let rectangledimension = document.querySelector(".rectangle1");
+  rectangledimension.style.width = "";
+  let rComputed = window.getComputedStyle(rectangledimension);
+  let rDW = parseFloat(rComputed.width);
+  let rDH = parseFloat(rComputed.height);
+  const wrapGrid = document.querySelector(".wrapperGrid");
+  wrapGrid.style.width = "";
+  const wrapGridPosx = wrapGrid.getBoundingClientRect();
+  console.log("miodio", rDW, rDH,wrapGridPosx.x);
+  return { screenWidth, screenHeight, rDW, rDH, wrapGridPosx };
+};
+
+const findCenter = (wrapGridPosx, rectangle1Pos, centerY, rectangle2Pos) => {
+  let r1moveX = wrapGridPosx.x - rectangle1Pos.offsetLeft;
   let r1moveY = centerY - rectangle1Pos.y;
-  let r2moveX = wrapGridPosx.x - rectangle2Pos.x;
+  let r2moveX = wrapGridPosx.x - rectangle2Pos.offsetLeft;
+  
   let r2moveY = centerY - rectangle2Pos.y;
   return { r1moveX, r1moveY, r2moveX, r2moveY };
 };
-let nuovaPos = rectangle1Pos.y - rectangle2Pos.y;
+const initializeAnimation = () => {
+  let { screenWidth, screenHeight, rDW, rDH, wrapGridPosx } = measures();
+  let rectangledW = rDW;
+  let rectangledH = rDH;
+  let rigaHeight = rectangledH / 2;
+  let rigaWidth = rectangledW * 2;
+  console.log(`width`, rectangledW, rigaWidth, rectangledH, rigaHeight);
+  console.log(wrapGridPosx.x);
+  const centerX = screenWidth / 3;
+  const centerY = screenHeight / 2;
+  const rectangle1 = document.querySelector(".rectangle1");
+  const rectangle2 = document.querySelector(".rectangle2");
+  const rectangle1Pos = rectangle1.offsetTop;
+  const rectangle2Pos = rectangle2.offsetTop;
+  
+  let nuovaPos = rectangle1Pos - rectangle2Pos;
 
-console.log(centerX, centerY);
-let { r1moveX, r1moveY, r2moveX, r2moveY } = findCenter();
-r1moveX = r1moveX + rigaHeight;
+  console.log(centerX, centerY);
 
-r2moveX = r2moveX + rigaHeight;
-r2moveY = r2moveY + 2 * 10;
-r1moveY = r1moveY - 2 * 10;
-gsap.set(rectangle1, {
-  x: r1moveX,
-  width: () => rigaWidth,
-  gridRow: 1,
-  rotate: 0,
-});
-gsap.set(rectangle2, {
-  x: r2moveX,
-  y: nuovaPos,
-  gridRow: 2,
-  width: () => rigaWidth,
-  rotate: 0,
-});
-const openingHome = gsap.timeline();
-openingHome.addLabel("firstShow");
-openingHome.from(
-  rectangle1,
-  {
-    x: () => rigaWidth + 100,
-    duration: 1,
-  },
-  "firstShow"
-);
-openingHome.from(
-  rectangle2,
-  {
-    x: () => rigaWidth + 100,
-    duration: 1,
-  },
-  "firstShow"
-);
-openingHome.addLabel("animRiga");
-openingHome.fromTo(
-  rectangle1,
-  {
-    x: () => r1moveX,
+  let { r1moveX, r1moveY, r2moveX, r2moveY } = findCenter(
+    wrapGridPosx,
+    rectangle1,
+    centerY,
+    rectangle2
+  );
+  r1moveX = r1moveX + rigaHeight;
+
+  r2moveX = r2moveX + rigaHeight;
+  r2moveY = r2moveY + 2 * 10;
+  r1moveY = r1moveY - 2 * 10;
+
+  // // Kill any ongoing animations before starting new ones
+  // gsap.killTweensOf([
+  //   rectangle1,
+  //   rectangle2,
+  //   ".containerMattiaTit",
+  //   ".containerYaghmai",
+  //   ".WrapperTextHero",
+  // ]);
+
+  gsap.set(rectangle1, {
+    x: r1moveX,
+    width: () => rigaWidth,
+    gridRow: 1,
     rotate: 0,
-  },
-  {
-    rotate: -90,
-    delay: 0.8,
-    duration: 1,
-  },
-  "animRiga"
-);
-
-openingHome.fromTo(
-  rectangle2,
-  {
-    x: () => r2moveX,
+  });
+  gsap.set(rectangle2, {
+    x: r2moveX,
     y: nuovaPos,
+    gridRow: 2,
+    width: () => rigaWidth,
     rotate: 0,
-  },
-  {
-    rotate: -90,
-    delay: 0.8,
-    duration: 1,
-  },
-  "animRiga"
-);
-openingHome.from(
-  ".containerMattiaTit",
-  {
-    opacity: 0,
-    delay: 0.8,
-    duration: 1,
-  },
-  "animRiga"
-);
-openingHome.from(
-  ".containerYaghmai",
-  {
-    opacity: 0,
-    delay: 0.8,
-    duration: 1,
-  },
-  "animRiga"
-);
-openingHome.set(rectangle1, {
-  x:()=> -rigaHeight,
-  y: ()=> rectangledH + 100,
+  });
 
-  transformOrigin: "0% 0%",
-  width: () => rectangledW,
+
+  openingHome.addLabel("firstShow");
+  openingHome.from(
+    rectangle1,
+    {
+      x: () => rigaWidth + 100,
+      duration: 1,
+    },
+    "firstShow"
+  );
+  openingHome.from(
+    rectangle2,
+    {
+      x: () => rigaWidth + 100,
+      duration: 1,
+    },
+    "firstShow"
+  );
+  openingHome.addLabel("animRiga");
+  openingHome.fromTo(
+    rectangle1,
+    {
+      x: () => r1moveX,
+      rotate: 0,
+    },
+    {
+      rotate: -90,
+      delay: 0.8,
+      duration: 1,
+    },
+    "animRiga"
+  );
+
+  openingHome.fromTo(
+    rectangle2,
+    {
+      x: () => r2moveX,
+      y: nuovaPos,
+      rotate: 0,
+    },
+    {
+      rotate: -90,
+      delay: 0.8,
+      duration: 1,
+    },
+    "animRiga"
+  );
+  openingHome.from(
+    ".containerMattiaTit",
+    {
+      opacity: 0,
+      delay: 0.8,
+      duration: 1,
+    },
+    "animRiga"
+  );
+  openingHome.from(
+    ".containerYaghmai",
+    {
+      opacity: 0,
+      delay: 0.8,
+      duration: 1,
+    },
+    "animRiga"
+  );
+  openingHome.set(rectangle1, {
+    x: () => -rigaHeight,
+    y: () => rectangledH + 100,
+
+    transformOrigin: "0% 0%",
+    width: () => rectangledW,
+  });
+  openingHome.set(rectangle2, {
+    x: () => rigaHeight,
+
+    y: () => -(rectangledH + 100),
+    transformOrigin: "100% 100%",
+    width: () => rectangledW,
+  });
+  openingHome.addLabel("repositioningY");
+  openingHome.to(
+    rectangle1,
+    {
+      y: 0,
+    },
+    "repositioningY"
+  );
+  openingHome.to(
+    rectangle2,
+    {
+      y: 0,
+    },
+    "repositioningY"
+  );
+  openingHome.from(
+    ".containerYaghmai",
+    {
+      y: () => -rectangledH,
+    },
+    "repositioningY"
+  );
+  openingHome.addLabel("repositioning");
+  openingHome.to(
+    rectangle1,
+    {
+      duration: 2,
+      rotate: 0,
+    },
+    "repositioning"
+  );
+  openingHome.to(
+    rectangle2,
+    {
+      duration: 2,
+
+      rotate: 0,
+    },
+    "repositioning"
+  );
+
+  openingHome.from(
+    ".WrapperTextHero",
+    { delay: 1.5, opacity: 0, duration: 2 },
+    "repositioning"
+  );
+  openingHome.addLabel("repositioningGrid");
+};
+
+// Initialize the animation on load
+measures();
+initializeAnimation();
+
+// Re-initialize the animation on window resize
+window.addEventListener("resize", () => {
+  openingHome.restart()
+  
+  initializeAnimation();
 });
-openingHome.set(rectangle2, {
-  x:()=> rigaHeight,
 
-  y: ()=> -(rectangledH + 100),
-  transformOrigin: "100% 100%",
-  width: () => rectangledW,
-});
-openingHome.addLabel("repositioningY");
-openingHome.to(
-  rectangle1,
-  {
-    y: 0,
-  },
-  "repositioningY"
-);
-openingHome.to(
-  rectangle2,
-  {
-    y: 0,
-  },
-  "repositioningY"
-);
-openingHome.from(
-  ".containerYaghmai",
-  {
-  y: ()=> -(rectangledH ),
-  },
-  "repositioningY"
-);
-openingHome.addLabel("repositioning");
-openingHome.to(
-  rectangle1,
-  {
-    duration: 2,
-    rotate: 0,
-  },
-  "repositioning"
-);
-openingHome.to(
-  rectangle2,
-  {
-    duration: 2,
-
-    rotate: 0,
-  },
-  "repositioning"
-);
-
-openingHome.from(
-  ".WrapperTextHero",
-  { delay: 1.5, opacity: 0, duration: 2 },
-  "repositioning"
-);
-openingHome.addLabel("repositioningGrid");
 ////////////////////////////////////////////////////
 ///////////////////////SCROLLING TITLES///////////////
 //////////////////////////////////////////////////////
 const titleInfo = document.querySelector(".titleInfo ");
-const titleWrapperInfo = document.querySelector('.titleWrapperInfo');
+const titleWrapperInfo = document.querySelector(".titleWrapperInfo");
 let titleIH = titleWrapperInfo.getBoundingClientRect();
 titleIH = titleIH.height;
 const titleWeb = document.querySelector(".titleWeb ");
-const titleWrapperWeb = document.querySelector('.titleWrapperWeb');
+const titleWrapperWeb = document.querySelector(".titleWrapperWeb");
 let titleWH = titleWrapperWeb.getBoundingClientRect();
-titleWH = (titleWH.height) ;
+titleWH = titleWH.height;
 const titleMap = document.querySelector(".titleMap ");
 const titleWrapperMap = document.querySelector(".titleWrapperMap ");
 let titleMH = titleWrapperMap.getBoundingClientRect();
@@ -247,7 +291,7 @@ let titleVH = titleVideo.getBoundingClientRect();
 titleVH = titleVH.height;
 
 let scrollTween1 = gsap.from(titleInfo, {
-  y: ()=> - titleIH,
+  y: () => -titleIH,
   duration: 0.5,
   ease: "power1.inOut",
   scrollTrigger: {
@@ -258,7 +302,7 @@ let scrollTween1 = gsap.from(titleInfo, {
   },
 });
 let scrollTween2 = gsap.from(titleWeb, {
-  y:()=> - titleWH,
+  y: () => -titleWH,
   duration: 0.1,
   ease: "power1.inOut",
   scrollTrigger: {
@@ -268,7 +312,7 @@ let scrollTween2 = gsap.from(titleWeb, {
   },
 });
 let scrollTween3 = gsap.from(titleMap, {
-  y:()=> -titleMH,
+  y: () => -titleMH,
   duration: 0.5,
   ease: "power1.inOut",
   scrollTrigger: {
@@ -278,7 +322,7 @@ let scrollTween3 = gsap.from(titleMap, {
   },
 });
 let scrollTween4 = gsap.from(titleVideo, {
-  y:()=> -titleMH,
+  y: () => -titleMH,
   duration: 0.5,
   ease: "power1.inOut",
   scrollTrigger: {
@@ -307,4 +351,3 @@ sections.forEach((section) => {
     console.log(paragraph);
   });
 });
-

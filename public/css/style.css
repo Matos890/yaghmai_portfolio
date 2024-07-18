@@ -233,6 +233,7 @@ overflow-y: visible;
   align-items: center;
 }
 .rectangle1 {
+  position: relative;
   grid-column: 2;
   grid-row: 1;
   width: 85%;
@@ -240,6 +241,7 @@ overflow-y: visible;
   background-color: #ad7684;
 }
 .rectangle2 {
+  position: relative;
   grid-column: 1;
   grid-row: 2;
   width: 85%;
