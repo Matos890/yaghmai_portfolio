@@ -19,6 +19,7 @@ p {
 h2 {
   font-size: 2.8rem;
   margin-bottom: 0.8rem;
+  font-weight: 800;
 }
 article {
   font-size: 1.8rem;
@@ -80,8 +81,8 @@ body::after {
 }
 
 .siteWrapper {
-  width: 100%;
-  left: 0;
+  width: calc(100vw - 40px);
+  left: 20px;
   /* height: 400vh; */
   /* background-image: url("../img/background_home.png"); */
   position: absolute;
@@ -196,12 +197,12 @@ picture {
 
 /* SECTION HERO */
 .heroSection {
-  left:0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow-y: hidden;
+  overflow-y: clip;
 }
 .wrapperGrid {
   width: 100vw;
@@ -238,6 +239,7 @@ picture {
 }
 .rectangle1 {
   position: relative;
+  opacity: 1;
   grid-column: 2;
   grid-row: 1;
   width: 85%;
@@ -248,6 +250,7 @@ picture {
   position: relative;
   grid-column: 1;
   grid-row: 2;
+  opacity: 1;
   width: 85%;
   height: 5rem;
   background-color: #ad7684;
@@ -433,6 +436,15 @@ footer {
   flex-direction: column;
 }
 /* MEDIA QUERIES */
+@media (max-height: 700px) {
+  .heroSection {
+    height: auto;
+  }
+  .wrapperGrid {
+    height: auto;
+    margin-top: 45vh !important;
+  }
+}
 @media (min-width: 900px) {
   /* section {
     min-height: 100vh;
@@ -548,7 +560,7 @@ footer {
     grid-template-rows: 8rem 8rem 11rem;
     height: 27rem;
     column-gap: 2rem;
-    margin-top: 9vh;
+    margin-top: 20vh;
   }
   .containerMattiaTit {
     font-size: 7rem;
@@ -587,7 +599,7 @@ footer {
     width: 40.312rem;
   }
 }
-@media (min-width: 1460px) {
+/* @media (min-width: 1460px) {
   h2 {
     font-size: 3.5rem;
   }
@@ -644,7 +656,7 @@ footer {
     width: 54.8rem;
   }
 }
-
+*/
 @media (min-width: 1920px) {
   h2 {
     font-size: 5rem;
@@ -659,6 +671,7 @@ footer {
     width: 183rem;
     height: auto;
     grid-template-columns: 89.5rem 89.5rem;
+    margin-top: 16rem;
   }
   .containerMattiaTit {
     font-size: 12rem;

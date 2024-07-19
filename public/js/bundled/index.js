@@ -733,7 +733,6 @@ const initializeAnimation = function() {
         duration: 1
     }, "animRiga");
     openingHome.fromTo(rectangle2, {
-        opacity: 1,
         x: ()=>r2moveX,
         y: nuovaPos,
         rotate: 0
@@ -759,6 +758,7 @@ const initializeAnimation = function() {
         width: ()=>rectangledW
     });
     openingHome.set(rectangle2, {
+        opacity: 1,
         x: ()=>rigaHeight,
         y: ()=>-rectangledH,
         transformOrigin: "100% 100%",

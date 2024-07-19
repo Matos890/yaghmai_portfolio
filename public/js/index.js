@@ -129,7 +129,6 @@ const initializeAnimation = function () {
     rectangledH,
     rectangledW,
   } = measures();
-
   gsap.set(rectangle2, {
     opacity: 0,
   });
@@ -188,7 +187,6 @@ const initializeAnimation = function () {
   openingHome.fromTo(
     rectangle2,
     {
-      opacity: 1,
       x: () => r2moveX,
       y: nuovaPos,
       rotate: 0,
@@ -229,6 +227,8 @@ const initializeAnimation = function () {
   });
 
   openingHome.set(rectangle2, {
+    
+      opacity: 1,
     x: () => rigaHeight,
     y: () => -rectangledH,
     transformOrigin: "100% 100%",
