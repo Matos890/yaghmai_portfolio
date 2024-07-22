@@ -54,267 +54,267 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 /////////////////ANIMATION/////////////////////////
 /////////////////////////////////////////////////
 ///////////MEASUREMENTS//////////////////////////////
-let rectangle2 = document.querySelector(".rectangle2");
-let rectangledimension = document.querySelector(".rectangle1");
+// let rectangle2 = document.querySelector(".rectangle2");
+// let rectangledimension = document.querySelector(".rectangle1");
 
-const measures = () => {
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
+// const measures = () => {
+//   const screenWidth = window.innerWidth;
+//   const screenHeight = window.innerHeight;
 
-  // Reset width and height styles for accurate measurement
-  rectangledimension.style.width = "";
-  rectangledimension.style.height = "";
+//   // Reset width and height styles for accurate measurement
+//   rectangledimension.style.width = "";
+//   rectangledimension.style.height = "";
 
-  // Get computed styles
-  let rDW = window.getComputedStyle(rectangledimension);
+//   // Get computed styles
+//   let rDW = window.getComputedStyle(rectangledimension);
 
-  // Extract and convert width and height from computed styles
-  let rectangledW = parseFloat(rDW.width);
-  let rectangledH = parseFloat(rDW.height);
-  
-  let rigaHeight = rectangledH / 2;
-  let rigaWidth = rectangledW * 2;
+//   // Extract and convert width and height from computed styles
+//   let rectangledW = parseFloat(rDW.width);
+//   let rectangledH = parseFloat(rDW.height);
 
-  const wrapGrid = document.querySelector(".wrapperGrid");
-  const wrapGridPosx = wrapGrid.getBoundingClientRect().x;
+//   let rigaHeight = rectangledH / 2;
+//   let rigaWidth = rectangledW * 2;
 
-  const centerX = screenWidth / 3;
-  const centerY = screenHeight / 2;
-  const rectangle1 = document.querySelector(".rectangle1");
-  const rectangle1Pos = rectangle1.getBoundingClientRect();
-  const rectangle2Pos = rectangle2.getBoundingClientRect();
+//   const wrapGrid = document.querySelector(".wrapperGrid");
+//   const wrapGridPosx = wrapGrid.getBoundingClientRect().x;
 
-  const findCenter = () => {
-    let r1moveX = wrapGridPosx - rectangle1Pos.x;
-    let r1moveY = centerY - rectangle1Pos.y;
-    let r2moveX = wrapGridPosx - rectangle2Pos.x;
-    let r2moveY = centerY - rectangle2Pos.y;
-    return { r1moveX, r1moveY, r2moveX, r2moveY };
-  };
+//   const centerX = screenWidth / 3;
+//   const centerY = screenHeight / 2;
+//   const rectangle1 = document.querySelector(".rectangle1");
+//   const rectangle1Pos = rectangle1.getBoundingClientRect();
+//   const rectangle2Pos = rectangle2.getBoundingClientRect();
 
-  let nuovaPos = rectangle1Pos.y - rectangle2Pos.y;
+//   const findCenter = () => {
+//     let r1moveX = wrapGridPosx - rectangle1Pos.x;
+//     let r1moveY = centerY - rectangle1Pos.y;
+//     let r2moveX = wrapGridPosx - rectangle2Pos.x;
+//     let r2moveY = centerY - rectangle2Pos.y;
+//     return { r1moveX, r1moveY, r2moveX, r2moveY };
+//   };
 
-  let { r1moveX, r1moveY, r2moveX, r2moveY } = findCenter();
-  
-  r1moveX = r1moveX + rigaHeight;
-  r2moveX = r2moveX + rigaHeight;
-  r2moveY = r2moveY + (rigaHeight / 2);
-  r1moveY = r1moveY - (rigaHeight / 2);
+//   let nuovaPos = rectangle1Pos.y - rectangle2Pos.y;
 
-  return {
-    rectangle1,
-    r1moveX,
-    rigaWidth,
-    rectangle2,
-    r2moveX,
-    nuovaPos,
-    rigaHeight,
-    rectangledH,
-    rectangledW,
-  };
-};
+//   let { r1moveX, r1moveY, r2moveX, r2moveY } = findCenter();
 
-///////////////////////////////////////////////////
+//   r1moveX = r1moveX + rigaHeight;
+//   r2moveX = r2moveX + rigaHeight;
+//   r2moveY = r2moveY + (rigaHeight / 2);
+//   r1moveY = r1moveY - (rigaHeight / 2);
 
-const openingHome = gsap.timeline();
-const initializeAnimation = function () {
-  let {
-    rectangle1,
-    r1moveX,
-    rigaWidth,
-    rectangle2,
-    r2moveX,
-    nuovaPos,
-    rigaHeight,
-    rectangledH,
-    rectangledW,
-  } = measures();
-  gsap.set(rectangle2, {
-    opacity: 0,
-  });
+//   return {
+//     rectangle1,
+//     r1moveX,
+//     rigaWidth,
+//     rectangle2,
+//     r2moveX,
+//     nuovaPos,
+//     rigaHeight,
+//     rectangledH,
+//     rectangledW,
+//   };
+// };
 
-  gsap.set(rectangle1, {
-    transformOrigin: "50% 50%",
-    x: r1moveX,
-    width: () => rigaWidth,
-    gridRow: 1,
-    rotate: 0,
-  });
+// ///////////////////////////////////////////////////
 
-  gsap.set(rectangle2, {
-    transformOrigin: "50% 50%",
-    x: r2moveX,
-    y: nuovaPos,
-    gridRow: 2,
-    width: () => rigaWidth,
-    rotate: 0,
-    opacity: 0,
-  });
+// const openingHome = gsap.timeline();
+// const initializeAnimation = function () {
+//   let {
+//     rectangle1,
+//     r1moveX,
+//     rigaWidth,
+//     rectangle2,
+//     r2moveX,
+//     nuovaPos,
+//     rigaHeight,
+//     rectangledH,
+//     rectangledW,
+//   } = measures();
+//   gsap.set(rectangle2, {
+//     opacity: 0,
+//   });
 
-  openingHome.addLabel("firstShow");
-  openingHome.from(
-    rectangle1,
-    {
-      x: () => rigaWidth + 100,
-      duration: 1,
-    },
-    "firstShow"
-  );
-  openingHome.from(
-    rectangle2,
-    {
-      x: () => rigaWidth + 100,
-      duration: 1,
-    },
-    "firstShow"
-  );
+//   gsap.set(rectangle1, {
+//     transformOrigin: "50% 50%",
+//     x: r1moveX,
+//     width: () => rigaWidth,
+//     gridRow: 1,
+//     rotate: 0,
+//   });
 
-  openingHome.addLabel("animRiga");
-  openingHome.fromTo(
-    rectangle1,
-    {
-      x: () => r1moveX,
-      rotate: 0,
-    },
-    {
-      rotate: -90,
-      delay: 0.8,
-      duration: 1,
-    },
-    "animRiga"
-  );
+//   gsap.set(rectangle2, {
+//     transformOrigin: "50% 50%",
+//     x: r2moveX,
+//     y: nuovaPos,
+//     gridRow: 2,
+//     width: () => rigaWidth,
+//     rotate: 0,
+//     opacity: 0,
+//   });
 
-  openingHome.fromTo(
-    rectangle2,
-    {
-      x: () => r2moveX,
-      y: nuovaPos,
-      rotate: 0,
-    },
-    {
-      rotate: -90,
-      delay: 0.8,
-      duration: 1,
-    },
-    "animRiga"
-  );
+//   openingHome.addLabel("firstShow");
+//   openingHome.from(
+//     rectangle1,
+//     {
+//       x: () => rigaWidth + 100,
+//       duration: 1,
+//     },
+//     "firstShow"
+//   );
+//   openingHome.from(
+//     rectangle2,
+//     {
+//       x: () => rigaWidth + 100,
+//       duration: 1,
+//     },
+//     "firstShow"
+//   );
 
-  openingHome.from(
-    ".containerMattiaTit",
-    {
-      opacity: 0,
-      delay: 0.8,
-      duration: 1,
-    },
-    "animRiga"
-  );
+//   openingHome.addLabel("animRiga");
+//   openingHome.fromTo(
+//     rectangle1,
+//     {
+//       x: () => r1moveX,
+//       rotate: 0,
+//     },
+//     {
+//       rotate: -90,
+//       delay: 0.8,
+//       duration: 1,
+//     },
+//     "animRiga"
+//   );
 
-  openingHome.from(
-    ".containerYaghmai",
-    {
-      opacity: 0,
-      delay: 0.8,
-      duration: 1,
-    },
-    "animRiga"
-  );
+//   openingHome.fromTo(
+//     rectangle2,
+//     {
+//       x: () => r2moveX,
+//       y: nuovaPos,
+//       rotate: 0,
+//     },
+//     {
+//       rotate: -90,
+//       delay: 0.8,
+//       duration: 1,
+//     },
+//     "animRiga"
+//   );
 
-  openingHome.set(rectangle1, {
-    x: () => -rigaHeight,
-    y: () => rectangledH,
-    transformOrigin: "0% 0%",
-    width: () => rectangledW,
-  });
+//   openingHome.from(
+//     ".containerMattiaTit",
+//     {
+//       opacity: 0,
+//       delay: 0.8,
+//       duration: 1,
+//     },
+//     "animRiga"
+//   );
 
-  openingHome.set(rectangle2, {
-    
-      opacity: 1,
-    x: () => rigaHeight,
-    y: () => -rectangledH,
-    transformOrigin: "100% 100%",
-    width: () => rectangledW,
-  });
+//   openingHome.from(
+//     ".containerYaghmai",
+//     {
+//       opacity: 0,
+//       delay: 0.8,
+//       duration: 1,
+//     },
+//     "animRiga"
+//   );
 
-  openingHome.addLabel("repositioningY");
-  openingHome.to(
-    rectangle1,
-    {
-      y: 0,
-    },
-    "repositioningY"
-  );
-  openingHome.to(
-    rectangle2,
-    {
-      y: 0,
-    },
-    "repositioningY"
-  );
+//   openingHome.set(rectangle1, {
+//     x: () => -rigaHeight,
+//     y: () => rectangledH,
+//     transformOrigin: "0% 0%",
+//     width: () => rectangledW,
+//   });
 
-  openingHome.from(
-    ".containerYaghmai",
-    {
-      y: () => -rectangledH,
-    },
-    "repositioningY"
-  );
+//   openingHome.set(rectangle2, {
 
-  openingHome.addLabel("repositioning");
-  openingHome.to(
-    rectangle1,
-    {
-      duration: 2,
-      rotate: 0,
-    },
-    "repositioning"
-  );
+//       opacity: 1,
+//     x: () => rigaHeight,
+//     y: () => -rectangledH,
+//     transformOrigin: "100% 100%",
+//     width: () => rectangledW,
+//   });
 
-  openingHome.to(
-    rectangle2,
-    {
-      duration: 2,
-      rotate: 0,
-    },
-    "repositioning"
-  );
+//   openingHome.addLabel("repositioningY");
+//   openingHome.to(
+//     rectangle1,
+//     {
+//       y: 0,
+//     },
+//     "repositioningY"
+//   );
+//   openingHome.to(
+//     rectangle2,
+//     {
+//       y: 0,
+//     },
+//     "repositioningY"
+//   );
 
-  openingHome.from(
-    ".WrapperTextHero",
-    { delay: 1.5, opacity: 0, duration: 2 },
-    "repositioning"
-  );
-};
+//   openingHome.from(
+//     ".containerYaghmai",
+//     {
+//       y: () => -rectangledH,
+//     },
+//     "repositioningY"
+//   );
 
-const debounce = (func, delay) => {
-  let timeout;
-  return function (...args) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      func.apply(this, args);
-    }, delay);
-  };
-};
+//   openingHome.addLabel("repositioning");
+//   openingHome.to(
+//     rectangle1,
+//     {
+//       duration: 2,
+//       rotate: 0,
+//     },
+//     "repositioning"
+//   );
 
-window.addEventListener(
-  "resize",
-  debounce(() => {
-    openingHome.progress(1);
-    gsap.killTweensOf(openingHome);
+//   openingHome.to(
+//     rectangle2,
+//     {
+//       duration: 2,
+//       rotate: 0,
+//     },
+//     "repositioning"
+//   );
 
-    rectangledimension.style.width = "";
-    rectangledimension.style.height = "";
-    rectangle2.style.width = "";
-    rectangle2.style.height = "";
+//   openingHome.from(
+//     ".WrapperTextHero",
+//     { delay: 1.5, opacity: 0, duration: 2 },
+//     "repositioning"
+//   );
+// };
 
-    gsap.set(rectangle2, {
-      opacity: 0,
-    });
+// const debounce = (func, delay) => {
+//   let timeout;
+//   return function (...args) {
+//     clearTimeout(timeout);
+//     timeout = setTimeout(() => {
+//       func.apply(this, args);
+//     }, delay);
+//   };
+// };
 
-    initializeAnimation();
-  }, 300)
-);
+// window.addEventListener(
+//   "resize",
+//   debounce(() => {
+//     openingHome.progress(1);
+//     gsap.killTweensOf(openingHome);
 
-initializeAnimation();
+//     rectangledimension.style.width = "";
+//     rectangledimension.style.height = "";
+//     rectangle2.style.width = "";
+//     rectangle2.style.height = "";
+
+//     gsap.set(rectangle2, {
+//       opacity: 0,
+//     });
+
+//     initializeAnimation();
+//   }, 300)
+// );
+
+// initializeAnimation();
 
 ////////////////////////////////////////////////////
 ///////////////////////SCROLLING TITLES///////////////
@@ -396,3 +396,85 @@ sections.forEach((section) => {
     console.log(paragraph);
   });
 });
+////////////////ANIMAZIONE ALTERNATIVA
+const rectangle1 = document.querySelector(".rectangle1");
+const rectangle1dimension = rectangle1.getBoundingClientRect()
+console.log('ei', rectangle1dimension.width)
+const rectangle2dimension = rectangle1.getBoundingClientRect()
+const rectangle2 = document.querySelector(".rectangle2");
+const fakeRectangle = document.querySelector(".fakeRectangle");
+const fakeDimension = fakeRectangle.getBoundingClientRect();
+const yaghmai = document.querySelector(".yaghmai");
+const yaghmaiDimension = yaghmai.getBoundingClientRect();
+const mattia = document.querySelector(".mattia");
+const mattiaDimension = mattia.getBoundingClientRect();
+const wrapperTextHero = document.querySelector('.text')
+const wrapperTextDimension = wrapperTextHero.getBoundingClientRect()
+// gsap.set(mattia, {
+//   x: () => mattiaDimension.width,
+// // });
+// gsap.set(yaghmai, {
+//   x: () => -yaghmaiDimension.width,
+// });
+gsap.set(rectangle1, {
+  x:()=>-rectangle1dimension.width,
+});
+gsap.set(wrapperTextHero, {
+  y:()=> - wrapperTextDimension.height - 100
+})
+gsap.set(rectangle2, {
+  x:()=>rectangle1dimension.width,
+});
+gsap.set(fakeRectangle, {
+  transformOrigin: '50% 50%',
+})
+const tl1 = gsap.timeline();
+tl1.addLabel('primaReveal')
+tl1.from(fakeRectangle, {
+  scale:0,
+})
+tl1.from(fakeRectangle, {
+  // width: () => fakeDimension.height * 2,
+  
+  y:() => fakeDimension.height / 2,
+  height: () =>fakeDimension.height * 2,
+  rotation: 90,
+  delay: 1,
+}, 'primaReveal');
+// tl1.to(fakeRectangle, {
+//   width:() => -100,
+//   delay:1
+// }, 'primaReveal')
+tl1.from(mattia, {
+  x: () => mattiaDimension.width,
+  delay:1
+
+}, 'primaReveal')
+tl1.from(yaghmai, {
+
+  x: () => -yaghmaiDimension.width,
+  delay:1
+}, 'primaReveal')
+tl1.addLabel('secondReveal')
+tl1.to(rectangle1, {
+  opacity:1,
+  duration:0.4,
+x:()=>0 
+}, 'secondReveal-=0.35')
+
+tl1.to(rectangle2, {
+  opacity:1,
+  duration:0.4,
+x:() =>0
+}, 'secondReveal-=0.35')
+tl1.to(fakeRectangle, {
+  opacity: 0,
+  duration:0.5,
+} )
+tl1.to(wrapperTextHero, {
+  
+  y:()=>
+   0  
+  
+})
+
