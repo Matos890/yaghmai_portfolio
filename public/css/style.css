@@ -9,7 +9,7 @@ section {
   position: relative;
 }
 
-a{
+a {
   z-index: 2000;
 }
 figure,
@@ -227,24 +227,26 @@ picture {
   grid-column: 1;
   grid-row: 1;
   z-index: -1;
-  font-size: 4rem;
+  font-size: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-x: clip;
+  overflow-y: clip;
 }
 .containerYaghmai {
   z-index: -1;
   grid-column: 2;
   grid-row: 2;
-  font-size: 4rem;
+  font-size: 3rem;
   display: flex;
   justify-content: center;
   overflow-x: clip;
+  overflow-y: clip;
 
   align-items: center;
 }
-.containerRectangle1{
+.containerRectangle1 {
   position: relative;
   overflow-x: clip;
   grid-column: 2;
@@ -259,11 +261,11 @@ picture {
   height: 5rem;
   background-color: #ad7684;
 }
-.containerRectangle2{
+.containerRectangle2 {
   position: relative;
   grid-column: 1;
   grid-row: 2;
-  overflow-x:clip;
+  overflow-x: clip;
 }
 .rectangle2 {
   position: relative;
@@ -276,8 +278,8 @@ picture {
 }
 span {
   font-weight: 500;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
 }
 .WrapperTextHero {
   /* margin-top: 4vh; */
@@ -444,7 +446,7 @@ span {
 } */
 /* CONTACT ME */
 footer {
-  min-height: 25vh;
+  min-height: 30vh;
   display: flex;
   align-items: end;
   justify-content: center;
@@ -482,30 +484,59 @@ footer {
   .wrapperGrid {
     width: 78.6328125rem;
     grid-template-columns: 39.3164rem 39.3164rem;
-    grid-template-rows: 8rem 8rem auto;
+    grid-template-rows: 4rem 4rem auto;
     display: grid;
     /* justify-content: center; */
     row-gap: 1rem;
   }
+  .fakeRectangle {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+    align-self: end;
+    justify-self: end;
+    position: absolute;
+    left: 37.13rem;
+    overflow-x: clip;
+    height: 9rem;
+    width: 4rem;
+    grid-row: 1 / span 2;
+    grid-column: 1;
+    z-index: -1;
+    background-color: #ad7684;
+  }
   .containerMattiaTit {
     font-size: 5rem;
     justify-content: end;
+    z-index: -2;
   }
   .containerYaghmai {
     font-size: 5rem;
     justify-content: start;
+    z-index: -2;
+  }
+  .mattia{
+    z-index: -2;
+  }
+  .yaghmai{
+    z-index: -2;
+  }
+  .containerRectangle1 {
+    right: 2.2rem;
   }
   .rectangle1 {
     width: 39.3164rem;
-    height: 100%;
+    height: 4rem;
+  }
+  .containerRectangle2 {
+    width: 41.116rem;
   }
   .rectangle2 {
-    width: 39.3164rem;
-    height: 100%;
+    width: 41.116rem;
+    height: 4rem;
   }
   .WrapperTextHero {
     text-align: left;
-    width: 64.5rem;
+    width: 36.5rem;
   }
   .wrapperIntroduction {
     align-items: unset;
@@ -573,28 +604,30 @@ footer {
 }
 
 @media (min-width: 1100px) {
+span {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
   .wrapperGrid {
     width: 100.78rem;
     grid-template-columns: 50.38rem 50.38rem;
-    grid-template-rows: 13rem 13rem auto;
     display: grid;
-    grid-template-rows: 8rem 8rem 11rem;
+    grid-template-rows: 5rem 5rem auto;
     height: 27rem;
     column-gap: 2rem;
     margin-top: 20vh;
   }
-  .fakeRectangle{
-    
-    grid-row: 1/ span 2;
+  .fakeRectangle {
+    grid-row: 1 / span 2;
     grid-column: 1;
     align-self: end;
     justify-self: end;
     position: absolute;
-    left:86.5rem;
+    left: 49.13rem;
     overflow-x: clip;
-    height: 17rem;
-    width: 8rem;
-    grid-row: 1/ span 2;
+    height: 11rem;
+    width: 5rem;
+    grid-row: 1 / span 2;
     grid-column: 1;
     z-index: -1;
     background-color: #ad7684;
@@ -609,13 +642,23 @@ footer {
     justify-content: start;
     z-index: -2;
   }
+  .containerRectangle1 {
+    right: 3.2rem;
+  }
+  .containerRectangle2 {
+    width: 54.15rem;
+  }
+.WrapperTextHero{
+
+    width: 40.5rem;
+}
   .rectangle1 {
-    width: 50.38rem;
-    height: 8rem;
+    width: 54.15rem;
+    height: 5rem;
   }
   .rectangle2 {
-    width: 50.38rem;
-    height: 8rem;
+    width: 54.15rem;
+    height: 5rem;
   }
   .wrapperIntroduction {
     font-size: 3rem;
@@ -697,6 +740,10 @@ footer {
 }
 */
 @media (min-width: 1920px) {
+span {
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
   h2 {
     font-size: 5rem;
   }
@@ -710,6 +757,7 @@ footer {
     width: 183rem;
     height: auto;
     grid-template-columns: 89.5rem 89.5rem;
+    grid-template-rows: 8rem 8rem 11rem;
     margin-top: 16rem;
   }
   .containerMattiaTit {
@@ -718,11 +766,28 @@ footer {
   .containerYaghmai {
     font-size: 12rem;
   }
+  .fakeRectangle {
+    left: 86.5rem;
+    width: 8rem;
+    height: 16.8rem;
+  }
+  .WrapperTextHero{
+    width: 61rem;
+  }
+  .containerRectangle1 {
+    width: 94rem;
+    right: 5rem;
+  }
+  .containerRectangle2 {
+    width: 94.5rem;
+  }
   .rectangle1 {
-    width: 89.5rem;
+    width: 94.5rem;
+    height: 8rem;
   }
   .rectangle2 {
-    width: 89.5rem;
+    width: 94.5rem;
+    height: 8rem;
   }
   .devContainer {
     width: 183rem;
