@@ -632,15 +632,32 @@ const nav1 = document.querySelector(".nav1");
 const addMenu = function () {
   const screenWidth = window.innerWidth;
   if (screenWidth <= 900) {
-    nav.classList.add("hideMenu");
+    nav.style.display = "none";
+    nav1.style.display = "flex";
   } else {
-    nav.classList.remove("hideMenu");
-  }
-  if (screenWidth >= 900) {
-    nav1.classList.add("hideMenu");
-  } else {
-    nav1.classList.remove("hideMenu");
+    nav1.style.display = "none";
+    nav.style.display = "flex";
   }
 };
 window.addEventListener("resize", addMenu);
+window.addEventListener("DOMContentLoaded", addMenu);
 addMenu();
+
+const modalMenu = document.querySelector(".modalWrapper");
+modalMenu.classList.add("hideMenu");
+const burgerMenu = document.getElementById("menuToggle");
+burgerMenu.addEventListener("click", () => {
+  
+    modalMenu.classList.toggle("showModal");
+    modalMenu.classList.toggle("hideMenu");
+  }
+);
+const closeBtn = document.querySelector('.close-btn')
+closeBtn.addEventListener('click', ()=>
+
+
+{
+  modalMenu.classList.remove('showModal')
+modalMenu.classList.add("hideMenu");
+}
+)
