@@ -130,6 +130,51 @@ picture {
 .hideMenu{
   opacity: 0;
 }
+/* NAV */
+#menuToggle
+{
+  display: block;
+  position: relative;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #b78483;
+
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
 .nav {
   display: flex;
   font-size: 3rem;
@@ -292,7 +337,7 @@ picture {
   height: 5rem;
   background-color: #ad7684;
 }
-span {
+.mattia,.yaghmai span {
   font-weight: 500;
   padding-right: 4rem;
   padding-left: 4rem;
