@@ -961,6 +961,7 @@ const wrapperGrid = document.querySelector(".wrapperGrid");
 const wrapperGridDimension = window.getComputedStyle(wrapperGrid);
 const initializeAnimation = function() {
     const screenWidth = window.innerWidth; // Aggiungi questa linea
+    const screenHeight = window.innerHeight;
     (0, _gsapDefault.default).set(rectangle1, {
         x: ()=>-parseFloat(rectangle1dimension.width)
     });
@@ -1098,6 +1099,19 @@ window.addEventListener("resize", debounce(()=>{
     initializeAnimation();
 }, 300));
 initializeAnimation();
+//////////////////////////////////////////////////////////////////
+///////////////////////////MENU////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const nav1 = document.querySelector(".nav1");
+const addMenu = function() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 900) nav.classList.add("hideMenu");
+    else nav.classList.remove("hideMenu");
+    if (screenWidth >= 900) nav1.classList.add("hideMenu");
+    else nav1.classList.remove("hideMenu");
+};
+window.addEventListener("resize", addMenu);
+addMenu();
 
 },{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

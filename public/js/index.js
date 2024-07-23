@@ -424,16 +424,16 @@ const wrapperGrid = document.querySelector(".wrapperGrid");
 const wrapperGridDimension = window.getComputedStyle(wrapperGrid);
 
 const initializeAnimation = function () {
-  const screenWidth = window.innerWidth;  // Aggiungi questa linea
-
+  const screenWidth = window.innerWidth; // Aggiungi questa linea
+  const screenHeight = window.innerHeight;
   gsap.set(rectangle1, {
-    x: () => -parseFloat(rectangle1dimension.width) ,
+    x: () => -parseFloat(rectangle1dimension.width),
   });
   gsap.set(wrapperTextHero, {
     y: () => -parseFloat(wrapperTextDimension.height) - 100,
   });
   gsap.set(rectangle2, {
-    x: () => parseFloat(rectangle2dimension.width) ,
+    x: () => parseFloat(rectangle2dimension.width),
   });
   gsap.set(fakeRectangle, {
     transformOrigin: "50% 50%",
@@ -464,7 +464,7 @@ const initializeAnimation = function () {
   tl1.from(
     yaghmai,
     {
-      x: () => -parseFloat(yaghmaiDimension.width) -  200,
+      x: () => -parseFloat(yaghmaiDimension.width) - 200,
       delay: 1,
     },
     "primaReveal"
@@ -488,14 +488,17 @@ const initializeAnimation = function () {
     },
     "secondReveal"
   );
-  tl1.to(fakeRectangle, {
-    opacity:0,
-    duration:0.4
-  }, "secondReveal")
+  tl1.to(
+    fakeRectangle,
+    {
+      opacity: 0,
+      duration: 0.4,
+    },
+    "secondReveal"
+  );
   tl1.to(wrapperTextHero, {
     y: () => 0,
   });
-  
 
   if (screenWidth <= 900) {
     tl1.kill();
@@ -605,10 +608,16 @@ window.addEventListener(
 
     // Resetta gli stili degli elementi
     const elementsToReset = [
-      mattia, yaghmai, fakeRectangle, wrapperGrid, wrapperTextHero, rectangle1, rectangle2
+      mattia,
+      yaghmai,
+      fakeRectangle,
+      wrapperGrid,
+      wrapperTextHero,
+      rectangle1,
+      rectangle2,
     ];
-    elementsToReset.forEach(element => {
-      element.removeAttribute('style');
+    elementsToReset.forEach((element) => {
+      element.removeAttribute("style");
     });
 
     initializeAnimation();
@@ -616,3 +625,22 @@ window.addEventListener(
 );
 
 initializeAnimation();
+//////////////////////////////////////////////////////////////////
+///////////////////////////MENU////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+const nav1 = document.querySelector(".nav1");
+const addMenu = function () {
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= 900) {
+    nav.classList.add("hideMenu");
+  } else {
+    nav.classList.remove("hideMenu");
+  }
+  if (screenWidth >= 900) {
+    nav1.classList.add("hideMenu");
+  } else {
+    nav1.classList.remove("hideMenu");
+  }
+};
+window.addEventListener("resize", addMenu);
+addMenu();

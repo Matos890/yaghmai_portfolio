@@ -127,7 +127,23 @@ picture {
   display: flex;
   flex-direction: row;
 }
+.hideMenu{
+  opacity: 0;
+}
 .nav {
+  display: flex;
+  font-size: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+  width: 94vw;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.nav1 {
   display: flex;
   font-size: 3rem;
   justify-content: space-between;
