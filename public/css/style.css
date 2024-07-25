@@ -8,7 +8,9 @@ p,
 section {
   position: relative;
 }
-
+:root {
+  --line-width: 100%;
+}
 a {
   z-index: 2000;
 }
@@ -18,6 +20,7 @@ picture {
 }
 p {
   font-size: 1.8rem;
+  font-weight: 400;
 }
 h2 {
   font-size: 2.8rem;
@@ -26,6 +29,7 @@ h2 {
 }
 article {
   font-size: 1.8rem;
+  font-weight: 400;
 }
 
 /* section {
@@ -101,7 +105,8 @@ div {
 .overlaySite {
   position: fixed;
   width: calc(100vw - 40px);
-  background-image: url("../img/background_home.png");
+  background-image: url("../img/background-MattiaPortfolio.png");
+  background-size: contain;
   height: 100vh;
   z-index: -2;
   mix-blend-mode: normal;
@@ -245,11 +250,15 @@ picture {
   color: #222;
 }
 
+.nav__link:hover{
+color:#ad7684;
+font-weight: bold;
+}
 .nav__link--btn:hover,
 .nav__link--btn:active {
   color: inherit;
   background-color: var(--color-primary-darker);
-  color: #333;
+  color: #f2c787;
 }
 /* MODAL */
 
@@ -441,6 +450,19 @@ picture {
   margin-bottom: 1.8rem;
   grid-column: 1;
 }
+.containerMattia:after{
+content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -8%;
+  background-color: #d9d0be;
+  z-index: -1;
+  left: -9%;
+  box-shadow: 3px 1px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+
 .containerPicture {
   grid-column: 2;
   grid-row: 2 / span 2;
@@ -459,6 +481,7 @@ picture {
   min-width: 10rem;
 }
 .containerMattia {
+
   position: relative;
 }
 .etic {
@@ -506,7 +529,21 @@ picture {
 .titleWrapperInfo,
 .titleWrapperWeb {
   overflow-y: clip;
+  width: fit-content;
 }
+[class^="titleWrapper"]::after {
+  content: "";
+  display: block;
+  height: 1vh;
+  width: var(--line-width);
+  background-color: #f2c787;
+  right: 100;
+  margin: 0;
+  padding: 0;
+  top: -1rem;
+  /* animation: animationHorizontal 5s forwards; */
+}
+
 .containerBox {
   display: flex;
   flex-direction: column;
@@ -686,7 +723,7 @@ footer {
     grid-column: 2;
     grid-row: 2 / span 3;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     margin-bottom: 2rem;
     width: 100%;
   }

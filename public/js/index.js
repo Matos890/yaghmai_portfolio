@@ -18,7 +18,7 @@ const handleHover = function (e) {
   }
 };
 const nav = document.querySelector(".nav");
-nav.addEventListener("mouseover", handleHover.bind(0.5));
+nav.addEventListener("mouseover", handleHover.bind(0.2));
 
 nav.addEventListener("mouseout", handleHover.bind(1));
 ///////// STICKY MENU
@@ -398,6 +398,43 @@ sections.forEach((section) => {
     console.log(paragraph);
   });
 });
+gsap.from(titleWrapperInfo, {
+  "--line-width": '0%',
+  delay:0.8,
+  duration:0.2,
+  ease:'circ.inOut',
+  scrollTrigger:{
+    trigger:titleWrapperInfo
+  }
+});
+gsap.from(titleWrapperWeb, {
+  "--line-width": '0%',
+  delay:1,
+  duration:0.2,
+  ease:'circ.inOut',
+  scrollTrigger:{
+    trigger:titleWrapperWeb
+  }
+});
+gsap.from(titleWrapperMap, {
+  "--line-width": '0%',
+  delay:1.2,
+  duration:0.2,
+  ease:'circ.inOut',
+  scrollTrigger:{
+    trigger:titleWrapperMap
+  }
+});
+gsap.from('.titleWrapperVideo', {
+  "--line-width": '0%',
+  delay:1.3,
+  duration:0.2,
+  ease:'circ.inOut',
+  scrollTrigger:{
+    trigger:'.titleWrapperVideo'
+  }
+});
+
 ////////////////ANIMAZIONE ALTERNATIVA
 const tl1 = gsap.timeline();
 const tl2 = gsap.timeline();
@@ -647,17 +684,11 @@ const modalMenu = document.querySelector(".modalWrapper");
 modalMenu.classList.add("hideMenu");
 const burgerMenu = document.getElementById("menuToggle");
 burgerMenu.addEventListener("click", () => {
-  
-    modalMenu.classList.toggle("showModal");
-    modalMenu.classList.toggle("hideMenu");
-  }
-);
-const closeBtn = document.querySelector('.close-btn')
-closeBtn.addEventListener('click', ()=>
-
-
-{
-  modalMenu.classList.remove('showModal')
-modalMenu.classList.add("hideMenu");
-}
-)
+  modalMenu.classList.toggle("showModal");
+  modalMenu.classList.toggle("hideMenu");
+});
+const closeBtn = document.querySelector(".close-btn");
+closeBtn.addEventListener("click", () => {
+  modalMenu.classList.remove("showModal");
+  modalMenu.classList.add("hideMenu");
+});

@@ -606,7 +606,7 @@ const handleHover = function(e) {
     }
 };
 const nav = document.querySelector(".nav");
-nav.addEventListener("mouseover", handleHover.bind(0.5));
+nav.addEventListener("mouseover", handleHover.bind(0.2));
 nav.addEventListener("mouseout", handleHover.bind(1));
 ///////// STICKY MENU
 const header = document.querySelector(".heroSection");
@@ -940,6 +940,42 @@ sections.forEach((section)=>{
         });
         console.log(paragraph);
     });
+});
+(0, _gsapDefault.default).from(titleWrapperInfo, {
+    "--line-width": "0%",
+    delay: 0.8,
+    duration: 0.2,
+    ease: "circ.inOut",
+    scrollTrigger: {
+        trigger: titleWrapperInfo
+    }
+});
+(0, _gsapDefault.default).from(titleWrapperWeb, {
+    "--line-width": "0%",
+    delay: 1,
+    duration: 0.2,
+    ease: "circ.inOut",
+    scrollTrigger: {
+        trigger: titleWrapperWeb
+    }
+});
+(0, _gsapDefault.default).from(titleWrapperMap, {
+    "--line-width": "0%",
+    delay: 1.2,
+    duration: 0.2,
+    ease: "circ.inOut",
+    scrollTrigger: {
+        trigger: titleWrapperMap
+    }
+});
+(0, _gsapDefault.default).from(".titleWrapperVideo", {
+    "--line-width": "0%",
+    delay: 1.3,
+    duration: 0.2,
+    ease: "circ.inOut",
+    scrollTrigger: {
+        trigger: ".titleWrapperVideo"
+    }
 });
 ////////////////ANIMAZIONE ALTERNATIVA
 const tl1 = (0, _gsapDefault.default).timeline();
