@@ -343,7 +343,7 @@ let scrollTween1 = gsap.from(titleInfo, {
   ease: "power1.inOut",
   scrollTrigger: {
     trigger: ".introduction",
-    start: "top center",
+        start: "10% bottom",
 
     end: "center center",
   },
@@ -354,7 +354,7 @@ let scrollTween2 = gsap.from(titleWeb, {
   ease: "power1.inOut",
   scrollTrigger: {
     trigger: ".titleWrapperWeb",
-    start: "center center",
+        start: "10% bottom",
     end: "center center",
   },
 });
@@ -364,7 +364,7 @@ let scrollTween3 = gsap.from(titleMap, {
   ease: "power1.inOut",
   scrollTrigger: {
     trigger: ".titleWrapperMap",
-    start: "center center",
+        start: "10% bottom",
     end: "center center",
   },
 });
@@ -374,7 +374,7 @@ let scrollTween4 = gsap.from(titleVideo, {
   ease: "power1.inOut",
   scrollTrigger: {
     trigger: ".titleWrapperMap",
-    start: "center center ",
+        start: "10% bottom",
 
     end: "center center",
   },
@@ -386,12 +386,12 @@ let sections = gsap.utils.toArray("section");
 
 sections.forEach((section) => {
   let paragraphs = section.querySelectorAll(".testo");
-  paragraphs.forEach((paragraph) => {
+  paragraphs.forEach((paragraph,i ) => {
     gsap.from(paragraph, {
       y: -200,
       scrollTrigger: {
         trigger: paragraph,
-        start: "center center",
+        start: "10% bottom",
         toggleActions: "play none none none",
       },
     });
@@ -400,38 +400,49 @@ sections.forEach((section) => {
 });
 gsap.from(titleWrapperInfo, {
   "--line-width": '0%',
-  delay:0.8,
-  duration:0.2,
-  ease:'circ.inOut',
+  "--line-position":2000,
+  // delay:0.8,
+  duration:0.8,
+  ease:'ease',
   scrollTrigger:{
-    trigger:titleWrapperInfo
+    trigger:titleWrapperInfo,
+        start: "10% bottom",
   }
 });
 gsap.from(titleWrapperWeb, {
   "--line-width": '0%',
-  delay:1,
-  duration:0.2,
+  "--line-position":600,
+  delay:0.8,
+  // delay:1,
+  duration:0.8,
   ease:'circ.inOut',
   scrollTrigger:{
-    trigger:titleWrapperWeb
+    trigger:titleWrapperWeb,
+        start: "10% bottom",
   }
 });
 gsap.from(titleWrapperMap, {
   "--line-width": '0%',
-  delay:1.2,
-  duration:0.2,
+  "--line-position":300,
+  delay:0.8,
+  // delay:1.2,
+  duration:0.8,
   ease:'circ.inOut',
   scrollTrigger:{
-    trigger:titleWrapperMap
+    trigger:titleWrapperMap,
+        start: "10% bottom",
   }
 });
 gsap.from('.titleWrapperVideo', {
   "--line-width": '0%',
-  delay:1.3,
+  "--line-position":300,
+  delay:0.8,
+  // delay:1.3,
   duration:0.2,
   ease:'circ.inOut',
   scrollTrigger:{
-    trigger:'.titleWrapperVideo'
+    trigger:'.titleWrapperVideo',
+        start: "10% bottom",
   }
 });
 
