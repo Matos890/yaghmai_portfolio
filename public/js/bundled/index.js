@@ -948,15 +948,6 @@ closeBtn.addEventListener("click", ()=>{
     modalMenu.classList.add("hideMenu");
 });
 /////////////////////////////PAGE TRANSITION////////////
-// Funzione per rimuovere eventi
-function killEvents() {
-// Aggiungi il codice per rimuovere gli eventi qui, se necessario
-}
-// Funzione per aggiungere eventi
-function addEvents() {
-// Aggiungi il codice per aggiungere gli eventi qui, se necessario
-}
-// Funzione per animazioni del contenuto
 function contentAnimation() {
     const tl4 = (0, _gsapDefault.default).timeline();
     tl4.from("section", {
@@ -964,7 +955,6 @@ function contentAnimation() {
         duration: 1
     });
 }
-// Funzione per le transizioni di pagina
 function pageTransition() {
     const tl5 = (0, _gsapDefault.default).timeline();
     tl5.to(".transition", {
@@ -975,16 +965,16 @@ function pageTransition() {
     tl5.addLabel("sectionopacity");
     tl5.to(".transition", {
         scaleX: 0,
-        duration: .5,
+        duration: 0.5,
         delay: 0.2,
         transformOrigin: "left"
     }, "sectionopacity");
     tl5.to("section", {
         opacity: 0,
-        duration: .2
+        duration: 0.2
     }, "sectionopacity");
+    return tl5; // Restituire la timeline per consentire l'utilizzo delle promesse
 }
-// Funzione di ritardo
 function delay(n) {
     n = n || 2000;
     return new Promise((done)=>{
@@ -993,7 +983,6 @@ function delay(n) {
         }, n);
     });
 }
-// Inizializza Barba.js
 (0, _coreDefault.default).init({
     sync: true,
     transitions: [
@@ -1001,8 +990,7 @@ function delay(n) {
             name: "opacity-transition",
             async leave (data) {
                 const done = this.async();
-                pageTransition();
-                await delay(1700);
+                await pageTransition().then(()=>delay(1700)); // Aspetta il completamento di pageTransition prima di continuare
                 done();
             },
             async enter (data) {
@@ -1012,18 +1000,19 @@ function delay(n) {
                 contentAnimation();
             }
         }
+    ],
+    views: [
+        {
+            namespace: "homepage",
+            beforeLeave (data) {
+                pageTransition();
+            },
+            beforeEnter (data) {
+                initializeAnimation();
+            }
+        }
     ]
 });
-// Hook per riattivare gli eventi dopo ogni transizione
-(0, _coreDefault.default).hooks.afterEnter(()=>{
-    addEvents();
-});
-// Hook per rimuovere gli eventi prima di ogni transizione
-(0, _coreDefault.default).hooks.beforeEnter(()=>{
-    killEvents();
-});
-// Riattiva gli eventi per la prima volta quando la pagina viene caricata
-addEvents();
 
 },{"gsap":"fPSuC","@barba/core":"gIWbX","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

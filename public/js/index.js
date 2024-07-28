@@ -439,44 +439,41 @@ closeBtn.addEventListener("click", () => {
   modalMenu.classList.add("hideMenu");
 });
 /////////////////////////////PAGE TRANSITION////////////
-// Funzione per rimuovere eventi
-function killEvents() {
-  // Aggiungi il codice per rimuovere gli eventi qui, se necessario
-}
 
-// Funzione per aggiungere eventi
-function addEvents() {
-  // Aggiungi il codice per aggiungere gli eventi qui, se necessario
-}
-
-// Funzione per animazioni del contenuto
 function contentAnimation() {
   const tl4 = gsap.timeline();
-  tl4.from('section', { y: 200, duration: 1 });
+  tl4.from("section", { y: 200, duration: 1 });
 }
 
-// Funzione per le transizioni di pagina
 function pageTransition() {
   const tl5 = gsap.timeline();
-  tl5.to('.transition', {
+  tl5.to(".transition", {
     scaleX: 1,
     duration: 1,
     transformOrigin: "left",
   });
-  tl5.addLabel('sectionopacity')
-  tl5.to('.transition', {
-    scaleX: 0,
-    duration: .5,
-    delay: 0.2,
-    transformOrigin: "left",
-  }, 'sectionopacity');
-  tl5.to('section', {
-    opacity: 0,
-    duration: .2
-  }, 'sectionopacity');
+  tl5.addLabel("sectionopacity");
+  tl5.to(
+    ".transition",
+    {
+      scaleX: 0,
+      duration: 0.5,
+      delay: 0.2,
+      transformOrigin: "left",
+    },
+    "sectionopacity"
+  );
+  tl5.to(
+    "section",
+    {
+      opacity: 0,
+      duration: 0.2,
+    },
+    "sectionopacity"
+  );
+  return tl5; // Restituire la timeline per consentire l'utilizzo delle promesse
 }
 
-// Funzione di ritardo
 function delay(n) {
   n = n || 2000;
   return new Promise((done) => {
@@ -486,7 +483,6 @@ function delay(n) {
   });
 }
 
-// Inizializza Barba.js
 barba.init({
   sync: true,
   transitions: [
@@ -494,8 +490,7 @@ barba.init({
       name: "opacity-transition",
       async leave(data) {
         const done = this.async();
-        pageTransition();
-        await delay(1700);
+        await pageTransition().then(() => delay(1700)); // Aspetta il completamento di pageTransition prima di continuare
         done();
       },
       async enter(data) {
@@ -506,17 +501,15 @@ barba.init({
       },
     },
   ],
+  views: [
+    {
+      namespace: "homepage",
+      beforeLeave(data) {
+        pageTransition();
+      },
+      beforeEnter(data) {
+      initializeAnimation()
+      },
+    },
+  ],
 });
-
-// Hook per riattivare gli eventi dopo ogni transizione
-barba.hooks.afterEnter(() => {
-  addEvents();
-});
-
-// Hook per rimuovere gli eventi prima di ogni transizione
-barba.hooks.beforeEnter(() => {
-  killEvents();
-});
-
-// Riattiva gli eventi per la prima volta quando la pagina viene caricata
-addEvents();
