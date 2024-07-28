@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import barba from "@barba/core";
 import { ScrollTrigger } from "gsap/all";
 import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
@@ -52,272 +53,6 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 });
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
-////////////////////////////////////////////////////////////
-/////////////////ANIMATION/////////////////////////
-/////////////////////////////////////////////////
-///////////MEASUREMENTS//////////////////////////////
-// let rectangle2 = document.querySelector(".rectangle2");
-// let rectangledimension = document.querySelector(".rectangle1");
-
-// const measures = () => {
-//   const screenWidth = window.innerWidth;
-//   const screenHeight = window.innerHeight;
-
-//   // Reset width and height styles for accurate measurement
-//   rectangledimension.style.width = "";
-//   rectangledimension.style.height = "";
-
-//   // Get computed styles
-//   let rDW = window.getComputedStyle(rectangledimension);
-
-//   // Extract and convert width and height from computed styles
-//   let rectangledW = parseFloat(rDW.width);
-//   let rectangledH = parseFloat(rDW.height);
-
-//   let rigaHeight = rectangledH / 2;
-//   let rigaWidth = rectangledW * 2;
-
-//   const wrapGrid = document.querySelector(".wrapperGrid");
-//   const wrapGridPosx = wrapGrid.getBoundingClientRect().x;
-
-//   const centerX = screenWidth / 3;
-//   const centerY = screenHeight / 2;
-//   const rectangle1 = document.querySelector(".rectangle1");
-//   const rectangle1Pos = rectangle1.getBoundingClientRect();
-//   const rectangle2Pos = rectangle2.getBoundingClientRect();
-
-//   const findCenter = () => {
-//     let r1moveX = wrapGridPosx - rectangle1Pos.x;
-//     let r1moveY = centerY - rectangle1Pos.y;
-//     let r2moveX = wrapGridPosx - rectangle2Pos.x;
-//     let r2moveY = centerY - rectangle2Pos.y;
-//     return { r1moveX, r1moveY, r2moveX, r2moveY };
-//   };
-
-//   let nuovaPos = rectangle1Pos.y - rectangle2Pos.y;
-
-//   let { r1moveX, r1moveY, r2moveX, r2moveY } = findCenter();
-
-//   r1moveX = r1moveX + rigaHeight;
-//   r2moveX = r2moveX + rigaHeight;
-//   r2moveY = r2moveY + (rigaHeight / 2);
-//   r1moveY = r1moveY - (rigaHeight / 2);
-
-//   return {
-//     rectangle1,
-//     r1moveX,
-//     rigaWidth,
-//     rectangle2,
-//     r2moveX,
-//     nuovaPos,
-//     rigaHeight,
-//     rectangledH,
-//     rectangledW,
-//   };
-// };
-
-// ///////////////////////////////////////////////////
-
-// const openingHome = gsap.timeline();
-// const initializeAnimation = function () {
-//   let {
-//     rectangle1,
-//     r1moveX,
-//     rigaWidth,
-//     rectangle2,
-//     r2moveX,
-//     nuovaPos,
-//     rigaHeight,
-//     rectangledH,
-//     rectangledW,
-//   } = measures();
-//   gsap.set(rectangle2, {
-//     opacity: 0,
-//   });
-
-//   gsap.set(rectangle1, {
-//     transformOrigin: "50% 50%",
-//     x: r1moveX,
-//     width: () => rigaWidth,
-//     gridRow: 1,
-//     rotate: 0,
-//   });
-
-//   gsap.set(rectangle2, {
-//     transformOrigin: "50% 50%",
-//     x: r2moveX,
-//     y: nuovaPos,
-//     gridRow: 2,
-//     width: () => rigaWidth,
-//     rotate: 0,
-//     opacity: 0,
-//   });
-
-//   openingHome.addLabel("firstShow");
-//   openingHome.from(
-//     rectangle1,
-//     {
-//       x: () => rigaWidth + 100,
-//       duration: 1,
-//     },
-//     "firstShow"
-//   );
-//   openingHome.from(
-//     rectangle2,
-//     {
-//       x: () => rigaWidth + 100,
-//       duration: 1,
-//     },
-//     "firstShow"
-//   );
-
-//   openingHome.addLabel("animRiga");
-//   openingHome.fromTo(
-//     rectangle1,
-//     {
-//       x: () => r1moveX,
-//       rotate: 0,
-//     },
-//     {
-//       rotate: -90,
-//       delay: 0.8,
-//       duration: 1,
-//     },
-//     "animRiga"
-//   );
-
-//   openingHome.fromTo(
-//     rectangle2,
-//     {
-//       x: () => r2moveX,
-//       y: nuovaPos,
-//       rotate: 0,
-//     },
-//     {
-//       rotate: -90,
-//       delay: 0.8,
-//       duration: 1,
-//     },
-//     "animRiga"
-//   );
-
-//   openingHome.from(
-//     ".containerMattiaTit",
-//     {
-//       opacity: 0,
-//       delay: 0.8,
-//       duration: 1,
-//     },
-//     "animRiga"
-//   );
-
-//   openingHome.from(
-//     ".containerYaghmai",
-//     {
-//       opacity: 0,
-//       delay: 0.8,
-//       duration: 1,
-//     },
-//     "animRiga"
-//   );
-
-//   openingHome.set(rectangle1, {
-//     x: () => -rigaHeight,
-//     y: () => rectangledH,
-//     transformOrigin: "0% 0%",
-//     width: () => rectangledW,
-//   });
-
-//   openingHome.set(rectangle2, {
-
-//       opacity: 1,
-//     x: () => rigaHeight,
-//     y: () => -rectangledH,
-//     transformOrigin: "100% 100%",
-//     width: () => rectangledW,
-//   });
-
-//   openingHome.addLabel("repositioningY");
-//   openingHome.to(
-//     rectangle1,
-//     {
-//       y: 0,
-//     },
-//     "repositioningY"
-//   );
-//   openingHome.to(
-//     rectangle2,
-//     {
-//       y: 0,
-//     },
-//     "repositioningY"
-//   );
-
-//   openingHome.from(
-//     ".containerYaghmai",
-//     {
-//       y: () => -rectangledH,
-//     },
-//     "repositioningY"
-//   );
-
-//   openingHome.addLabel("repositioning");
-//   openingHome.to(
-//     rectangle1,
-//     {
-//       duration: 2,
-//       rotate: 0,
-//     },
-//     "repositioning"
-//   );
-
-//   openingHome.to(
-//     rectangle2,
-//     {
-//       duration: 2,
-//       rotate: 0,
-//     },
-//     "repositioning"
-//   );
-
-//   openingHome.from(
-//     ".WrapperTextHero",
-//     { delay: 1.5, opacity: 0, duration: 2 },
-//     "repositioning"
-//   );
-// };
-
-// const debounce = (func, delay) => {
-//   let timeout;
-//   return function (...args) {
-//     clearTimeout(timeout);
-//     timeout = setTimeout(() => {
-//       func.apply(this, args);
-//     }, delay);
-//   };
-// };
-
-// window.addEventListener(
-//   "resize",
-//   debounce(() => {
-//     openingHome.progress(1);
-//     gsap.killTweensOf(openingHome);
-
-//     rectangledimension.style.width = "";
-//     rectangledimension.style.height = "";
-//     rectangle2.style.width = "";
-//     rectangle2.style.height = "";
-
-//     gsap.set(rectangle2, {
-//       opacity: 0,
-//     });
-
-//     initializeAnimation();
-//   }, 300)
-// );
-
-// initializeAnimation();
-
 ////////////////////////////////////////////////////
 ///////////////////////SCROLLING TITLES///////////////
 //////////////////////////////////////////////////////
@@ -343,7 +78,7 @@ let scrollTween1 = gsap.from(titleInfo, {
   ease: "power1.inOut",
   scrollTrigger: {
     trigger: ".introduction",
-        start: "10% bottom",
+    start: "10% bottom",
 
     end: "center center",
   },
@@ -354,7 +89,7 @@ let scrollTween2 = gsap.from(titleWeb, {
   ease: "power1.inOut",
   scrollTrigger: {
     trigger: ".titleWrapperWeb",
-        start: "10% bottom",
+    start: "10% bottom",
     end: "center center",
   },
 });
@@ -364,7 +99,7 @@ let scrollTween3 = gsap.from(titleMap, {
   ease: "power1.inOut",
   scrollTrigger: {
     trigger: ".titleWrapperMap",
-        start: "10% bottom",
+    start: "10% bottom",
     end: "center center",
   },
 });
@@ -374,7 +109,7 @@ let scrollTween4 = gsap.from(titleVideo, {
   ease: "power1.inOut",
   scrollTrigger: {
     trigger: ".titleWrapperMap",
-        start: "10% bottom",
+    start: "10% bottom",
 
     end: "center center",
   },
@@ -386,7 +121,7 @@ let sections = gsap.utils.toArray("section");
 
 sections.forEach((section) => {
   let paragraphs = section.querySelectorAll(".testo");
-  paragraphs.forEach((paragraph,i ) => {
+  paragraphs.forEach((paragraph, i) => {
     gsap.from(paragraph, {
       y: -200,
       scrollTrigger: {
@@ -399,51 +134,51 @@ sections.forEach((section) => {
   });
 });
 gsap.from(titleWrapperInfo, {
-  "--line-width": '0%',
-  "--line-position":2000,
+  "--line-width": "0%",
+  "--line-position": 2000,
   // delay:0.8,
-  duration:0.8,
-  ease:'ease',
-  scrollTrigger:{
-    trigger:titleWrapperInfo,
-        start: "10% bottom",
-  }
+  duration: 0.8,
+  ease: "ease",
+  scrollTrigger: {
+    trigger: titleWrapperInfo,
+    start: "10% bottom",
+  },
 });
 gsap.from(titleWrapperWeb, {
-  "--line-width": '0%',
-  "--line-position":600,
-  delay:0.8,
+  "--line-width": "0%",
+  "--line-position": 600,
+  delay: 0.8,
   // delay:1,
-  duration:0.8,
-  ease:'circ.inOut',
-  scrollTrigger:{
-    trigger:titleWrapperWeb,
-        start: "10% bottom",
-  }
+  duration: 0.8,
+  ease: "circ.inOut",
+  scrollTrigger: {
+    trigger: titleWrapperWeb,
+    start: "10% bottom",
+  },
 });
 gsap.from(titleWrapperMap, {
-  "--line-width": '0%',
-  "--line-position":300,
-  delay:0.8,
+  "--line-width": "0%",
+  "--line-position": 300,
+  delay: 0.8,
   // delay:1.2,
-  duration:0.8,
-  ease:'circ.inOut',
-  scrollTrigger:{
-    trigger:titleWrapperMap,
-        start: "10% bottom",
-  }
+  duration: 0.8,
+  ease: "circ.inOut",
+  scrollTrigger: {
+    trigger: titleWrapperMap,
+    start: "10% bottom",
+  },
 });
-gsap.from('.titleWrapperVideo', {
-  "--line-width": '0%',
-  "--line-position":300,
-  delay:0.8,
+gsap.from(".titleWrapperVideo", {
+  "--line-width": "0%",
+  "--line-position": 300,
+  delay: 0.8,
   // delay:1.3,
-  duration:0.2,
-  ease:'circ.inOut',
-  scrollTrigger:{
-    trigger:'.titleWrapperVideo',
-        start: "10% bottom",
-  }
+  duration: 0.2,
+  ease: "circ.inOut",
+  scrollTrigger: {
+    trigger: ".titleWrapperVideo",
+    start: "10% bottom",
+  },
 });
 
 ////////////////ANIMAZIONE ALTERNATIVA
@@ -703,3 +438,85 @@ closeBtn.addEventListener("click", () => {
   modalMenu.classList.remove("showModal");
   modalMenu.classList.add("hideMenu");
 });
+/////////////////////////////PAGE TRANSITION////////////
+// Funzione per rimuovere eventi
+function killEvents() {
+  // Aggiungi il codice per rimuovere gli eventi qui, se necessario
+}
+
+// Funzione per aggiungere eventi
+function addEvents() {
+  // Aggiungi il codice per aggiungere gli eventi qui, se necessario
+}
+
+// Funzione per animazioni del contenuto
+function contentAnimation() {
+  const tl4 = gsap.timeline();
+  tl4.from('section', { y: 200, duration: 1 });
+}
+
+// Funzione per le transizioni di pagina
+function pageTransition() {
+  const tl5 = gsap.timeline();
+  tl5.to('.transition', {
+    scaleX: 1,
+    duration: 1,
+    transformOrigin: "left",
+  });
+  tl5.addLabel('sectionopacity')
+  tl5.to('.transition', {
+    scaleX: 0,
+    duration: .5,
+    delay: 0.2,
+    transformOrigin: "left",
+  }, 'sectionopacity');
+  tl5.to('section', {
+    opacity: 0,
+    duration: .2
+  }, 'sectionopacity');
+}
+
+// Funzione di ritardo
+function delay(n) {
+  n = n || 2000;
+  return new Promise((done) => {
+    setTimeout(() => {
+      done();
+    }, n);
+  });
+}
+
+// Inizializza Barba.js
+barba.init({
+  sync: true,
+  transitions: [
+    {
+      name: "opacity-transition",
+      async leave(data) {
+        const done = this.async();
+        pageTransition();
+        await delay(1700);
+        done();
+      },
+      async enter(data) {
+        contentAnimation();
+      },
+      async once(data) {
+        contentAnimation();
+      },
+    },
+  ],
+});
+
+// Hook per riattivare gli eventi dopo ogni transizione
+barba.hooks.afterEnter(() => {
+  addEvents();
+});
+
+// Hook per rimuovere gli eventi prima di ogni transizione
+barba.hooks.beforeEnter(() => {
+  killEvents();
+});
+
+// Riattiva gli eventi per la prima volta quando la pagina viene caricata
+addEvents();

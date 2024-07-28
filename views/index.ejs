@@ -13,78 +13,83 @@
     <script defer src="/js/bundled/index.js"></script>
     <title>Mattia Yaghmai | portfolio</title>
   </head>
-  <body>
-       <div class="modalWrapper">
-        <div class="modalMenu">
+  <body data-barba="wrapper">
+    <div class="modalWrapper">
+      <div class="modalMenu">
         <div class="close-btn" id="closeMenu"></div>
-          <ul class="nav__linksModal">
-            <li class="nav__item">
-              <a class="nav__link" href="#section--1">Who I am</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#section--2">work</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#section--3">blog</a>
-            </li>
-            <li class="nav__item">
-              <a
-                class="nav__link nav__link--btn btn--show-modal"
-                href="#section--4"
-                >hire Me</a
-              >
-            </li>
-          </ul>
-        </div>
-        </div>
-    <div class="siteWrapper">
+        <ul class="nav__linksModal">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Who I am</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">work</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">blog</a>
+          </li>
+          <li class="nav__item">
+            <a
+              class="nav__link nav__link--btn btn--show-modal"
+              href="#section--4"
+              >hire Me</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <nav class="nav1">
+      <div class="navBack"></div>
+      <a href="/"
+        ><img
+          src="img/logoMY-2-01.png"
+          alt="Bankist logo"
+          class="nav__logo"
+          id="logo"
+      /></a>
+      <div id="menuToggle" class="show-modal menu-burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      <div class="navBack"></div>
+      <a href="/">
+        <img
+          src="img/logoMY-2-01.png"
+          alt="Bankist logo"
+          class="nav__logo"
+          id="logo"
+      /></a>
+      <ul class="nav__links">
+        <li class="nav__item">
+          <a class="nav__link" href="#section--1">Who I am</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--2">work</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--3">blog</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link nav__link--btn btn--show-modal" href="#section--4"
+            >hire Me</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main
+      class="siteWrapper"
+      data-barba="container"
+      data-barba-namespace="home"
+      class="container content"
+    >
+      <div class="transition"></div>
       <div class="overlaySite"></div>
       <div class="fixedOverlay"></div>
       <!-- <div class="overlaySite"></div> -->
       <section class="heroSection">
-        <nav class="nav1">
-          <div class="navBack"></div>
-          <img
-            src="img/logoMY-2-01.png"
-            alt="Bankist logo"
-            class="nav__logo"
-            id="logo"
-          />
-          <div id="menuToggle" class="show-modal menu-burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </nav>
-
-        <nav class="nav">
-          <div class="navBack"></div>
-          <img
-            src="img/logoMY-2-01.png"
-            alt="Bankist logo"
-            class="nav__logo"
-            id="logo"
-          />
-          <ul class="nav__links">
-            <li class="nav__item">
-              <a class="nav__link" href="#section--1">Who I am</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#section--2">work</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="#section--3">blog</a>
-            </li>
-            <li class="nav__item">
-              <a
-                class="nav__link nav__link--btn btn--show-modal"
-                href="#section--4"
-                >hire Me</a
-              >
-            </li>
-          </ul>
-        </nav>
-
         <div class="wrapperGrid wrapperSection">
           <div class="fakeRectangle"></div>
           <div class="containerRectangle1">
@@ -131,6 +136,11 @@
               <div class="etic et2"></div>
             </div>
           </div>
+        </div>
+        <div>
+          <button>
+            <a href="/aboutMe">know more about me!</a>
+          </button>
         </div>
       </section>
       <section class="webDev" id="section--2">
@@ -203,15 +213,15 @@
           </div>
         </div>
       </section>
-      <footer id="section--4">
-        <div class="contactMeContainer wrapperSection">
-          <h2 class="contactMe">Contact Me</h2>
-          <div class="textContact">
-            <p>you need to contact me motherfucker</p>
-          </div>
-          <div class="email"><p>matosyaghmai@gmail.com</p></div>
+    </main>
+    <footer id="section--4">
+      <div class="contactMeContainer wrapperSection">
+        <h2 class="contactMe">Contact Me</h2>
+        <div class="textContact">
+          <p>you need to contact me motherfucker</p>
         </div>
-      </footer>
-    </div>
+        <div class="email"><p>matosyaghmai@gmail.com</p></div>
+      </div>
+    </footer>
   </body>
 </html>
