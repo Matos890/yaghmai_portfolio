@@ -994,6 +994,7 @@ function delay(n) {
                 done();
             },
             async enter (data) {
+                await initializeAnimation().then(()=>delay(1700));
                 contentAnimation();
             },
             async once (data) {
