@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const viewRoute = require("./routes/viewRoute");
+const dotenv = require("dotenv").config();
 
 const app = express();
 

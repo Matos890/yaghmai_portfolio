@@ -25,39 +25,32 @@
   /></a>
   <ul class="nav__links">
     <li class="nav__item">
-      <% if (isHomepage) { %>
+      <% if (locals.isHomepage) { %>
       <a class="nav__link" href="#section--1">About Me</a>
       <% } else { %>
       <a class="nav__link linkPages" href="/aboutMe">About Me</a>
       <% } %>
     </li>
     <li class="nav__item">
-    <% if (isHomepage){ %> 
+    <% if (locals.isHomepage){ %> 
       <a class="nav__link" href="#section--2">Web Development</a> 
       <%} else {%>
       <a class="nav__link linkPages" href="/webDevelopment">Web Development</a> 
       <% } %>
     </li>
     <li class="nav__item">
-    <% if (isHomepage){ %> 
+    <% if (locals.isHomepage){ %> 
       <a class="nav__link" href="#section--3">My Work</a> 
       <%} else {%>
       <a class="nav__link linkPages" href="/maps">Maps</a> 
       <% } %>
     </li>
     <li class="nav__item">
-    <% if (isHomepage){ %> 
+    <% if (locals.isHomepage){ %> 
       <a class="nav__link" href="#section--4">Hire me</a> 
       <%} else {%>
       <a class="nav__link linkPages" href="/motionGraphics">Motion Graphics</a> 
       <% } %>
     </li>
-    <!-- <li class="nav__item">
-    <% if (isHomepage){ %> 
-      <a class="nav__link" href="#section--4">Hire Me</a> 
-      <%} else {%>
-      
-      <% } %>
-    </li> -->
   </ul>
 </nav>
