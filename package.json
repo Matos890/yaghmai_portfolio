@@ -13,7 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "watch:js": "parcel serve ./public/js/index.js --dist-dir ./public/js/bundled",
-    "build": "parcel build views/*.ejs --dist-dir  dist/"
+    "build": "parcel build views/*.ejs --dist-dir ./dist/"
+
 
   },
   "author": "",
