@@ -4,15 +4,16 @@
   "description": "my portfolio",
   "main": "app.js",
   "targets": {
-    "main": {
-      "publicUrl": "./public"
-    }
+    "default":{
+"source":"views/index.ejs"
+    },
+    "main": false
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "watch:js": "parcel serve ./public/js/index.js --dist-dir ./public/js/bundled",
-    "build": "parcel build views/index.ejs --public-url ./public"
+    "build": "parcel build views/index.ejs"
   },
   "author": "",
   "license": "ISC",

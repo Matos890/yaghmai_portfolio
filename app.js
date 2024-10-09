@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // Configurare la directory dei file statici
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/")));
 
 // Utilizzare la rotta definita
 app.use("/", viewRoute);
