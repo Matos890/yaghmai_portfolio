@@ -1117,7 +1117,7 @@ footer {
   }
 }
 */
-@media (min-width: 1920px) {
+/* @media (min-width: 1920px) {
   .mattia,
   .yaghmai span {
     padding-right: 4rem;
@@ -1199,7 +1199,7 @@ footer {
   .contactMeContainer {
     margin-top: 10%;
   }
-}
+} */
 .aboutMeSite {
   display: flex;
   align-items: center;
