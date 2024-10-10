@@ -1116,8 +1116,8 @@ footer {
     width: 54.8rem;
   }
 }
-*/
-@media (min-width: 1920px) {
+/* */
+/* @media (min-width: 1920px) {
   .mattia,
   .yaghmai span {
     padding-right: 4rem;
@@ -1139,33 +1139,33 @@ footer {
   .yaghmai {
     padding-left: 9rem;
   }
-  .wrapperGrid {
+  .wrappergrid {
     width: 183rem;
     height: auto;
     grid-template-columns: 89.5rem 89.5rem;
     grid-template-rows: 8rem 8rem auto;
     margin-top: 16rem;
   }
-  .containerMattiaTit {
+  .containermattiatit {
     font-size: 12rem;
   }
-  .containerYaghmai {
+  .containeryaghmai {
     font-size: 12rem;
   }
-  .fakeRectangle {
+  .fakerectangle {
     left: 86.5rem;
     width: 8rem;
     height: 16.8rem;
   }
-  .WrapperTextHero {
+  .wrappertexthero {
     width: 100%;
     padding: unset;
   }
-  .containerRectangle1 {
+  .containerrectangle1 {
     width: 94rem;
     right: 5rem;
   }
-  .containerRectangle2 {
+  .containerrectangle2 {
     width: 94.5rem;
   }
   .rectangle1 {
@@ -1176,30 +1176,30 @@ footer {
     width: 94.5rem;
     height: 8rem;
   }
-  .devContainer {
+  .devcontainer {
     width: 183rem;
   }
-  .coverDev {
+  .coverdev {
     height: 40vh;
   }
-  .containerBox {
+  .containerbox {
     width: 183rem;
   }
-  .sectionVM {
+  .sectionvm {
     width: 183rem;
     grid-template-columns: 70rem 43rem 70rem;
   }
-  .mapBox {
+  .mapbox {
     width: 70rem;
     height: 40vh;
   }
-  .mattiaPic {
+  .mattiapic {
     max-width: 50rem;
   }
-  .contactMeContainer {
+  .contactmecontainer {
     margin-top: 10%;
   }
-}
+} */ 
 .aboutMeSite {
   display: flex;
   align-items: center;
