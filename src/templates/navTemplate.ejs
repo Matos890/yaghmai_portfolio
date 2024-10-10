@@ -2,7 +2,7 @@
   <div class="navBack"></div>
   <a href="/"
     ><img
-      src="/public/img/logoMY-2-01.png"
+      src="../public/img/logoMY-2-01.png"
       alt="Bankist logo"
       class="nav__logo"
       id="logo"
@@ -13,41 +13,42 @@
     <span></span>
   </div>
 </nav>
+
 <nav class="nav">
   <div class="navBack"></div>
   <a href="/">
     <img
-      src="/public/img/logoMY-2-01.png"
+      src="../public/img/logoMY-2-01.png"
       alt="Bankist logo"
       class="nav__logo"
       id="logo"
   /></a>
   <ul class="nav__links">
     <li class="nav__item">
-      <% if (locals.isHomepage) { %>
+      <% if (process.env.IS_HOMEPAGE === 'true') { %>
       <a class="nav__link" href="#section--1">About Me</a>
       <% } else { %>
       <a class="nav__link linkPages" href="/aboutMe">About Me</a>
       <% } %>
     </li>
     <li class="nav__item">
-    <% if (locals.isHomepage){ %> 
+    <% if (process.env.IS_HOMEPAGE === 'true') { %> 
       <a class="nav__link" href="#section--2">Web Development</a> 
-      <%} else {%>
+      <% } else { %>
       <a class="nav__link linkPages" href="/webDevelopment">Web Development</a> 
       <% } %>
     </li>
     <li class="nav__item">
-    <% if (locals.isHomepage){ %> 
+    <% if (process.env.IS_HOMEPAGE === 'true') { %> 
       <a class="nav__link" href="#section--3">My Work</a> 
-      <%} else {%>
+      <% } else { %>
       <a class="nav__link linkPages" href="/maps">Maps</a> 
       <% } %>
     </li>
     <li class="nav__item">
-    <% if (locals.isHomepage){ %> 
+    <% if (process.env.IS_HOMEPAGE === 'true') { %> 
       <a class="nav__link" href="#section--4">Hire me</a> 
-      <%} else {%>
+      <% } else { %>
       <a class="nav__link linkPages" href="/motionGraphics">Motion Graphics</a> 
       <% } %>
     </li>

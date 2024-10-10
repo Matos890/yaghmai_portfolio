@@ -1,7 +1,8 @@
 const express = require("express");
 const path = require("path");
 const viewRoute = require("./routes/viewRoute");
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv").config({ path: path.join(__dirname, "config.env") });
+
 
 const app = express();
 
@@ -9,7 +10,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src"));
 
 // Configurare la directory dei file statici
-const parts = [__dirname, 'public'];
+const parts = [__dirname, 'build'];
 app.use(express.static(path.join()));
 
 // Utilizzare la rotta definita
