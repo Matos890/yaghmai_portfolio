@@ -2,45 +2,29 @@
   "name": "portfolio_mattia_yaghmai",
   "version": "1.0.0",
   "description": "my portfolio",
-  "main": "app.js",
-  "targets": {
-    "default": {
-      "source": "views/index.ejs"
-    },
-    "main": false
-  }, 
+  "source": "./src/index.ejs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "watch:js": "parcel serve ./public/js/index.js --dist-dir ./public/js/bundled",
-"build": "parcel build './views/*.ejs'"
-
+    "build": "cross-env PARCEL_WORKER_BACKEND=process  parcel build './src/*.ejs' --dist-dir ./build --public-url ./public --no-source-maps --no-autoinstall"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/resolver-glob": "^2.12.0",
+    "@parcel/config-default": "^2.12.0",
     "babel": "^6.23.0",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.3",
     "parcel": "^2.12.0",
-    "parcel-plugin-electron-dotenv": "^0.1.0"
+    "parcel-plugin-electron-dotenv": "^0.1.0",
+    "parcel-transformer-ejs": "^1.0.1"
   },
   "dependencies": {
-    "@parcel/config-default": "^2.12.0",
-    "@parcel/core": "^2.12.0",
     "canvas-image-cover": "^2.0.2",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "gsap": "^3.12.5",
-    "parcel-transformer-ejs": "^1.0.1"
-  },
-  "@parcel/resolver-default": {
-    "packageExports": true
-  },
-  "staticFiles": {
-    "staticPath": [
-      "path/to/a/staticFolder"
-    ]
+    "gsap": "^3.12.5"
   }
 }
