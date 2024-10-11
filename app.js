@@ -6,14 +6,13 @@ const dotenv = require("dotenv").config({ path: path.join(__dirname, "config.env
 
 const app = express();
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "src"));
+// app.set("views", path.join(__dirname, "build"));
 
 // Configurare la directory dei file statici
-const parts = [__dirname, 'build'];
-app.use(express.static(path.join()));
+app.use(express.static(path.join(__dirname, "build")));
 
 // Utilizzare la rotta definita
+
 app.use("/", viewRoute);
 
 // Avviare il server sulla porta 2000
