@@ -792,7 +792,7 @@ content: '';
 /* CONTACT ME */
 footer {
   min-height: 30vh;
-
+  margin-top: 15rem !important;
   display: flex;
   align-items: end;
   justify-content: center;
@@ -1345,7 +1345,7 @@ footer {
   border-radius: 3.3rem;
 }
 .descriptionMap {
-  width: 30%;
+  width: 80%;
 }
 .gif2 {
   width: 100%;
@@ -1494,6 +1494,9 @@ footer {
     font-size: 3rem;
   }
   /* MAP PAGE! */
+  .imgContainer {
+    width: 60%;
+  }
   .mapPage .wrapperTextAbout {
     margin-top: unset;
   }
@@ -1522,7 +1525,11 @@ footer {
     justify-content: space-between;
     margin-bottom: 5rem;
     flex-wrap: wrap;
-    align-items: unset;
+    align-items: center;
+    flex-direction: column;
+  }
+  .descriptionMap {
+    margin-top: calc(1rem + 5vh);
   }
   .mapGrid {
     flex-direction: unset;
@@ -1538,7 +1545,7 @@ footer {
     border-radius: 3.3rem;
   }
   .descriptionMap {
-    width: 30%;
+    width: 60%;
   }
   /* PRIMA MAPPA */
   .imgContainer .mapContainerWork:nth-child(1) .mapWrapper {

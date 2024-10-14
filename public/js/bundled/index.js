@@ -7452,7 +7452,7 @@ function initializeTransitionHome() {
     if (document.title === "Mattia Yaghmai - portfolio") window.addEventListener("pageshow", ()=>{
         const nav = document.querySelector(".nav");
         (0, _gsapDefault.default).from("section", {
-            y: 200,
+            y: -200,
             duration: 0.5
         });
         const transitionEl = document.querySelector(".transition");
