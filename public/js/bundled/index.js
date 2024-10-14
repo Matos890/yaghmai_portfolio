@@ -7454,7 +7454,7 @@ function initializeTransitionHome() {
     if (document.title === "Mattia Yaghmai - portfolio") window.addEventListener("pageshow", ()=>{
         const nav = document.querySelector(".nav");
         (0, _gsapDefault.default).from("section", {
-            y: 200,
+            y: -200,
             duration: 0.5
         });
         const transitionEl = document.querySelector(".transition");
@@ -7531,6 +7531,7 @@ function divideWords() {
 }
 function animatePage(wordsToAnimate) {
     const transitionEl1 = document.querySelector(".transitionWorks");
+    const transitionEl11 = document.querySelector(".transitionWorks1");
     let titles = document.querySelector(".titleWorks");
     const wrapperTextAbout = document.querySelector(".wrapperTextAbout");
     const timeLineTransition = (0, _gsapDefault.default).timeline();

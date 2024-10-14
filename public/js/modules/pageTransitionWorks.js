@@ -58,6 +58,7 @@ function divideWords() {
 }
 function animatePage(wordsToAnimate) {
   const transitionEl = document.querySelector(".transitionWorks");
+  const transitionEl1 = document.querySelector(".transitionWorks1");
   let titles = document.querySelector(".titleWorks");
   const wrapperTextAbout = document.querySelector(".wrapperTextAbout");
   const timeLineTransition = gsap.timeline();

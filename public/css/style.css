@@ -1230,6 +1230,19 @@ footer {
   pointer-events: none;
   /* transform: scaleX(0); */
 }
+.transitionWorks1 {
+  background-color: var(--shape-titles-color);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top:  -100vh;  
+  transform: translate(0px, 100vh);
+  left: -100vw;
+  z-index: 101;
+  /* -webkit-transform: scaleX(0); */
+  pointer-events: none;
+  /* transform: scaleX(0); */
+}
 .transitionWorks.is-active {
   /* transform:scaleX(1); */
   top: 0vh;
