@@ -7425,8 +7425,10 @@ function initializeMenu() {
                 console.log("ciao yo", modalReveal);
                 modalReveal.forEach((reveal)=>{
                     (0, _gsapDefault.default).from(reveal, {
-                        y: 100,
-                        duration: 1
+                        opacity: 0,
+                        y: -150,
+                        duration: 1,
+                        ease: "easeIn"
                     });
                 });
             }
