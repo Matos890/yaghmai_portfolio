@@ -1632,6 +1632,7 @@ footer {
   .imgContainer .mapContainerWork:nth-child(1) .descriptionMap {
     padding-top: 3rem;
     border-top: 0.3rem solid var(--former-color-shT);
+    border-left:unset;
   }
   /* SECONDA MAPPA */
 

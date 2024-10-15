@@ -1,12 +1,21 @@
 <div class="transitionWorks"></div>
-<section class="heroSection column webDevelopmentPage">
+<section
+  class="heroSection column webDevelopmentPage"
+  itemscope
+  itemtype="http://schema.org/Service"
+>
   <!-- FIRST SECTION -->
   <div class="wrapperTextAbout webDevelopmentFlex">
-    <div class="wrapperTextWebDev">
+    <div
+      class="wrapperTextWebDev"
+      itemprop="hasOfferCatalog"
+      itemscope
+      itemtype="http://schema.org/OfferCatalog"
+    >
       <div class="wrapperTitleWorks">
-        <h2 class="titleWorks">Web Development</h2>
+        <h2 class="titleWorks" itemprop="name">Web Development</h2>
       </div>
-      <p class="aboutWorks">
+      <p class="aboutWorks" itemprop="description">
         Let's dive deeper into what I can offer as a web developer, from
         delivering single-page applications to
         <strong>scalable design systems</strong>.
@@ -31,17 +40,32 @@
         playsinline
         src="../public/img/gifWebDev3.webm"
         alt="video where a pen draws elements on a grid for designers"
-      ></video>
+        itemprop="video"
+        itemscope
+        itemtype="http://schema.org/VideoObject"
+      >
+        <meta itemprop="name" content="Web Development Process Animation" />
+        <meta
+          itemprop="description"
+          content="A video where a pen draws elements on a grid for designers."
+        />
+        <meta itemprop="contentUrl" content="../public/img/gifWebDev3.webm" />
+      </video>
     </div>
   </div>
 
   <!-- SECOND SECTION -->
   <div class="wrapperTextAbout webDevelopmentFlex">
-    <div class="wrapperTextWebDev">
-      <h3 class="secondaryTitleTools">Tools and Technology</h3>
-      <p class="aboutWorks">
+    <div
+      class="wrapperTextWebDev"
+      itemprop="hasOfferCatalog"
+      itemscope
+      itemtype="http://schema.org/OfferCatalog"
+    >
+      <h3 class="secondaryTitleTools" itemprop="name">Tools and Technology</h3>
+      <p class="aboutWorks" itemprop="description">
         For front-end development, I primarily use
-        <strong>JavaScript </strong>along with various associated frameworks,
+        <strong>JavaScript</strong> along with various associated frameworks,
         but I also have experience with <strong>Python</strong>. On the
         server-side, I typically work with <strong>Node.js</strong> and
         <strong>Express</strong>, while for databases, I’m familiar with both
@@ -59,18 +83,33 @@
         autoplay
         playsinline
         src="../public/img/webDevGif2.webm"
-        alt="video showing a code that transforms into internet pages."
-      ></video>
+        alt="video showing code transforming into web pages"
+        itemprop="video"
+        itemscope
+        itemtype="http://schema.org/VideoObject"
+      >
+        <meta itemprop="name" content="Web Development Code Animation" />
+        <meta
+          itemprop="description"
+          content="A video showing code transforming into web pages."
+        />
+        <meta itemprop="contentUrl" content="../public/img/webDevGif2.webm" />
+      </video>
     </div>
   </div>
 
   <!-- THIRD SECTION -->
   <div class="wrapperTextAbout webDevelopmentFlex">
-    <div class="wrapperTextWebDev">
-      <h3 class="secondaryTitleAnimation">
+    <div
+      class="wrapperTextWebDev"
+      itemprop="hasOfferCatalog"
+      itemscope
+      itemtype="http://schema.org/OfferCatalog"
+    >
+      <h3 class="secondaryTitleAnimation" itemprop="name">
         Animations and Interactive Storytelling
       </h3>
-      <p class="aboutWorks">
+      <p class="aboutWorks" itemprop="description">
         Don’t forget, I can also bring your site to life with animations! I work
         with <strong>GSAP</strong> (GreenSock Animation Platform), so if you’re
         aiming for a more interactive experience or want to create a site with
@@ -88,8 +127,21 @@
         autoplay
         playsinline
         src="../public/img/videoTelegraphSite1.webm"
-        alt="video showing the scrolling of the website where the history of telegraph is shown"
-      ></video>
+        alt="video showing the scrolling of a website about telegraph history"
+        itemprop="video"
+        itemscope
+        itemtype="http://schema.org/VideoObject"
+      >
+        <meta itemprop="name" content="Telegraph History Website Animation" />
+        <meta
+          itemprop="description"
+          content="A video showing the scrolling of a website where the history of telegraph is shown."
+        />
+        <meta
+          itemprop="contentUrl"
+          content="../public/img/videoTelegraphSite1.webm"
+        />
+      </video>
     </div>
   </div>
 </section>

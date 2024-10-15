@@ -9,7 +9,7 @@ export function initializeTransitionHome() {
     window.addEventListener("pageshow", () => {
 const nav = document.querySelector(".nav");
       gsap.from("section", {
-        y:-200,
+        y: -200,
         duration: 0.5,
       });
       const transitionEl = document.querySelector(".transition");

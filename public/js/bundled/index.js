@@ -609,12 +609,6 @@ var _pageTranstionHome = require("./modules/pageTranstionHome");
 var _pageTransitionWorks = require("./modules/pageTransitionWorks");
 (0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
 const logoNav = document.querySelector(".animatedLogo");
-if (logoNav) logoNav.addEventListener("mouseover", ()=>{
-    const mouseOverVideo = e.currentTarget;
-    mouseOverVideo.currentTime = 0;
-    mouseOverVideo.play();
-    console.log("ciao");
-});
 document.addEventListener("DOMContentLoaded", ()=>{});
 document.addEventListener("DOMContentLoaded", ()=>{
     (0, _nav.initializeNav)();
@@ -7256,13 +7250,13 @@ function initializeAnimation() {
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
         (0, _gsapDefault.default).set(rectangle1, {
-            x: ()=>-parseFloat(rectangle1dimension.width) - 100
+            x: ()=>-parseFloat(rectangle1dimension.width)
         });
         (0, _gsapDefault.default).set(wrapperTextHero, {
             y: ()=>-parseFloat(wrapperTextDimension.height) - 100
         });
         (0, _gsapDefault.default).set(rectangle2, {
-            x: ()=>parseFloat(rectangle2dimension.width) + 100
+            x: ()=>parseFloat(rectangle2dimension.width)
         });
         (0, _gsapDefault.default).set(fakeRectangle, {
             transformOrigin: "50% 50%"

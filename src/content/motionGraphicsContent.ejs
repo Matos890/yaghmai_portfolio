@@ -1,32 +1,20 @@
 <div class="transitionWorks is-active"></div>
-<section class="heroSection column motionGraphicsPage">
+<section class="heroSection column motionGraphicsPage" itemscope itemtype="http://schema.org/CreativeWork">
   <div class="wrapperTextAbout motionGraphicsGrid">
     <div class="containerHeroWork">
       <div class="wrapperTitleWorks">
-        <h2 class="titleWorks">Motion Graphics</h2>
+        <h2 class="titleWorks" itemprop="name">Motion Graphics</h2>
       </div>
-      <p class="aboutWorks">
-        I can create explainer videos using motion graphics to make your project
-        or business even more accessible and easy to understand. If you're
-        looking to tell a story, this technique will undoubtedly make it more
-        engaging and captivating. To produce these videos, I primarily use Adobe
-        software, including <strong>Illustrator</strong>,
-        <strong>Photoshop</strong>, and <strong>After Effects</strong>. Feel
-        free to reach out for more information!
+      <p class="aboutWorks" itemprop="description">
+        I can create explainer videos using motion graphics to make your project or business even more accessible and easy to understand. If you're looking to tell a story, this technique will undoubtedly make it more engaging and captivating. To produce these videos, I primarily use Adobe software, including <strong>Illustrator</strong>, <strong>Photoshop</strong>, and <strong>After Effects</strong>. Feel free to reach out for more information!
       </p>
     </div>
-    <!-- <div class="containerGifMotionG">
-      <img src="/img/motionGraphicsGif.gif" alt="" class="gifMot" />
-    </div> -->
   </div>
   <div class="videoContainerPage">
     <p class="descriptionVideoMobi">
-      These videos are a trailer and the design conceptualization of the first
-      episode of <i>Mobi Doc</i>, an in-progress ambitious web documentary
-      centered around the almost untapped history of identity documents for the
-      <i>Institut Convergence Migration</i>.
+      These videos are a trailer and the design conceptualization of the first episode of <i>Mobi Doc</i>, an in-progress ambitious web documentary centered around the almost untapped history of identity documents for the <i>Institut Convergence Migration</i>.
     </p>
-    <div class="videoContainerWork scrollingElementWork">
+    <div class="videoContainerWork scrollingElementWork" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
       <div class="videoWrapper elementTriggerWork">
         <iframe
           class="box video show--box"
@@ -39,10 +27,14 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen=""
+          itemprop="contentUrl"
         ></iframe>
+        <meta itemprop="name" content="Mobi Doc Trailer">
+        <meta itemprop="description" content="A trailer for the Mobi Doc web documentary, centered around the history of identity documents.">
+        <meta itemprop="uploadDate" content="2024-10-15">
       </div>
     </div>
-    <div class="videoContainerWork scrollingElementWork">
+    <div class="videoContainerWork scrollingElementWork" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
       <div class="videoWrapper elementTriggerWork">
         <iframe
           class="box video show--box"
@@ -55,7 +47,11 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen=""
+          itemprop="contentUrl"
         ></iframe>
+        <meta itemprop="name" content="Mobi Doc Concept">
+        <meta itemprop="description" content="Design concept video for the first episode of the Mobi Doc web documentary.">
+        <meta itemprop="uploadDate" content="2024-10-15">
       </div>
     </div>
   </div>
