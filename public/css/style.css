@@ -1662,3 +1662,7 @@ footer {
     border-left: 0.3rem solid var(--former-color-shT);
   }
 }
+html{
+  visibility: visible;
+    opacity: 1;
+}
