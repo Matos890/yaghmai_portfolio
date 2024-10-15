@@ -138,10 +138,11 @@ index 4787fa8..f3228e3 100644
  function animatePage(wordsToAnimate) {
    const transitionEl = document.querySelector(".transitionWorks");
    const transitionEl1 = document.querySelector(".transitionWorks1");
-diff --git a/views/content/mapContent.ejs b/views/content/mapContent.ejs
+diff --git a/src/content/mapContent.ejs b/src/content/mapContent.ejs
 index f13dda1..6c8ed83 100644
---- a/views/content/mapContent.ejs
-+++ b/views/content/mapContent.ejs
+--- a/src/content/mapContent.ejs
+
++++ b/iews/content/mapContent.ejs
 @@ -1,4 +1,3 @@
 -
  <div class="transitionWorks1"></div>
