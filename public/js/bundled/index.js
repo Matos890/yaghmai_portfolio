@@ -7511,21 +7511,30 @@ function initializeTransitionAbout() {
     scrollingELements();
 }
 function divideWords() {
-    let aboutMeP = document.querySelectorAll(".aboutWorks");
+    const aboutMeP = document.querySelectorAll(".aboutWorks");
     let wordsToAnimate = [];
-    // Itera su ogni paragrafo selezionato con `querySelectorAll`
     aboutMeP.forEach((paragraph)=>{
-        // Ottieni il testo del paragrafo
-        const text = paragraph.innerText;
-        // Dividi il testo in parole
-        const words = text.split(" ");
-        // Crea il nuovo HTML con gli span
-        const newHtml = words.map((word)=>`<span class="aboutMyWorksPremier"><span class="aboutMyWorks">${word}</span></span>`).join(" ");
-        // Imposta il nuovo contenuto HTML
-        paragraph.innerHTML = newHtml;
-        // Seleziona solo le parole nel paragrafo corrente
-        let wordstoAnimateParagraph = paragraph.querySelectorAll(".aboutMyWorks");
-        wordsToAnimate.push(...wordstoAnimateParagraph);
+        const words = [];
+        // Split the paragraph's HTML content using regex to handle words and tags separately
+        paragraph.childNodes.forEach((node)=>{
+            if (node.nodeType === Node.TEXT_NODE) // Split the text node into words
+            node.textContent.split(" ").forEach((word)=>{
+                if (word.trim()) words.push(`<span class="aboutMyWorksPremier"><span class="aboutMyWorks">${word}</span></span>`);
+            });
+            else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === "STRONG") {
+                // Handle <strong> elements by wrapping words inside them
+                const strongWords = node.innerText.split(" ").map((word)=>{
+                    return `<span class="aboutMyWorksPremier"><strong><span class="aboutMyWorks">${word}</span></strong></span>`;
+                });
+                words.push(...strongWords);
+            } else // Append any other nodes without modification
+            words.push(node.outerHTML);
+        });
+        // Join the processed words array and set the new HTML
+        paragraph.innerHTML = words.join(" ");
+        // Select the newly added spans for animation
+        const wordsToAnimateParagraph = paragraph.querySelectorAll(".aboutMyWorks");
+        wordsToAnimate.push(...wordsToAnimateParagraph);
     });
     return wordsToAnimate;
 }

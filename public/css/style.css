@@ -36,6 +36,9 @@ section {
 a {
   z-index: 2000;
 }
+strong{
+  color:var(--shape-titles-color)
+}
 figure,
 picture {
   margin: 0;
