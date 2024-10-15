@@ -29,6 +29,9 @@ section {
   --former-wordParagraph: #485b7a;
   --h2Dimension: calc(2.2rem + 1vw);
 }
+strong {
+  color: var(--shape-titles-color);
+}
 ::selection {
   background: #f2c787;
   color: inherit;
@@ -1330,7 +1333,6 @@ footer {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 5rem;
   flex-wrap: wrap;
 }
@@ -1341,16 +1343,21 @@ footer {
 .imgMap {
   position: absolute;
   top: 0;
-  border: solid 1rem var(--shape-titles-color);
+  /* border: solid 1rem var(--shape-titles-color); */
   border-radius: 3.3rem;
 }
 .descriptionMap {
   width: 80%;
+  margin-top: 3rem;
 }
 .gif2 {
   width: 100%;
 }
 /* PRIMA MAPPA */
+.imgContainer .mapContainerWork:nth-child(1) {
+  flex-direction: column !important;
+  align-items: center;
+}
 .imgContainer .mapContainerWork:nth-child(1) .mapWrapper {
   padding: 33%;
   aspect-ratio: 0.7;
@@ -1402,7 +1409,7 @@ footer {
 .box {
   width: 100%;
   height: 100%;
-  border: solid 1rem var(--shape-titles-color);
+  /* border: solid 1rem var(--shape-titles-color); */
   border-radius: 3.3rem;
 }
 .videoContainerPage {
@@ -1428,7 +1435,7 @@ footer {
     font-size: 5.5rem;
   }
   .aboutMePage .wrapperTextAbout {
-    width: 80%;
+    width: 50%;
     display: flex;
     margin-top: 10rem;
     flex-direction: column;
@@ -1522,14 +1529,9 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 5rem;
     flex-wrap: wrap;
     align-items: center;
-    flex-direction: column;
-  }
-  .descriptionMap {
-    margin-top: calc(1rem + 5vh);
   }
   .mapGrid {
     flex-direction: unset;
@@ -1545,12 +1547,21 @@ footer {
     border-radius: 3.3rem;
   }
   .descriptionMap {
-    width: 60%;
+    width: 30%;
+    margin-left: 3rem;
+    margin-top: unset;
   }
+
   /* PRIMA MAPPA */
+  .imgContainer .mapContainerWork:nth-child(1) {
+    flex-direction: column !important;
+    align-items: center;
+  }
   .imgContainer .mapContainerWork:nth-child(1) .mapWrapper {
     padding: 25%;
     aspect-ratio: 0.7;
+    width: 60%;
+    align-self: center;
   }
   .imgContainer .mapContainerWork:nth-child(1) .mapWrapper .imgMap {
     left: 0;
@@ -1597,6 +1608,10 @@ footer {
   /* .containerHeroWork .aboutWorks {
     width: 70%;
   } */
+  .descriptionVideoMobi {
+    width: 50%;
+    margin-bottom: calc(3rem + 3vh);
+  }
   .motionGraphicsGrid .containerHeroWork .aboutWorks {
     width: unset;
   }
