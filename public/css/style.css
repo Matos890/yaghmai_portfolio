@@ -36,8 +36,8 @@ section {
 a {
   z-index: 2000;
 }
-strong{
-  color:var(--shape-titles-color)
+strong {
+  color: var(--shape-titles-color);
 }
 figure,
 picture {
@@ -102,7 +102,6 @@ body {
   margin: 0;
   /* width: calc(100vw - 40px); */
   z-index: -1;
-
 }
 body::after {
   content: "";
@@ -1204,7 +1203,7 @@ footer {
   .contactmecontainer {
     margin-top: 10%;
   }
-} */ 
+} */
 .aboutMeSite {
   display: flex;
   align-items: center;
@@ -1238,7 +1237,7 @@ footer {
   position: fixed;
   width: 100%;
   height: 100vh;
-  top:  -100vh;  
+  top: -100vh;
   transform: translate(0px, 100vh);
   left: -100vw;
   z-index: 101;
@@ -1366,7 +1365,8 @@ footer {
   border-radius: 3.3rem;
 }
 .descriptionMap {
-  width: 30%;
+  margin-top:3rem;
+  width: 80%;
 }
 .gif2 {
   width: 100%;
@@ -1540,7 +1540,6 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 5rem;
     flex-wrap: wrap;
     align-items: unset;
@@ -1560,11 +1559,18 @@ footer {
   }
   .descriptionMap {
     width: 30%;
+    margin-left: 3rem;
   }
   /* PRIMA MAPPA */
+  .imgContainer .mapContainerWork:nth-child(1) {
+    flex-direction: column !important;
+    align-items: center;
+  }
   .imgContainer .mapContainerWork:nth-child(1) .mapWrapper {
     padding: 25%;
     aspect-ratio: 0.7;
+    width: 60%;
+    align-self: center;
   }
   .imgContainer .mapContainerWork:nth-child(1) .mapWrapper .imgMap {
     left: 0;
