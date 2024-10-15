@@ -2,9 +2,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
-document.addEventListener("DOMContentLoaded", () =>{
-
-})
+const logoNav = document.querySelector(".animatedLogo");
+document.addEventListener("DOMContentLoaded", () => {});
 //////////////////////////////////////////////////////////////////////
 ////////////////////////////// NAV ///////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -31,19 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 /////////////////////////////PAGE TRANSITION HOME////////////
 import { initializeTransitionHome } from "./modules/pageTranstionHome";
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener("DOMContentLoaded", () => {
   initializeTransitionHome();
-})
+});
 ////////////////////////////PAGE TRANSITION ABOUT ME /////////////
-import { initializeTransitionAbout} from "./modules/pageTransitionWorks";
-if(document.title.includes('|'))
-document.addEventListener('DOMContentLoaded',()=>{
-  initializeTransitionAbout();
-})
+import { initializeTransitionAbout } from "./modules/pageTransitionWorks";
+if (document.title.includes("|"))
+  document.addEventListener("DOMContentLoaded", () => {
+    initializeTransitionAbout();
+  });
 ////////////////////ANIMATION ELEMENTS WITH SCROLL//////
 // import { scrollingELements } from "./modules/scrollingElementsWork";
 // if(document.title.includes('|'))
 // document.addEventListener('DOMContentLoaded',()=>{
 //   scrollingELements();
-  
+
 // })

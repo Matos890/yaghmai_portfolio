@@ -608,6 +608,13 @@ var _pageTranstionHome = require("./modules/pageTranstionHome");
 ////////////////////////////PAGE TRANSITION ABOUT ME /////////////
 var _pageTransitionWorks = require("./modules/pageTransitionWorks");
 (0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
+const logoNav = document.querySelector(".animatedLogo");
+if (logoNav) logoNav.addEventListener("mouseover", ()=>{
+    const mouseOverVideo = e.currentTarget;
+    mouseOverVideo.currentTime = 0;
+    mouseOverVideo.play();
+    console.log("ciao");
+});
 document.addEventListener("DOMContentLoaded", ()=>{});
 document.addEventListener("DOMContentLoaded", ()=>{
     (0, _nav.initializeNav)();
@@ -624,13 +631,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 if (document.title.includes("|")) document.addEventListener("DOMContentLoaded", ()=>{
     (0, _pageTransitionWorks.initializeTransitionAbout)();
-}) ////////////////////ANIMATION ELEMENTS WITH SCROLL//////
+}); ////////////////////ANIMATION ELEMENTS WITH SCROLL//////
  // import { scrollingELements } from "./modules/scrollingElementsWork";
  // if(document.title.includes('|'))
  // document.addEventListener('DOMContentLoaded',()=>{
  //   scrollingELements();
  // })
-;
 
 },{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","./modules/nav":"fLOTs","./modules/scrollingTitleAnimation":"b19BA","./modules/animazioneHome":"fVMw1","./modules/menu":"7FeRP","./modules/pageTranstionHome":"85FTH","./modules/pageTransitionWorks":"iquZy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -7250,13 +7256,13 @@ function initializeAnimation() {
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
         (0, _gsapDefault.default).set(rectangle1, {
-            x: ()=>-parseFloat(rectangle1dimension.width)
+            x: ()=>-parseFloat(rectangle1dimension.width) - 100
         });
         (0, _gsapDefault.default).set(wrapperTextHero, {
             y: ()=>-parseFloat(wrapperTextDimension.height) - 100
         });
         (0, _gsapDefault.default).set(rectangle2, {
-            x: ()=>parseFloat(rectangle2dimension.width)
+            x: ()=>parseFloat(rectangle2dimension.width) + 100
         });
         (0, _gsapDefault.default).set(fakeRectangle, {
             transformOrigin: "50% 50%"
