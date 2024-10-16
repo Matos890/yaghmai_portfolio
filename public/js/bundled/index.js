@@ -7401,6 +7401,8 @@ function initializeMenu() {
     const navModal = document.querySelector(".modalWrapper");
     const showModal = document.querySelector(".showModal");
     const burgerMenu = document.getElementById("menuToggle");
+    const modalMenu = document.querySelector(".modalWrapper");
+    modalMenu.style.opacity = "0";
     if (nav1) {
         const addMenu = function() {
             const screenWidth = window.innerWidth;
@@ -7419,11 +7421,11 @@ function initializeMenu() {
         window.addEventListener("resize", addMenu);
         window.addEventListener("DOMContentLoaded", addMenu);
         addMenu();
-        const modalMenu = document.querySelector(".modalWrapper");
         modalMenu.classList.add("hideMenu");
         burgerMenu.addEventListener("click", ()=>{
             modalMenu.classList.toggle("hideMenu");
             modalMenu.classList.toggle("showModal");
+            modalMenu.style.opacity = "1";
             // Animazione del menu modale
             if (modalMenu.classList.contains("showModal")) {
                 const modalReveal = document.querySelectorAll(".menuModalReveal");
