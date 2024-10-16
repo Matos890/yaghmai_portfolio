@@ -7397,8 +7397,10 @@ var _gsapDefault = parcelHelpers.interopDefault(_gsap);
 function initializeMenu() {
     const nav = document.querySelector(".nav");
     const nav1 = document.querySelector(".nav1");
+    const screenWidth = window.innerWidth;
     const navModal = document.querySelector(".modalWrapper");
     const showModal = document.querySelector(".showModal");
+    const burgerMenu = document.getElementById("menuToggle");
     if (nav1) {
         const addMenu = function() {
             const screenWidth = window.innerWidth;
@@ -7408,6 +7410,10 @@ function initializeMenu() {
             } else {
                 nav1.style.display = "none";
                 nav.style.display = "flex";
+                // Chiudi il menu modale se la larghezza dello schermo è maggiore di 900px
+                const modalMenu = document.querySelector(".modalWrapper");
+                modalMenu.classList.remove("showModal");
+                modalMenu.classList.add("hideMenu");
             }
         };
         window.addEventListener("resize", addMenu);
@@ -7415,17 +7421,16 @@ function initializeMenu() {
         addMenu();
         const modalMenu = document.querySelector(".modalWrapper");
         modalMenu.classList.add("hideMenu");
-        const burgerMenu = document.getElementById("menuToggle");
         burgerMenu.addEventListener("click", ()=>{
-            modalMenu.classList.toggle("showModal");
             modalMenu.classList.toggle("hideMenu");
-            ///MODALE ANIMAZIONE
+            modalMenu.classList.toggle("showModal");
+            // Animazione del menu modale
             if (modalMenu.classList.contains("showModal")) {
                 const modalReveal = document.querySelectorAll(".menuModalReveal");
-                console.log("ciao yo", modalReveal);
                 modalReveal.forEach((reveal)=>{
                     (0, _gsapDefault.default).from(reveal, {
-                        y: 100,
+                        opacity: 0,
+                        y: -100,
                         duration: 1
                     });
                 });
@@ -7437,6 +7442,7 @@ function initializeMenu() {
             modalMenu.classList.add("hideMenu");
         });
     }
+    if (screenWidth >= 900) navModal.classList.add("hideMenu");
 }
 
 },{"gsap":"fPSuC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"85FTH":[function(require,module,exports) {
@@ -7456,6 +7462,7 @@ function initializeTransitionHome() {
             duration: 0.5
         });
         const transitionEl = document.querySelector(".transition");
+        transitionEl.classList.add("hideTrans");
         const anchors = document.querySelectorAll(".linkPages");
         setTimeout(()=>{
             transitionEl.classList.remove("is-active");
@@ -7468,6 +7475,7 @@ function initializeTransitionHome() {
                 console.log(target);
                 if (nav) nav.classList.remove("sticky");
                 transitionEl.classList.add("is-active");
+                transitionEl.classList.remove("hideTrans");
                 setTimeout(()=>{
                     window.location.href = target;
                 }, 500);

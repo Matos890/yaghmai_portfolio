@@ -13,6 +13,7 @@ const nav = document.querySelector(".nav");
         duration: 0.5,
       });
       const transitionEl = document.querySelector(".transition");
+      transitionEl.classList.add('hideTrans');
       const anchors = document.querySelectorAll(".linkPages");
       setTimeout(() => {
         transitionEl.classList.remove("is-active");
@@ -27,6 +28,7 @@ const nav = document.querySelector(".nav");
             nav.classList.remove("sticky");
           }
           transitionEl.classList.add("is-active");
+          transitionEl.classList.remove("hideTrans");
           setTimeout(() => {
             window.location.href = target;
           }, 500);
