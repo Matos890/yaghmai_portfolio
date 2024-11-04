@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "watch:js": "parcel serve ./public/js/index.js --dist-dir ./public/js/bundled",
+    "watchTelegrafo:js": "parcel serve ./public/js/indexTelegrafo.js --dist-dir ./public/js/bundled",
     "build": "cross-env PARCEL_WORKER_BACKEND=process parcel build './src/*.ejs' --dist-dir ./build --public-url ./ --no-cache --no-source-maps --no-autoinstall"
   },
   "author": "",

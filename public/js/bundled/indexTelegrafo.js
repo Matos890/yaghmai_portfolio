@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"kx4kz":[function(require,module,exports) {
+})({"7ZVa9":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "4c74fe43c064fd94";
+module.bundle.HMR_BUNDLE_ID = "8df700308466c984";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -583,14 +583,60 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"f2QDv":[function(require,module,exports) {
+},{}],"8O1sU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _gsap = require("gsap");
 var _gsapDefault = parcelHelpers.interopDefault(_gsap);
 var _all = require("gsap/all");
 var _gsapCore = require("gsap/gsap-core");
+var _canvasImageCover = require("canvas-image-cover");
+var _canvasImageCoverDefault = parcelHelpers.interopDefault(_canvasImageCover);
+// Importa le immagini
+var _emblemata1624Bookmark1Jpg = require("../img/Emblemata_1624_bookmark_1.jpg");
+var _emblemata1624Bookmark1JpgDefault = parcelHelpers.interopDefault(_emblemata1624Bookmark1Jpg);
+var _chappebackgroundPng = require("../img/chappebackground.png");
+var _chappebackgroundPngDefault = parcelHelpers.interopDefault(_chappebackgroundPng);
+var _franklinHandBookmark2Jpg = require("../img/Franklin_hand_bookmark_2.jpg");
+var _franklinHandBookmark2JpgDefault = parcelHelpers.interopDefault(_franklinHandBookmark2Jpg);
+var _magnetism1BackgroundPng = require("../img/magnetism1background.png");
+var _magnetism1BackgroundPngDefault = parcelHelpers.interopDefault(_magnetism1BackgroundPng);
+var _faradayPng = require("../img/Faraday.png");
+var _faradayPngDefault = parcelHelpers.interopDefault(_faradayPng);
+var _henryPng = require("../img/henry.png");
+var _henryPngDefault = parcelHelpers.interopDefault(_henryPng);
+var _railwaymapPng = require("../img/railwaymap.png");
+var _railwaymapPngDefault = parcelHelpers.interopDefault(_railwaymapPng);
+var _magnetismbackground2Png = require("../img/magnetismbackground2.png");
+var _magnetismbackground2PngDefault = parcelHelpers.interopDefault(_magnetismbackground2Png);
+var _giornalistiBookmark3Png = require("../img/giornalisti_bookmark_3.png");
+var _giornalistiBookmark3PngDefault = parcelHelpers.interopDefault(_giornalistiBookmark3Png);
+var _morsebackgroundPng = require("../img/morsebackground.png");
+var _morsebackgroundPngDefault = parcelHelpers.interopDefault(_morsebackgroundPng);
+var _morsePng = require("../img/morse.png");
+var _morsePngDefault = parcelHelpers.interopDefault(_morsePng);
+var _testbackgroundPng = require("../img/testbackground.png");
+var _testbackgroundPngDefault = parcelHelpers.interopDefault(_testbackgroundPng);
+var _morseNotesJpg = require("../img/morseNotes.jpg");
+var _morseNotesJpgDefault = parcelHelpers.interopDefault(_morseNotesJpg);
+var _giornalistibackgroundPng = require("../img/giornalistibackground.png");
+var _giornalistibackgroundPngDefault = parcelHelpers.interopDefault(_giornalistibackgroundPng);
+var _submarineBookmark4Jpg = require("../img/submarine_bookmark_4.jpg");
+var _submarineBookmark4JpgDefault = parcelHelpers.interopDefault(_submarineBookmark4Jpg);
+var _shipbackgroundPng = require("../img/shipbackground.png");
+var _shipbackgroundPngDefault = parcelHelpers.interopDefault(_shipbackgroundPng);
+var _cyrusPng = require("../img/cyrus.png");
+var _cyrusPngDefault = parcelHelpers.interopDefault(_cyrusPng);
+var _messagequeenPng = require("../img/messagequeen.png");
+var _messagequeenPngDefault = parcelHelpers.interopDefault(_messagequeenPng);
+var _1871TelegraphLinesJpg = require("../img/1871Telegraph lines.jpg");
+var _1871TelegraphLinesJpgDefault = parcelHelpers.interopDefault(_1871TelegraphLinesJpg);
+var _1880TelegraphLinesJpg = require("../img/1880Telegraph lines.jpg");
+var _1880TelegraphLinesJpgDefault = parcelHelpers.interopDefault(_1880TelegraphLinesJpg);
+var _1901TelegraphLinesJpg = require("../img/1901Telegraph lines.jpg");
+var _1901TelegraphLinesJpgDefault = parcelHelpers.interopDefault(_1901TelegraphLinesJpg);
+var _caricaturebackgroundPng = require("../img/caricaturebackground.png");
+var _caricaturebackgroundPngDefault = parcelHelpers.interopDefault(_caricaturebackgroundPng);
 (0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
-const cover = require("d2847929e4f80a5f");
 const canvas = document.getElementById("myCanvas");
 const canvas1 = document.getElementById("myCanvas1");
 const frame = document.querySelectorAll("[class^='frame']");
@@ -609,30 +655,30 @@ ctx.globalCompositeOperation = "source-over";
 bookmarkFrame.forEach((bookmark)=>{
     console.log(bookmark);
 });
-//IMAGES
+// IMAGES
 const imageSources = [
-    "/img/Emblemata_1624_bookmark_1.jpg",
-    "/img/chappebackground.png",
-    "/img/Franklin_hand_bookmark_2.jpg",
-    "/img/magnetism1background.png",
-    "/img/Faraday.png",
-    "/img/henry.png",
-    "/img/railwaymap.png",
-    "/img/magnetismbackground2.png",
-    "/img/giornalisti_bookmark_3.png",
-    "/img/morsebackground.png",
-    "/img/morse.png",
-    "/img/testbackground.png",
-    "/img/morseNotes.jpg",
-    "/img/giornalistibackground.png",
-    "/img/submarine_bookmark_4.jpg",
-    "/img/shipbackground.png",
-    "/img/cyrus.png",
-    "/img/messagequeen.png",
-    "/img/1871Telegraph lines.jpg",
-    "/img/1880Telegraph lines.jpg",
-    "/img/1901Telegraph lines.jpg",
-    "/img/caricaturebackground.png"
+    (0, _emblemata1624Bookmark1JpgDefault.default),
+    (0, _chappebackgroundPngDefault.default),
+    (0, _franklinHandBookmark2JpgDefault.default),
+    (0, _magnetism1BackgroundPngDefault.default),
+    (0, _faradayPngDefault.default),
+    (0, _henryPngDefault.default),
+    (0, _railwaymapPngDefault.default),
+    (0, _magnetismbackground2PngDefault.default),
+    (0, _giornalistiBookmark3PngDefault.default),
+    (0, _morsebackgroundPngDefault.default),
+    (0, _morsePngDefault.default),
+    (0, _testbackgroundPngDefault.default),
+    (0, _morseNotesJpgDefault.default),
+    (0, _giornalistibackgroundPngDefault.default),
+    (0, _submarineBookmark4JpgDefault.default),
+    (0, _shipbackgroundPngDefault.default),
+    (0, _cyrusPngDefault.default),
+    (0, _messagequeenPngDefault.default),
+    (0, _1871TelegraphLinesJpgDefault.default),
+    (0, _1880TelegraphLinesJpgDefault.default),
+    (0, _1901TelegraphLinesJpgDefault.default),
+    (0, _caricaturebackgroundPngDefault.default)
 ];
 const images = [];
 const bookmark = [];
@@ -694,64 +740,54 @@ function getDimension() {
 }
 function bookmarkPos(bookmark, frameBX, frameBY, frameWidthB, frameHeightB) {
     //1.
-    cover(bookmark[0], frameBX[0], frameBY[0], frameWidthB[0], frameHeightB[0], {
+    (0, _canvasImageCoverDefault.default)(bookmark[0], frameBX[0], frameBY[0], frameWidthB[0], frameHeightB[0], {
         mode: "cover"
     }).zoom(1.5).pan(0.7, 0).render(ctx);
     //2.
-    cover(bookmark[1], frameBX[1], frameBY[1], frameWidthB[1], frameHeightB[1], {
+    (0, _canvasImageCoverDefault.default)(bookmark[1], frameBX[1], frameBY[1], frameWidthB[1], frameHeightB[1], {
         mode: "cover"
     }).zoom(2.5).pan(0.2, 0).render(ctx);
     //3.
-    cover(bookmark[2], frameBX[2], frameBY[2], frameWidthB[2], frameHeightB[2], {
+    (0, _canvasImageCoverDefault.default)(bookmark[2], frameBX[2], frameBY[2], frameWidthB[2], frameHeightB[2], {
         mode: "cover"
     }).zoom(1.2).pan(0.295, 0).render(ctx);
     //4.
-    cover(bookmark[3], frameBX[3], frameBY[3], frameWidthB[3], frameHeightB[3], {
+    (0, _canvasImageCoverDefault.default)(bookmark[3], frameBX[3], frameBY[3], frameWidthB[3], frameHeightB[3], {
         mode: "cover"
     }).zoom(1.2).pan(0.5, 0).render(ctx);
 }
 function draw() {
-    {
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
-        canvas.setAttribute("width", screenWidth);
-        canvas.setAttribute("height", screenHeight);
-        canvas1.setAttribute("width", screenWidth);
-        canvas1.setAttribute("height", screenHeight);
-        let totalWidth = 0;
-        scroller.forEach((section)=>{
-            totalWidth += section.offsetHeight;
-        });
-        let ratioWH = coverArtSection.offsetWidth / coverArtSection.offsetHeight;
-        console.log(ratioWH);
-        totalWidth = mainWrapper.offsetWidth / ratioWH + coverArtSection.offsetHeight * 3 - coverArtSection.offsetHeight;
-        document.body.style.height = totalWidth + "px";
-        // body.setAttribute('height', totalWidth)
-        console.log("width of sectionz", totalWidth);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
-        const { frameX, frameY, frameWidth, frameHeight, frameBX, frameBY, frameWidthB, frameHeightB } = getDimension();
-        bookmarkPos(bookmark, frameBX, frameBY, frameWidthB, frameHeightB);
-        images.forEach((imgObj, i)=>{
-            if (imgObj.src.includes("background")) {
-                ctx1.globalAlpha = 0.2;
-                ctx1.drawImage(imgObj, frameX[i], frameY[i], frameWidth[i], frameHeight[i]);
-            // } else if (imgObj.src.includes("bookmark")) {
-            //   cover(imgObj, frameX[i], frameY[i], frameWidth[i], frameHeight[i], {
-            //     mode: "cover",
-            //   })
-            //     .zoom(1.5)
-            //     .pan(0.7, 0)
-            //     .render(ctx);}
-            } else {
-                ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
-                ctx.shadowBlur = 7;
-                ctx.shadowOffsetX = 10;
-                ctx.shadowOffsetY = 10;
-                ctx.drawImage(imgObj, frameX[i], frameY[i], frameWidth[i], frameHeight[i]);
-            }
-        });
-    }
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    canvas.setAttribute("width", screenWidth);
+    canvas.setAttribute("height", screenHeight);
+    canvas1.setAttribute("width", screenWidth);
+    canvas1.setAttribute("height", screenHeight);
+    let totalWidth = 0;
+    scroller.forEach((section)=>{
+        totalWidth += section.offsetHeight;
+    });
+    let ratioWH = coverArtSection.offsetWidth / coverArtSection.offsetHeight;
+    console.log(ratioWH);
+    totalWidth = mainWrapper.offsetWidth / ratioWH + coverArtSection.offsetHeight * 3 - coverArtSection.offsetHeight;
+    document.body.style.height = totalWidth + "px";
+    console.log("width of sectionz", totalWidth);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
+    const { frameX, frameY, frameWidth, frameHeight, frameBX, frameBY, frameWidthB, frameHeightB } = getDimension();
+    bookmarkPos(bookmark, frameBX, frameBY, frameWidthB, frameHeightB);
+    images.forEach((imgObj, i)=>{
+        if (imgObj.src.includes("background")) {
+            ctx1.globalAlpha = 0.2;
+            ctx1.drawImage(imgObj, frameX[i], frameY[i], frameWidth[i], frameHeight[i]);
+        } else {
+            ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
+            ctx.shadowBlur = 7;
+            ctx.shadowOffsetX = 10;
+            ctx.shadowOffsetY = 10;
+            ctx.drawImage(imgObj, frameX[i], frameY[i], frameWidth[i], frameHeight[i]);
+        }
+    });
 }
 function updateCanvas() {
     draw();
@@ -778,170 +814,10 @@ preloadImages(imageSources, ()=>{
     window.addEventListener("resize", draw);
     window.addEventListener("load", draw);
     let { positionContainer1X, gifX, positionContainer2X, endTrigger, distance } = calculatePositionsGif();
-    window.addEventListener("resize", ()=>{
-        ({ positionContainer1X, gifX, positionContainer2X, endTrigger, distance } = calculatePositionsGif());
-    });
-    ///OPENING
-    const tlOpening = (0, _gsapDefault.default).timeline();
-    tlOpening.add("diagonali");
-    tlOpening.addLabel("redTel");
-    tlOpening.from(".imgDiag1", {
-        x: 2000,
-        duration: 5,
-        ease: "power1.inOut",
-        filter: "blur(3px)"
-    }, "diagonali").from(".imgDiag2", {
-        x: 2000,
-        duration: 5,
-        filter: "blur(3px)"
-    }, "diagonali").from(".imgRed", {
-        duration: 2,
-        ease: "circ.in",
-        scale: 0
-    }, "diagonali").from(".titleContainer", {
-        x: 300,
-        opacity: 0,
-        duration: 3,
-        ease: "power3.out"
-    }, "diagonali+=2").from(".squareContainer", {
-        x: 200,
-        opacity: 0,
-        ease: "power3.out"
-    }, "diagonali+=2").from(".torpedoFish", {
-        x: 200,
-        duration: 3,
-        opacity: 0
-    }, "diagonali+=2").from(".naveContainer", {
-        x: 1200,
-        duration: 4,
-        ease: "power3.inOut"
-    }, "diagonali").from(".telegraphImg", {
-        duration: 2,
-        ease: "circ.in",
-        // scale:0,
-        opacity: 0
-    }, "diagonali+=3");
-    //MAIN SECTIONS
-    (0, _gsapDefault.default).from(".titoloChappe", {
-        opacity: 0,
-        y: "3vh",
-        duration: 1,
-        ease: "power1.inOut"
-    });
-    (0, _gsapDefault.default).from(".spanBookmark", {
-        opacity: 0,
-        y: "10vh",
-        stagger: 0.2,
-        duration: 5
-    });
-    const sections = (0, _gsapDefault.default).utils.toArray(".mainWrapper .scroller ");
-    let scrollTween = (0, _gsapDefault.default).to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        duration: 5,
-        delay: 0.2,
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".sectioni",
-            // markers:true,
-            pin: true,
-            scrub: 5,
-            pinSpacing: false,
-            invalidateOnRefresh: true,
-            start: "center center",
-            end: ()=>`+=${mainWrapper.offsetWidth / (coverArtSection.offsetWidth / coverArtSection.offsetHeight)}`,
-            onUpdate: ()=>{
-                requestAnimationFrame(draw);
-            }
-        }
-    });
-    const gifMoving = function() {
-        (0, _gsapDefault.default).to(".gif1", {
-            x: ()=>{
-                const container1 = document.querySelector(".containerFrame2");
-                const positionContainer1X = container1.getBoundingClientRect().left;
-                const canvasPositionX = canvas.getBoundingClientRect().left;
-                const gifX = positionContainer1X - canvasPositionX;
-                const container2 = document.querySelector(".containerFrame2Copy");
-                const positionContainer2X = container2.getBoundingClientRect().left;
-                const endTrigger = positionContainer2X - canvasPositionX;
-                const distance = endTrigger - gifX;
-                return distance;
-            },
-            ease: "power1.inOut",
-            scrollTrigger: {
-                trigger: ".gif1",
-                // endTrigger:'containerFrame2Copy',
-                containerAnimation: scrollTween,
-                horizontal: true,
-                pin: true,
-                scrub: true,
-                pinType: "transform",
-                pinSpacing: false,
-                invalidateOnRefresh: true,
-                start: ()=>`0   ${gifX}`,
-                end: ()=>`center  -${endTrigger}`
-            }
-        });
-        //-- MAP ANIMATION //
-        const tl = (0, _gsapDefault.default).timeline();
-        tl.add("start").from(map, {
-            opacity: 0,
-            duration: 2
-        }, "start").from(pallini, {
-            opacity: 0,
-            duration: 2
-        }, "start").from(cities, {
-            opacity: 0,
-            duration: 2
-        }).from(primaEra, {
-            opacity: 0,
-            duration: 2
-        }).from(secondaEra, {
-            opacity: 0,
-            duration: 2
-        }).from(terzaEra, {
-            opacity: 0,
-            duration: 2
-        }).from(after1830, {
-            opacity: 0,
-            duration: 2
-        });
-        (0, _all.ScrollTrigger).create({
-            animation: tl,
-            containerAnimation: scrollTween,
-            trigger: ".p-03",
-            start: "left center",
-            end: "+=200"
-        });
-        const tl1 = (0, _gsapDefault.default).timeline();
-        const ages = (0, _gsapDefault.default).utils.toArray(".ageMap ");
-        const animationAges = tl1.from(ages, {
-            y: -50,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.7,
-            ease: "power3.inOut"
-        }).to(ages, {
-            x: -50,
-            duration: 1,
-            stagger: 0.7,
-            ease: "power3.inOut"
-        });
-        (0, _all.ScrollTrigger).create({
-            animation: animationAges,
-            containerAnimation: scrollTween,
-            pinSpacing: false,
-            trigger: ".mapdiff",
-            start: "left center",
-            // markers: true,
-            end: "+=200"
-        });
-    };
-    window.addEventListener("resize", gifMoving());
-    requestAnimationFrame(updateCanvas);
+    updateCanvas();
 });
 
-},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","d2847929e4f80a5f":"6rkt6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
+},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","canvas-image-cover":"6rkt6","../img/Emblemata_1624_bookmark_1.jpg":"kfD9D","../img/chappebackground.png":"bXTTL","../img/Franklin_hand_bookmark_2.jpg":"4nmF6","../img/magnetism1background.png":"04BFI","../img/Faraday.png":"EhNho","../img/henry.png":"epnY2","../img/railwaymap.png":"fzAWu","../img/magnetismbackground2.png":"UWEPo","../img/giornalisti_bookmark_3.png":"iVYIW","../img/morsebackground.png":"27vSE","../img/morse.png":"fY94O","../img/testbackground.png":"40fnT","../img/morseNotes.jpg":"17P4y","../img/giornalistibackground.png":"6HSF3","../img/submarine_bookmark_4.jpg":"hjB6W","../img/shipbackground.png":"1DOSh","../img/cyrus.png":"cqWbc","../img/messagequeen.png":"hKnSK","../img/1871Telegraph lines.jpg":"TdSx2","../img/1880Telegraph lines.jpg":"gjs85","../img/1901Telegraph lines.jpg":"kyIbW","../img/caricaturebackground.png":"iglNJ"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "gsap", ()=>gsapWithCSS);
@@ -7399,6 +7275,107 @@ module.exports = (img, x, y, width, height)=>{
     return new Cover(img, x, y, width, height);
 };
 
-},{}]},["kx4kz","f2QDv"], "f2QDv", "parcelRequired091")
+},{}],"kfD9D":[function(require,module,exports) {
+module.exports = require("1918f5c3e90ca805").getBundleURL("cbFSN") + "Emblemata_1624_bookmark_1.e587e4ed.jpg" + "?" + Date.now();
 
-//# sourceMappingURL=index.js.map
+},{"1918f5c3e90ca805":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"bXTTL":[function(require,module,exports) {
+module.exports = require("8133c865dd522d8b").getBundleURL("cbFSN") + "chappebackground.53c13f6c.png" + "?" + Date.now();
+
+},{"8133c865dd522d8b":"lgJ39"}],"4nmF6":[function(require,module,exports) {
+module.exports = require("c4e941a291df36ad").getBundleURL("cbFSN") + "Franklin_hand_bookmark_2.a6bd8b72.jpg" + "?" + Date.now();
+
+},{"c4e941a291df36ad":"lgJ39"}],"04BFI":[function(require,module,exports) {
+module.exports = require("76eb02f4c05e1f32").getBundleURL("cbFSN") + "magnetism1background.a80b1f05.png" + "?" + Date.now();
+
+},{"76eb02f4c05e1f32":"lgJ39"}],"EhNho":[function(require,module,exports) {
+module.exports = require("a125f7cb7b0e4914").getBundleURL("cbFSN") + "Faraday.ff60e4e4.png" + "?" + Date.now();
+
+},{"a125f7cb7b0e4914":"lgJ39"}],"epnY2":[function(require,module,exports) {
+module.exports = require("fc1da750109e061a").getBundleURL("cbFSN") + "henry.819e7f9e.png" + "?" + Date.now();
+
+},{"fc1da750109e061a":"lgJ39"}],"fzAWu":[function(require,module,exports) {
+module.exports = require("29a006409c07f722").getBundleURL("cbFSN") + "railwaymap.cded6eb4.png" + "?" + Date.now();
+
+},{"29a006409c07f722":"lgJ39"}],"UWEPo":[function(require,module,exports) {
+module.exports = require("463f0b3edf656518").getBundleURL("cbFSN") + "magnetismbackground2.a4dd1e4c.png" + "?" + Date.now();
+
+},{"463f0b3edf656518":"lgJ39"}],"iVYIW":[function(require,module,exports) {
+module.exports = require("c8cef8245887a625").getBundleURL("cbFSN") + "giornalisti_bookmark_3.31e81354.png" + "?" + Date.now();
+
+},{"c8cef8245887a625":"lgJ39"}],"27vSE":[function(require,module,exports) {
+module.exports = require("b971b97661ac6af3").getBundleURL("cbFSN") + "morsebackground.a8ec9ec6.png" + "?" + Date.now();
+
+},{"b971b97661ac6af3":"lgJ39"}],"fY94O":[function(require,module,exports) {
+module.exports = require("5b368dc3d6788566").getBundleURL("cbFSN") + "morse.78ffece8.png" + "?" + Date.now();
+
+},{"5b368dc3d6788566":"lgJ39"}],"40fnT":[function(require,module,exports) {
+module.exports = require("361ebc44cf3fe60f").getBundleURL("cbFSN") + "testbackground.5b3d97d2.png" + "?" + Date.now();
+
+},{"361ebc44cf3fe60f":"lgJ39"}],"17P4y":[function(require,module,exports) {
+module.exports = require("61d7a4609079ecf").getBundleURL("cbFSN") + "morseNotes.11266d69.jpg" + "?" + Date.now();
+
+},{"61d7a4609079ecf":"lgJ39"}],"6HSF3":[function(require,module,exports) {
+module.exports = require("f3da2110331d93d7").getBundleURL("cbFSN") + "giornalistibackground.d84dfe3e.png" + "?" + Date.now();
+
+},{"f3da2110331d93d7":"lgJ39"}],"hjB6W":[function(require,module,exports) {
+module.exports = require("68129a80cbd0e5a0").getBundleURL("cbFSN") + "submarine_bookmark_4.ae76b9f7.jpg" + "?" + Date.now();
+
+},{"68129a80cbd0e5a0":"lgJ39"}],"1DOSh":[function(require,module,exports) {
+module.exports = require("65f5979703fb1587").getBundleURL("cbFSN") + "shipbackground.b004c8c8.png" + "?" + Date.now();
+
+},{"65f5979703fb1587":"lgJ39"}],"cqWbc":[function(require,module,exports) {
+module.exports = require("a62159ac69032abd").getBundleURL("cbFSN") + "cyrus.953b5daa.png" + "?" + Date.now();
+
+},{"a62159ac69032abd":"lgJ39"}],"hKnSK":[function(require,module,exports) {
+module.exports = require("8f71b65a12282d4d").getBundleURL("cbFSN") + "messagequeen.a7d9c4b6.png" + "?" + Date.now();
+
+},{"8f71b65a12282d4d":"lgJ39"}],"TdSx2":[function(require,module,exports) {
+module.exports = require("961f4ac69ccc6f28").getBundleURL("cbFSN") + "1871Telegraph lines.31b6a24d.jpg" + "?" + Date.now();
+
+},{"961f4ac69ccc6f28":"lgJ39"}],"gjs85":[function(require,module,exports) {
+module.exports = require("4d2838e3f93926e5").getBundleURL("cbFSN") + "1880Telegraph lines.78161b2e.jpg" + "?" + Date.now();
+
+},{"4d2838e3f93926e5":"lgJ39"}],"kyIbW":[function(require,module,exports) {
+module.exports = require("91add10d6fa3b963").getBundleURL("cbFSN") + "1901Telegraph lines.9f123a0d.jpg" + "?" + Date.now();
+
+},{"91add10d6fa3b963":"lgJ39"}],"iglNJ":[function(require,module,exports) {
+module.exports = require("75738f0f61628452").getBundleURL("cbFSN") + "caricaturebackground.6fb63334.png" + "?" + Date.now();
+
+},{"75738f0f61628452":"lgJ39"}]},["7ZVa9","8O1sU"], "8O1sU", "parcelRequire7f5a")
+
+//# sourceMappingURL=indexTelegrafo.js.map
