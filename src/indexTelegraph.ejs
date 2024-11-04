@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="../public/js/bundled/indexTelegrafo.js"></script>
+    <title>The Telegraph</title>
+  </head>
+  <body>
+
+
+    <%- include('coverArt.ejs') %>
+
+    <%- include('intro.ejs') %>
+    <!-- SECTION 1 -->
+    <section class="sectioni">
+      <div class="mainWrapper">
+        <!-- CHAPPE -->
+        <%- include('chappe.ejs') %>
+        <!-- ELECTROMAGNETISM -->
+        <%- include('electromagnetism.ejs') %>
+        <!-- MORSE -->
+        <%- include('morse.ejs') %>
+        <!-- DIFFUSION -->
+        <%- include('diffusion.ejs') %>
+        <!-- PAGE 1  -->
+        <!-- WHITE SPACE -->
+        <div class="scroller whiteSpace page"></div>
+        <!-- <div class="scroller whiteSpace page"></div> -->
+
+        <!-- END WHITE SPACE -->
+      </div>
+      <canvas id="myCanvas"></canvas>
+      <canvas id="myCanvas1"></canvas>
+    </section>
+  </body>
+</html>
