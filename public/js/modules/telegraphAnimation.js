@@ -23,27 +23,19 @@ export const initializeTelegraphAnimation = () => {
   //IMAGES
   const imageSources = [
     "/imgTelegraph/Emblemata_1624_bookmark_1.jpg",
-    "/imgTelegraph/chappebackground.png",
     "/imgTelegraph/Franklin_hand_bookmark_2.jpg",
-    "/imgTelegraph/magnetism1background.png",
     "/imgTelegraph/Faraday.png",
     "/imgTelegraph/henry.png",
     "/imgTelegraph/railwaymap.png",
-    "/imgTelegraph/magnetismbackground2.png",
     "/imgTelegraph/giornalisti_bookmark_3.png",
-    "/imgTelegraph/morsebackground.png",
     "/imgTelegraph/morse.png",
-    "/imgTelegraph/testbackground.png",
     "/imgTelegraph/morseNotes.jpg",
-    "/imgTelegraph/giornalistibackground.png",
     "/imgTelegraph/submarine_bookmark_4.jpg",
-    "/imgTelegraph/shipbackground.png",
     "/imgTelegraph/cyrus.png",
     "/imgTelegraph/messagequeen.png",
     "/imgTelegraph/1871Telegraphlines.jpg",
     "/imgTelegraph/1880Telegraphlines.jpg",
     "/imgTelegraph/1901Telegraphlines.jpg",
-    "/imgTelegraph/caricaturebackground.png",
   ];
 
   const images = [];
