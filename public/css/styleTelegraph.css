@@ -424,12 +424,11 @@ height: 100%;
 }
 .textBookmark {
   position: absolute;
-  font-size: 2;
+  font-size: 1.9vh;
   height: inherit;
   z-index: 3;
   display: flex;
   width: 100%;
-
   align-items: center;
   justify-content: center;
   color: #ebecdc;
@@ -535,7 +534,6 @@ p > .page {
 /* background */
 .backgroundContainer {
   position: absolute;
-  width: 0%;
 }
 .frame5 {
   height: 65vh;

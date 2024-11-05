@@ -624,7 +624,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     (0, _scrollingTitleAnimation.initializeScrollAnimations)();
 });
 (0, _animazioneHome.initializeAnimation)();
-document.addEventListener("DOMContentLoaded", ()=>{
+const nav1 = document.querySelector(".nav1");
+if (nav1) document.addEventListener("DOMContentLoaded", ()=>{
     (0, _menu.initializeMenu)();
 });
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -637,7 +638,7 @@ if (document.title.includes("Telegraph")) document.addEventListener("DOMContentL
     (0, _telegraphAnimation.initializeTelegraphAnimation)();
 });
 
-},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","./modules/nav":"fLOTs","./modules/scrollingTitleAnimation":"b19BA","./modules/animazioneHome":"fVMw1","./modules/menu":"7FeRP","./modules/pageTranstionHome":"85FTH","./modules/pageTransitionWorks":"iquZy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./modules/telegraphAnimation":"8g7WW"}],"fPSuC":[function(require,module,exports) {
+},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","./modules/nav":"fLOTs","./modules/scrollingTitleAnimation":"b19BA","./modules/animazioneHome":"fVMw1","./modules/menu":"7FeRP","./modules/pageTranstionHome":"85FTH","./modules/pageTransitionWorks":"iquZy","./modules/telegraphAnimation":"8g7WW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "gsap", ()=>gsapWithCSS);
@@ -7618,33 +7619,30 @@ const initializeTelegraphAnimation = ()=>{
     const ctx1 = canvas1.getContext("2d");
     const scroller = document.querySelectorAll(".scroller");
     ctx.globalCompositeOperation = "source-over";
-    bookmarkFrame.forEach((bookmark)=>{
-        console.log(bookmark);
-    });
     //IMAGES
     const imageSources = [
-        "/img/Emblemata_1624_bookmark_1.jpg",
-        "/img/chappebackground.png",
-        "/img/Franklin_hand_bookmark_2.jpg",
-        "/img/magnetism1background.png",
-        "/img/Faraday.png",
-        "/img/henry.png",
-        "/img/railwaymap.png",
-        "/img/magnetismbackground2.png",
-        "/img/giornalisti_bookmark_3.png",
-        "/img/morsebackground.png",
-        "/img/morse.png",
-        "/img/testbackground.png",
-        "/img/morseNotes.jpg",
-        "/img/giornalistibackground.png",
-        "/img/submarine_bookmark_4.jpg",
-        "/img/shipbackground.png",
-        "/img/cyrus.png",
-        "/img/messagequeen.png",
-        "/img/1871Telegraph lines.jpg",
-        "/img/1880Telegraph lines.jpg",
-        "/img/1901Telegraph lines.jpg",
-        "/img/caricaturebackground.png"
+        "/imgTelegraph/Emblemata_1624_bookmark_1.jpg",
+        "/imgTelegraph/chappebackground.png",
+        "/imgTelegraph/Franklin_hand_bookmark_2.jpg",
+        "/imgTelegraph/magnetism1background.png",
+        "/imgTelegraph/Faraday.png",
+        "/imgTelegraph/henry.png",
+        "/imgTelegraph/railwaymap.png",
+        "/imgTelegraph/magnetismbackground2.png",
+        "/imgTelegraph/giornalisti_bookmark_3.png",
+        "/imgTelegraph/morsebackground.png",
+        "/imgTelegraph/morse.png",
+        "/imgTelegraph/testbackground.png",
+        "/imgTelegraph/morseNotes.jpg",
+        "/imgTelegraph/giornalistibackground.png",
+        "/imgTelegraph/submarine_bookmark_4.jpg",
+        "/imgTelegraph/shipbackground.png",
+        "/imgTelegraph/cyrus.png",
+        "/imgTelegraph/messagequeen.png",
+        "/imgTelegraph/1871Telegraphlines.jpg",
+        "/imgTelegraph/1880Telegraphlines.jpg",
+        "/imgTelegraph/1901Telegraphlines.jpg",
+        "/imgTelegraph/caricaturebackground.png"
     ];
     const images = [];
     const bookmark = [];
@@ -7657,17 +7655,10 @@ const initializeTelegraphAnimation = ()=>{
                 loadedImages++;
                 if (loadedImages === sources.length) callback();
             };
-            if (img.src.includes("bookmark")) {
-                bookmark.push(img);
-                console.log(bookmark);
-            } else {
-                images.push(img);
-                console.log(images);
-            }
+            if (img.src.includes("bookmark")) bookmark.push(img);
+            else images.push(img);
         });
     }
-    console.log("this is bookmark", bookmark);
-    console.log("this is image", images);
     function getDimension() {
         let canvasX = canvas.getBoundingClientRect().left;
         let canvasY = canvas.getBoundingClientRect().top;
@@ -7735,11 +7726,9 @@ const initializeTelegraphAnimation = ()=>{
                 totalWidth += section.offsetHeight;
             });
             let ratioWH = coverArtSection.offsetWidth / coverArtSection.offsetHeight;
-            console.log(ratioWH);
             totalWidth = mainWrapper.offsetWidth / ratioWH + coverArtSection.offsetHeight * 3 - coverArtSection.offsetHeight;
             document.body.style.height = totalWidth + "px";
             // body.setAttribute('height', totalWidth)
-            console.log("width of sectionz", totalWidth);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
             const { frameX, frameY, frameWidth, frameHeight, frameBX, frameBY, frameWidthB, frameHeightB } = getDimension();
@@ -7833,7 +7822,7 @@ const initializeTelegraphAnimation = ()=>{
             // scale:0,
             opacity: 0
         }, "diagonali+=3");
-        //MAIN SECTIONS
+        // MAIN SECTIONS
         (0, _gsapDefault.default).from(".titoloChappe", {
             opacity: 0,
             y: "3vh",

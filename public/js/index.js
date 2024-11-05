@@ -25,9 +25,11 @@ initializeAnimation();
 ///////////////////////////MENU////////////////////////////////////
 /////////////////////////////////////////////////////////////////
 import { initializeMenu } from "./modules/menu";
+  const nav1 = document.querySelector(".nav1");
+  if(nav1){
 document.addEventListener("DOMContentLoaded", () => {
   initializeMenu();
-});
+});}
 /////////////////////////////PAGE TRANSITION HOME////////////
 import { initializeTransitionHome } from "./modules/pageTranstionHome";
 document.addEventListener("DOMContentLoaded", () => {

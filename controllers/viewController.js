@@ -1,10 +1,10 @@
 const path = require("path");
 
-exports.viewHome = (req, res) => { 
+exports.viewHome = (req, res) => {
   process.env.IS_HOMEPAGE = "true";
-res.status(200).sendFile(path.join(__dirname, "../build/index.html"));
+  res.status(200).sendFile(path.join(__dirname, "../build/index.html"));
   console.log(process.env.IS_HOMEPAGE);
-  console.log('ciao perchè sono qui?')
+  console.log("ciao perchè sono qui?");
 };
 
 exports.aboutMe = (req, res) => {
@@ -15,7 +15,9 @@ exports.aboutMe = (req, res) => {
 
 exports.webDevelopment = (req, res) => {
   process.env.IS_HOMEPAGE = "false";
-  res.status(200).sendFile(path.join(__dirname, "../build/webDevelopment.html"));
+  res
+    .status(200)
+    .sendFile(path.join(__dirname, "../build/webDevelopment.html"));
 };
 
 exports.maps = (req, res) => {
@@ -25,9 +27,13 @@ exports.maps = (req, res) => {
 
 exports.motionGraphics = (req, res) => {
   process.env.IS_HOMEPAGE = "false";
-  res.status(200).sendFile(path.join(__dirname, "../build/motionGraphics.html"));
+  res
+    .status(200)
+    .sendFile(path.join(__dirname, "../build/motionGraphics.html"));
 };
 exports.telegraphPage = (req, res) => {
   process.env.IS_HOMEPAGE = "false";
-  res.status(200).sendFile(path.join(__dirname, "../build/indexTelegraph.html"));
+  res
+    .status(200)
+    .sendFile(path.join(__dirname, "../build/indexTelegraph.html"));
 };
