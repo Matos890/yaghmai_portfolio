@@ -7621,20 +7621,20 @@ const initializeTelegraphAnimation = ()=>{
     ctx.globalCompositeOperation = "source-over";
     //IMAGES
     const imageSources = [
-        "/imgTelegraph/Emblemata_1624_bookmark_1.jpg",
-        "/imgTelegraph/Franklin_hand_bookmark_2.jpg",
-        "/imgTelegraph/Faraday.png",
-        "/imgTelegraph/henry.png",
-        "/imgTelegraph/railwaymap.png",
-        "/imgTelegraph/giornalisti_bookmark_3.png",
-        "/imgTelegraph/morse.png",
-        "/imgTelegraph/morseNotes.jpg",
-        "/imgTelegraph/submarine_bookmark_4.jpg",
-        "/imgTelegraph/cyrus.png",
-        "/imgTelegraph/messagequeen.png",
-        "/imgTelegraph/1871Telegraphlines.jpg",
-        "/imgTelegraph/1880Telegraphlines.jpg",
-        "/imgTelegraph/1901Telegraphlines.jpg"
+        "/imgTelegraphWEBP/Emblemata_1624_bookmark_1.webp",
+        "/imgTelegraphWEBP/Franklin_hand_bookmark_2.webp",
+        "/imgTelegraphWEBP/Faraday.webp",
+        "/imgTelegraphWEBP/henry.webp",
+        "/imgTelegraphWEBP/railwaymap.webp",
+        "/imgTelegraphWEBP/giornalisti_bookmark_3.webp",
+        "/imgTelegraphWEBP/morse.webp",
+        "/imgTelegraphWEBP/morseNotes.webp",
+        "/imgTelegraphWEBP/submarine_bookmark_4.webp",
+        "/imgTelegraphWEBP/cyrus.webp",
+        "/imgTelegraphWEBP/messagequeen.webp",
+        "/imgTelegraphWEBP/1871Telegraphlines.webp",
+        "/imgTelegraphWEBP/1880Telegraphlines.webp",
+        "/imgTelegraphWEBP/1901Telegraphlines.webp"
     ];
     const images = [];
     const bookmark = [];
