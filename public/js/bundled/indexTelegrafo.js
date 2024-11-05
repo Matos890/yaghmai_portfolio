@@ -589,143 +589,53 @@ var _gsap = require("gsap");
 var _gsapDefault = parcelHelpers.interopDefault(_gsap);
 var _all = require("gsap/all");
 var _gsapCore = require("gsap/gsap-core");
-var _canvasImageCover = require("canvas-image-cover");
-var _canvasImageCoverDefault = parcelHelpers.interopDefault(_canvasImageCover);
-// Importa le immagini
-var _emblemata1624Bookmark1Jpg = require("../img/Emblemata_1624_bookmark_1.jpg");
-var _emblemata1624Bookmark1JpgDefault = parcelHelpers.interopDefault(_emblemata1624Bookmark1Jpg);
-var _chappebackgroundPng = require("../img/chappebackground.png");
-var _chappebackgroundPngDefault = parcelHelpers.interopDefault(_chappebackgroundPng);
-var _franklinHandBookmark2Jpg = require("../img/Franklin_hand_bookmark_2.jpg");
-var _franklinHandBookmark2JpgDefault = parcelHelpers.interopDefault(_franklinHandBookmark2Jpg);
-var _magnetism1BackgroundPng = require("../img/magnetism1background.png");
-var _magnetism1BackgroundPngDefault = parcelHelpers.interopDefault(_magnetism1BackgroundPng);
-var _faradayPng = require("../img/Faraday.png");
-var _faradayPngDefault = parcelHelpers.interopDefault(_faradayPng);
-var _henryPng = require("../img/henry.png");
-var _henryPngDefault = parcelHelpers.interopDefault(_henryPng);
-var _railwaymapPng = require("../img/railwaymap.png");
-var _railwaymapPngDefault = parcelHelpers.interopDefault(_railwaymapPng);
-var _magnetismbackground2Png = require("../img/magnetismbackground2.png");
-var _magnetismbackground2PngDefault = parcelHelpers.interopDefault(_magnetismbackground2Png);
-var _giornalistiBookmark3Png = require("../img/giornalisti_bookmark_3.png");
-var _giornalistiBookmark3PngDefault = parcelHelpers.interopDefault(_giornalistiBookmark3Png);
-var _morsebackgroundPng = require("../img/morsebackground.png");
-var _morsebackgroundPngDefault = parcelHelpers.interopDefault(_morsebackgroundPng);
-var _morsePng = require("../img/morse.png");
-var _morsePngDefault = parcelHelpers.interopDefault(_morsePng);
-var _testbackgroundPng = require("../img/testbackground.png");
-var _testbackgroundPngDefault = parcelHelpers.interopDefault(_testbackgroundPng);
-var _morseNotesJpg = require("../img/morseNotes.jpg");
-var _morseNotesJpgDefault = parcelHelpers.interopDefault(_morseNotesJpg);
-var _giornalistibackgroundPng = require("../img/giornalistibackground.png");
-var _giornalistibackgroundPngDefault = parcelHelpers.interopDefault(_giornalistibackgroundPng);
-var _submarineBookmark4Jpg = require("../img/submarine_bookmark_4.jpg");
-var _submarineBookmark4JpgDefault = parcelHelpers.interopDefault(_submarineBookmark4Jpg);
-var _shipbackgroundPng = require("../img/shipbackground.png");
-var _shipbackgroundPngDefault = parcelHelpers.interopDefault(_shipbackgroundPng);
-var _cyrusPng = require("../img/cyrus.png");
-var _cyrusPngDefault = parcelHelpers.interopDefault(_cyrusPng);
-var _messagequeenPng = require("../img/messagequeen.png");
-var _messagequeenPngDefault = parcelHelpers.interopDefault(_messagequeenPng);
-var _1871TelegraphLinesJpg = require("../img/1871Telegraph lines.jpg");
-var _1871TelegraphLinesJpgDefault = parcelHelpers.interopDefault(_1871TelegraphLinesJpg);
-var _1880TelegraphLinesJpg = require("../img/1880Telegraph lines.jpg");
-var _1880TelegraphLinesJpgDefault = parcelHelpers.interopDefault(_1880TelegraphLinesJpg);
-var _1901TelegraphLinesJpg = require("../img/1901Telegraph lines.jpg");
-var _1901TelegraphLinesJpgDefault = parcelHelpers.interopDefault(_1901TelegraphLinesJpg);
-var _caricaturebackgroundPng = require("../img/caricaturebackground.png");
-var _caricaturebackgroundPngDefault = parcelHelpers.interopDefault(_caricaturebackgroundPng);
+var _images = require("./images"); // Importa le immagini da images.js
 (0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
+const cover = require("7d8fdd37424707ec");
 const canvas = document.getElementById("myCanvas");
 const canvas1 = document.getElementById("myCanvas1");
 const frame = document.querySelectorAll("[class^='frame']");
-const body = document.querySelector("body");
 const bookmarkFrame = document.querySelectorAll("[class^='bookmarkFrame']");
-const frame1 = document.querySelector(".frame1");
-const sectionz = document.querySelectorAll("section");
 const ctx = canvas.getContext("2d");
-const coverArtSection = document.querySelector(".coverArtSection");
-const introSection = document.querySelector(".introSection");
-const mainWrapper = document.querySelector(".mainWrapper");
-const whiteSpace = document.querySelectorAll(".whiteSpace");
 const ctx1 = canvas1.getContext("2d");
+const mainWrapper = document.querySelector(".mainWrapper");
+const coverArtSection = document.querySelector(".coverArtSection");
 const scroller = document.querySelectorAll(".scroller");
-ctx.globalCompositeOperation = "source-over";
-bookmarkFrame.forEach((bookmark)=>{
-    console.log(bookmark);
-});
-// IMAGES
-const imageSources = [
-    (0, _emblemata1624Bookmark1JpgDefault.default),
-    (0, _chappebackgroundPngDefault.default),
-    (0, _franklinHandBookmark2JpgDefault.default),
-    (0, _magnetism1BackgroundPngDefault.default),
-    (0, _faradayPngDefault.default),
-    (0, _henryPngDefault.default),
-    (0, _railwaymapPngDefault.default),
-    (0, _magnetismbackground2PngDefault.default),
-    (0, _giornalistiBookmark3PngDefault.default),
-    (0, _morsebackgroundPngDefault.default),
-    (0, _morsePngDefault.default),
-    (0, _testbackgroundPngDefault.default),
-    (0, _morseNotesJpgDefault.default),
-    (0, _giornalistibackgroundPngDefault.default),
-    (0, _submarineBookmark4JpgDefault.default),
-    (0, _shipbackgroundPngDefault.default),
-    (0, _cyrusPngDefault.default),
-    (0, _messagequeenPngDefault.default),
-    (0, _1871TelegraphLinesJpgDefault.default),
-    (0, _1880TelegraphLinesJpgDefault.default),
-    (0, _1901TelegraphLinesJpgDefault.default),
-    (0, _caricaturebackgroundPngDefault.default)
-];
 const images = [];
 const bookmark = [];
+// Precarica le immagini e organizza l'array `images` e `bookmark`
 function preloadImages(sources, callback) {
     let loadedImages = 0;
-    sources.forEach((src, index)=>{
+    sources.forEach((src)=>{
         const img = new Image();
         img.src = src;
         img.onload = ()=>{
             loadedImages++;
             if (loadedImages === sources.length) callback();
         };
-        if (img.src.includes("bookmark")) {
-            bookmark.push(img);
-            console.log(bookmark);
-        } else {
-            images.push(img);
-            console.log(images);
-        }
+        if (img.src.includes("bookmark")) bookmark.push(img);
+        else images.push(img);
     });
 }
-console.log("this is bookmark", bookmark);
-console.log("this is image", images);
+// Funzione per ottenere le dimensioni e le posizioni degli elementi
 function getDimension() {
-    let canvasX = canvas.getBoundingClientRect().left;
-    let canvasY = canvas.getBoundingClientRect().top;
-    let frameX = [];
-    let frameY = [];
-    let frameWidth = [];
-    let frameHeight = [];
-    let frameBX = [];
-    let frameBY = [];
-    let frameWidthB = [];
-    let frameHeightB = [];
-    frame.forEach((frame, i)=>{
-        let rect = frame.getBoundingClientRect();
+    const canvasX = canvas.getBoundingClientRect().left;
+    const canvasY = canvas.getBoundingClientRect().top;
+    let frameX = [], frameY = [], frameWidth = [], frameHeight = [];
+    let frameBX = [], frameBY = [], frameWidthB = [], frameHeightB = [];
+    frame.forEach((f)=>{
+        const rect = f.getBoundingClientRect();
         frameX.push(rect.left - canvasX);
         frameY.push(rect.top - canvasY);
-        frameWidth.push(frame.offsetWidth);
-        frameHeight.push(frame.offsetHeight);
+        frameWidth.push(f.offsetWidth);
+        frameHeight.push(f.offsetHeight);
     });
-    bookmarkFrame.forEach((bookFrame, i)=>{
-        let rect = bookFrame.getBoundingClientRect();
+    bookmarkFrame.forEach((bf)=>{
+        const rect = bf.getBoundingClientRect();
         frameBX.push(rect.left - canvasX);
         frameBY.push(rect.top - canvasY);
-        frameWidthB.push(bookFrame.offsetWidth);
-        frameHeightB.push(bookFrame.offsetHeight);
+        frameWidthB.push(bf.offsetWidth);
+        frameHeightB.push(bf.offsetHeight);
     });
     return {
         frameX,
@@ -738,43 +648,19 @@ function getDimension() {
         frameHeightB
     };
 }
+// Disegna i segnalibri su canvas con le dimensioni specifiche
 function bookmarkPos(bookmark, frameBX, frameBY, frameWidthB, frameHeightB) {
-    //1.
-    (0, _canvasImageCoverDefault.default)(bookmark[0], frameBX[0], frameBY[0], frameWidthB[0], frameHeightB[0], {
-        mode: "cover"
-    }).zoom(1.5).pan(0.7, 0).render(ctx);
-    //2.
-    (0, _canvasImageCoverDefault.default)(bookmark[1], frameBX[1], frameBY[1], frameWidthB[1], frameHeightB[1], {
-        mode: "cover"
-    }).zoom(2.5).pan(0.2, 0).render(ctx);
-    //3.
-    (0, _canvasImageCoverDefault.default)(bookmark[2], frameBX[2], frameBY[2], frameWidthB[2], frameHeightB[2], {
-        mode: "cover"
-    }).zoom(1.2).pan(0.295, 0).render(ctx);
-    //4.
-    (0, _canvasImageCoverDefault.default)(bookmark[3], frameBX[3], frameBY[3], frameWidthB[3], frameHeightB[3], {
-        mode: "cover"
-    }).zoom(1.2).pan(0.5, 0).render(ctx);
-}
-function draw() {
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-    canvas.setAttribute("width", screenWidth);
-    canvas.setAttribute("height", screenHeight);
-    canvas1.setAttribute("width", screenWidth);
-    canvas1.setAttribute("height", screenHeight);
-    let totalWidth = 0;
-    scroller.forEach((section)=>{
-        totalWidth += section.offsetHeight;
+    bookmark.forEach((img, i)=>{
+        cover(img, frameBX[i], frameBY[i], frameWidthB[i], frameHeightB[i], {
+            mode: "cover"
+        }).zoom(1.5).render(ctx);
     });
-    let ratioWH = coverArtSection.offsetWidth / coverArtSection.offsetHeight;
-    console.log(ratioWH);
-    totalWidth = mainWrapper.offsetWidth / ratioWH + coverArtSection.offsetHeight * 3 - coverArtSection.offsetHeight;
-    document.body.style.height = totalWidth + "px";
-    console.log("width of sectionz", totalWidth);
+}
+// Funzione di disegno su canvas
+function draw() {
+    const { frameX, frameY, frameWidth, frameHeight, frameBX, frameBY, frameWidthB, frameHeightB } = getDimension();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
-    const { frameX, frameY, frameWidth, frameHeight, frameBX, frameBY, frameWidthB, frameHeightB } = getDimension();
     bookmarkPos(bookmark, frameBX, frameBY, frameWidthB, frameHeightB);
     images.forEach((imgObj, i)=>{
         if (imgObj.src.includes("background")) {
@@ -789,35 +675,55 @@ function draw() {
         }
     });
 }
+// Aggiornamento continuo del canvas
 function updateCanvas() {
     draw();
     requestAnimationFrame(updateCanvas);
 }
-function calculatePositionsGif() {
-    const container1 = document.querySelector(".containerFrame2");
-    const positionContainer1X = container1.getBoundingClientRect().left;
-    const canvasPositionX = canvas.getBoundingClientRect().left;
-    const gifX = positionContainer1X - canvasPositionX;
-    const container2 = document.querySelector(".containerFrame2Copy");
-    const positionContainer2X = container2.getBoundingClientRect().left;
-    const endTrigger = positionContainer2X - canvasPositionX;
-    const distance = endTrigger - gifX;
-    return {
-        positionContainer1X,
-        gifX,
-        positionContainer2X,
-        endTrigger,
-        distance
-    };
+// Animazioni con GSAP e ScrollTrigger
+function animateContent() {
+    const tlOpening = (0, _gsapDefault.default).timeline().add("diagonali");
+    tlOpening.from(".imgDiag1", {
+        x: 2000,
+        duration: 5,
+        filter: "blur(3px)"
+    }, "diagonali").from(".imgRed", {
+        duration: 2,
+        scale: 0,
+        ease: "circ.in"
+    }, "diagonali").from(".titleContainer", {
+        x: 300,
+        opacity: 0,
+        duration: 3,
+        ease: "power3.out"
+    }, "diagonali+=2");
+    const sections = (0, _gsapDefault.default).utils.toArray(".mainWrapper .scroller ");
+    let scrollTween = (0, _gsapDefault.default).to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        duration: 5,
+        delay: 0.2,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".sectioni",
+            pin: true,
+            scrub: 5,
+            pinSpacing: false,
+            invalidateOnRefresh: true,
+            start: "center center",
+            end: ()=>`+=${mainWrapper.offsetWidth / (coverArtSection.offsetWidth / coverArtSection.offsetHeight)}`,
+            onUpdate: ()=>requestAnimationFrame(draw)
+        }
+    });
 }
-preloadImages(imageSources, ()=>{
+// Precarica le immagini, configura e attiva le animazioni e il rendering del canvas
+preloadImages((0, _images.imageSources), ()=>{
     window.addEventListener("resize", draw);
     window.addEventListener("load", draw);
-    let { positionContainer1X, gifX, positionContainer2X, endTrigger, distance } = calculatePositionsGif();
-    updateCanvas();
+    requestAnimationFrame(updateCanvas);
+    animateContent();
 });
 
-},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","canvas-image-cover":"6rkt6","../img/Emblemata_1624_bookmark_1.jpg":"kfD9D","../img/chappebackground.png":"bXTTL","../img/Franklin_hand_bookmark_2.jpg":"4nmF6","../img/magnetism1background.png":"04BFI","../img/Faraday.png":"EhNho","../img/henry.png":"epnY2","../img/railwaymap.png":"fzAWu","../img/magnetismbackground2.png":"UWEPo","../img/giornalisti_bookmark_3.png":"iVYIW","../img/morsebackground.png":"27vSE","../img/morse.png":"fY94O","../img/testbackground.png":"40fnT","../img/morseNotes.jpg":"17P4y","../img/giornalistibackground.png":"6HSF3","../img/submarine_bookmark_4.jpg":"hjB6W","../img/shipbackground.png":"1DOSh","../img/cyrus.png":"cqWbc","../img/messagequeen.png":"hKnSK","../img/1871Telegraph lines.jpg":"TdSx2","../img/1880Telegraph lines.jpg":"gjs85","../img/1901Telegraph lines.jpg":"kyIbW","../img/caricaturebackground.png":"iglNJ"}],"fPSuC":[function(require,module,exports) {
+},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","7d8fdd37424707ec":"6rkt6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./images":"03hWU"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "gsap", ()=>gsapWithCSS);
@@ -7275,7 +7181,36 @@ module.exports = (img, x, y, width, height)=>{
     return new Cover(img, x, y, width, height);
 };
 
-},{}],"kfD9D":[function(require,module,exports) {
+},{}],"03hWU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "imageSources", ()=>imageSources);
+const imageSources = [
+    require("1363fabe59c01235"),
+    require("68044f2784756450"),
+    require("bde5d6f9f7315177"),
+    require("b91874e867e2dd79"),
+    require("d3d1647d648502c3"),
+    require("631621ee2d9af8a1"),
+    require("6c2f597f82321dfd"),
+    require("e0d6edef9a5c8d9e"),
+    require("78073f8ec3a0b23"),
+    require("81c3bd2d4441970b"),
+    require("3011cc007da4291b"),
+    require("c9c0c957d4c835db"),
+    require("9260bb363da1d728"),
+    require("9f6f702a81e79109"),
+    require("918dee0d7794fc37"),
+    require("5fc4eec9d4996c65"),
+    require("af7f49d240a24eda"),
+    require("16e1e17c6ad270cf"),
+    require("fa1e325ed52e5cd4"),
+    require("e76e7256b0af63b7"),
+    require("4aa8c1dbef2ed57b"),
+    require("9ac9ce066ca3729d")
+];
+
+},{"1363fabe59c01235":"kfD9D","68044f2784756450":"bXTTL","bde5d6f9f7315177":"4nmF6","b91874e867e2dd79":"04BFI","d3d1647d648502c3":"EhNho","631621ee2d9af8a1":"epnY2","6c2f597f82321dfd":"fzAWu","e0d6edef9a5c8d9e":"UWEPo","78073f8ec3a0b23":"iVYIW","81c3bd2d4441970b":"27vSE","3011cc007da4291b":"fY94O","c9c0c957d4c835db":"40fnT","9260bb363da1d728":"17P4y","9f6f702a81e79109":"6HSF3","918dee0d7794fc37":"hjB6W","5fc4eec9d4996c65":"1DOSh","af7f49d240a24eda":"cqWbc","16e1e17c6ad270cf":"hKnSK","fa1e325ed52e5cd4":"TdSx2","e76e7256b0af63b7":"gjs85","4aa8c1dbef2ed57b":"kyIbW","9ac9ce066ca3729d":"iglNJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kfD9D":[function(require,module,exports) {
 module.exports = require("1918f5c3e90ca805").getBundleURL("cbFSN") + "Emblemata_1624_bookmark_1.e587e4ed.jpg" + "?" + Date.now();
 
 },{"1918f5c3e90ca805":"lgJ39"}],"lgJ39":[function(require,module,exports) {
