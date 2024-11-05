@@ -553,37 +553,29 @@ p > .page {
 #map > .st1 {
   stroke-width: 0.5;
 }
-
 #cities > .st4,
-#cities > .st5 {
+.st5 {
   font-size: clamp(12px, 1.5rem, 2rem);
 }
-
 #map {
   stroke-width: 1;
 }
-
 circle {
-  r: 1.5vw; /* Use radius for SVG circles */
+  width: 3vw;
 }
-
 #primaEra > .st7 {
   stroke: #000000;
-  /* z-index removed, as it doesn't work in SVG */
+  z-index: -1;
 }
-
 #secondaEra > .st7 {
   stroke: #ec7b11;
 }
-
 #terzaEra > .st7 {
   stroke: #ece939;
 }
-
 #after1830 > .st7 {
   stroke: #5db828;
 }
-
 
 /* SECTION MAGNETISM */
 /* BookMark 2 */

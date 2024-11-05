@@ -46,3 +46,9 @@ if (document.title.includes("|"))
 //   scrollingELements();
 
 // })
+
+import { initializeTelegraphAnimation } from "./modules/telegraphAnimation";
+if (document.title.includes("Telegraph"))
+  document.addEventListener("DOMContentLoaded", () => {
+    initializeTelegraphAnimation();
+  });

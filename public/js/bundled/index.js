@@ -607,6 +607,13 @@ var _menu = require("./modules/menu");
 var _pageTranstionHome = require("./modules/pageTranstionHome");
 ////////////////////////////PAGE TRANSITION ABOUT ME /////////////
 var _pageTransitionWorks = require("./modules/pageTransitionWorks");
+////////////////////ANIMATION ELEMENTS WITH SCROLL//////
+// import { scrollingELements } from "./modules/scrollingElementsWork";
+// if(document.title.includes('|'))
+// document.addEventListener('DOMContentLoaded',()=>{
+//   scrollingELements();
+// })
+var _telegraphAnimation = require("./modules/telegraphAnimation");
 (0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
 const logoNav = document.querySelector(".animatedLogo");
 document.addEventListener("DOMContentLoaded", ()=>{});
@@ -625,14 +632,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 if (document.title.includes("|")) document.addEventListener("DOMContentLoaded", ()=>{
     (0, _pageTransitionWorks.initializeTransitionAbout)();
-}); ////////////////////ANIMATION ELEMENTS WITH SCROLL//////
- // import { scrollingELements } from "./modules/scrollingElementsWork";
- // if(document.title.includes('|'))
- // document.addEventListener('DOMContentLoaded',()=>{
- //   scrollingELements();
- // })
+});
+if (document.title.includes("Telegraph")) document.addEventListener("DOMContentLoaded", ()=>{
+    (0, _telegraphAnimation.initializeTelegraphAnimation)();
+});
 
-},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","./modules/nav":"fLOTs","./modules/scrollingTitleAnimation":"b19BA","./modules/animazioneHome":"fVMw1","./modules/menu":"7FeRP","./modules/pageTranstionHome":"85FTH","./modules/pageTransitionWorks":"iquZy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
+},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","./modules/nav":"fLOTs","./modules/scrollingTitleAnimation":"b19BA","./modules/animazioneHome":"fVMw1","./modules/menu":"7FeRP","./modules/pageTranstionHome":"85FTH","./modules/pageTransitionWorks":"iquZy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./modules/telegraphAnimation":"8g7WW"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "gsap", ()=>gsapWithCSS);
@@ -7586,6 +7591,462 @@ function scrollingELements() {
     });
 }
 
-},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kx4kz","f2QDv"], "f2QDv", "parcelRequire7f5a")
+},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8g7WW":[function(require,module,exports) {
+// animations.js
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initializeTelegraphAnimation", ()=>initializeTelegraphAnimation);
+var _gsap = require("gsap");
+var _gsapDefault = parcelHelpers.interopDefault(_gsap);
+var _all = require("gsap/all");
+var _gsapCore = require("gsap/gsap-core");
+(0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
+const initializeTelegraphAnimation = ()=>{
+    const cover = require("426c7e0688609b44");
+    const canvas = document.getElementById("myCanvas");
+    const canvas1 = document.getElementById("myCanvas1");
+    const frame = document.querySelectorAll("[class^='frame']");
+    const body = document.querySelector("body");
+    const bookmarkFrame = document.querySelectorAll("[class^='bookmarkFrame']");
+    const frame1 = document.querySelector(".frame1");
+    const sectionz = document.querySelectorAll("section");
+    const ctx = canvas.getContext("2d");
+    const coverArtSection = document.querySelector(".coverArtSection");
+    const introSection = document.querySelector(".introSection");
+    const mainWrapper = document.querySelector(".mainWrapper");
+    const whiteSpace = document.querySelectorAll(".whiteSpace");
+    const ctx1 = canvas1.getContext("2d");
+    const scroller = document.querySelectorAll(".scroller");
+    ctx.globalCompositeOperation = "source-over";
+    bookmarkFrame.forEach((bookmark)=>{
+        console.log(bookmark);
+    });
+    //IMAGES
+    const imageSources = [
+        "/img/Emblemata_1624_bookmark_1.jpg",
+        "/img/chappebackground.png",
+        "/img/Franklin_hand_bookmark_2.jpg",
+        "/img/magnetism1background.png",
+        "/img/Faraday.png",
+        "/img/henry.png",
+        "/img/railwaymap.png",
+        "/img/magnetismbackground2.png",
+        "/img/giornalisti_bookmark_3.png",
+        "/img/morsebackground.png",
+        "/img/morse.png",
+        "/img/testbackground.png",
+        "/img/morseNotes.jpg",
+        "/img/giornalistibackground.png",
+        "/img/submarine_bookmark_4.jpg",
+        "/img/shipbackground.png",
+        "/img/cyrus.png",
+        "/img/messagequeen.png",
+        "/img/1871Telegraph lines.jpg",
+        "/img/1880Telegraph lines.jpg",
+        "/img/1901Telegraph lines.jpg",
+        "/img/caricaturebackground.png"
+    ];
+    const images = [];
+    const bookmark = [];
+    function preloadImages(sources, callback) {
+        let loadedImages = 0;
+        sources.forEach((src, index)=>{
+            const img = new Image();
+            img.src = src;
+            img.onload = ()=>{
+                loadedImages++;
+                if (loadedImages === sources.length) callback();
+            };
+            if (img.src.includes("bookmark")) {
+                bookmark.push(img);
+                console.log(bookmark);
+            } else {
+                images.push(img);
+                console.log(images);
+            }
+        });
+    }
+    console.log("this is bookmark", bookmark);
+    console.log("this is image", images);
+    function getDimension() {
+        let canvasX = canvas.getBoundingClientRect().left;
+        let canvasY = canvas.getBoundingClientRect().top;
+        let frameX = [];
+        let frameY = [];
+        let frameWidth = [];
+        let frameHeight = [];
+        let frameBX = [];
+        let frameBY = [];
+        let frameWidthB = [];
+        let frameHeightB = [];
+        frame.forEach((frame, i)=>{
+            let rect = frame.getBoundingClientRect();
+            frameX.push(rect.left - canvasX);
+            frameY.push(rect.top - canvasY);
+            frameWidth.push(frame.offsetWidth);
+            frameHeight.push(frame.offsetHeight);
+        });
+        bookmarkFrame.forEach((bookFrame, i)=>{
+            let rect = bookFrame.getBoundingClientRect();
+            frameBX.push(rect.left - canvasX);
+            frameBY.push(rect.top - canvasY);
+            frameWidthB.push(bookFrame.offsetWidth);
+            frameHeightB.push(bookFrame.offsetHeight);
+        });
+        return {
+            frameX,
+            frameY,
+            frameWidth,
+            frameHeight,
+            frameBX,
+            frameBY,
+            frameWidthB,
+            frameHeightB
+        };
+    }
+    function bookmarkPos(bookmark, frameBX, frameBY, frameWidthB, frameHeightB) {
+        //1.
+        cover(bookmark[0], frameBX[0], frameBY[0], frameWidthB[0], frameHeightB[0], {
+            mode: "cover"
+        }).zoom(1.5).pan(0.7, 0).render(ctx);
+        //2.
+        cover(bookmark[1], frameBX[1], frameBY[1], frameWidthB[1], frameHeightB[1], {
+            mode: "cover"
+        }).zoom(2.5).pan(0.2, 0).render(ctx);
+        //3.
+        cover(bookmark[2], frameBX[2], frameBY[2], frameWidthB[2], frameHeightB[2], {
+            mode: "cover"
+        }).zoom(1.2).pan(0.295, 0).render(ctx);
+        //4.
+        cover(bookmark[3], frameBX[3], frameBY[3], frameWidthB[3], frameHeightB[3], {
+            mode: "cover"
+        }).zoom(1.2).pan(0.5, 0).render(ctx);
+    }
+    function draw() {
+        {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            canvas.setAttribute("width", screenWidth);
+            canvas.setAttribute("height", screenHeight);
+            canvas1.setAttribute("width", screenWidth);
+            canvas1.setAttribute("height", screenHeight);
+            let totalWidth = 0;
+            scroller.forEach((section)=>{
+                totalWidth += section.offsetHeight;
+            });
+            let ratioWH = coverArtSection.offsetWidth / coverArtSection.offsetHeight;
+            console.log(ratioWH);
+            totalWidth = mainWrapper.offsetWidth / ratioWH + coverArtSection.offsetHeight * 3 - coverArtSection.offsetHeight;
+            document.body.style.height = totalWidth + "px";
+            // body.setAttribute('height', totalWidth)
+            console.log("width of sectionz", totalWidth);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
+            const { frameX, frameY, frameWidth, frameHeight, frameBX, frameBY, frameWidthB, frameHeightB } = getDimension();
+            bookmarkPos(bookmark, frameBX, frameBY, frameWidthB, frameHeightB);
+            images.forEach((imgObj, i)=>{
+                if (imgObj.src.includes("background")) {
+                    ctx1.globalAlpha = 0.2;
+                    ctx1.drawImage(imgObj, frameX[i], frameY[i], frameWidth[i], frameHeight[i]);
+                // } else if (imgObj.src.includes("bookmark")) {
+                //   cover(imgObj, frameX[i], frameY[i], frameWidth[i], frameHeight[i], {
+                //     mode: "cover",
+                //   })
+                //     .zoom(1.5)
+                //     .pan(0.7, 0)
+                //     .render(ctx);}
+                } else {
+                    ctx.shadowColor = "rgba(0, 0, 0, 0.4)";
+                    ctx.shadowBlur = 7;
+                    ctx.shadowOffsetX = 10;
+                    ctx.shadowOffsetY = 10;
+                    ctx.drawImage(imgObj, frameX[i], frameY[i], frameWidth[i], frameHeight[i]);
+                }
+            });
+        }
+    }
+    function updateCanvas() {
+        draw();
+        requestAnimationFrame(updateCanvas);
+    }
+    function calculatePositionsGif() {
+        const container1 = document.querySelector(".containerFrame2");
+        const positionContainer1X = container1.getBoundingClientRect().left;
+        const canvasPositionX = canvas.getBoundingClientRect().left;
+        const gifX = positionContainer1X - canvasPositionX;
+        const container2 = document.querySelector(".containerFrame2Copy");
+        const positionContainer2X = container2.getBoundingClientRect().left;
+        const endTrigger = positionContainer2X - canvasPositionX;
+        const distance = endTrigger - gifX;
+        return {
+            positionContainer1X,
+            gifX,
+            positionContainer2X,
+            endTrigger,
+            distance
+        };
+    }
+    preloadImages(imageSources, ()=>{
+        window.addEventListener("resize", draw);
+        window.addEventListener("load", draw);
+        let { positionContainer1X, gifX, positionContainer2X, endTrigger, distance } = calculatePositionsGif();
+        window.addEventListener("resize", ()=>{
+            ({ positionContainer1X, gifX, positionContainer2X, endTrigger, distance } = calculatePositionsGif());
+        });
+        ///OPENING
+        const tlOpening = (0, _gsapDefault.default).timeline();
+        tlOpening.add("diagonali");
+        tlOpening.addLabel("redTel");
+        tlOpening.from(".imgDiag1", {
+            x: 2000,
+            duration: 5,
+            ease: "power1.inOut",
+            filter: "blur(3px)"
+        }, "diagonali").from(".imgDiag2", {
+            x: 2000,
+            duration: 5,
+            filter: "blur(3px)"
+        }, "diagonali").from(".imgRed", {
+            duration: 2,
+            ease: "circ.in",
+            scale: 0
+        }, "diagonali").from(".titleContainer", {
+            x: 300,
+            opacity: 0,
+            duration: 3,
+            ease: "power3.out"
+        }, "diagonali+=2").from(".squareContainer", {
+            x: 200,
+            opacity: 0,
+            ease: "power3.out"
+        }, "diagonali+=2").from(".torpedoFish", {
+            x: 200,
+            duration: 3,
+            opacity: 0
+        }, "diagonali+=2").from(".naveContainer", {
+            x: 1200,
+            duration: 4,
+            ease: "power3.inOut"
+        }, "diagonali").from(".telegraphImg", {
+            duration: 2,
+            ease: "circ.in",
+            // scale:0,
+            opacity: 0
+        }, "diagonali+=3");
+        //MAIN SECTIONS
+        (0, _gsapDefault.default).from(".titoloChappe", {
+            opacity: 0,
+            y: "3vh",
+            duration: 1,
+            ease: "power1.inOut"
+        });
+        (0, _gsapDefault.default).from(".spanBookmark", {
+            opacity: 0,
+            y: "10vh",
+            stagger: 0.2,
+            duration: 5
+        });
+        const sections = (0, _gsapDefault.default).utils.toArray(".mainWrapper .scroller ");
+        let scrollTween = (0, _gsapDefault.default).to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            duration: 5,
+            delay: 0.2,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".sectioni",
+                // markers:true,
+                pin: true,
+                scrub: 5,
+                pinSpacing: false,
+                invalidateOnRefresh: true,
+                start: "center center",
+                end: ()=>`+=${mainWrapper.offsetWidth / (coverArtSection.offsetWidth / coverArtSection.offsetHeight)}`,
+                onUpdate: ()=>{
+                    requestAnimationFrame(draw);
+                }
+            }
+        });
+        const gifMoving = function() {
+            (0, _gsapDefault.default).to(".gif1", {
+                x: ()=>{
+                    const container1 = document.querySelector(".containerFrame2");
+                    const positionContainer1X = container1.getBoundingClientRect().left;
+                    const canvasPositionX = canvas.getBoundingClientRect().left;
+                    const gifX = positionContainer1X - canvasPositionX;
+                    const container2 = document.querySelector(".containerFrame2Copy");
+                    const positionContainer2X = container2.getBoundingClientRect().left;
+                    const endTrigger = positionContainer2X - canvasPositionX;
+                    const distance = endTrigger - gifX;
+                    return distance;
+                },
+                ease: "power1.inOut",
+                scrollTrigger: {
+                    trigger: ".gif1",
+                    // endTrigger:'containerFrame2Copy',
+                    containerAnimation: scrollTween,
+                    horizontal: true,
+                    pin: true,
+                    scrub: true,
+                    pinType: "transform",
+                    pinSpacing: false,
+                    invalidateOnRefresh: true,
+                    start: ()=>`0   ${gifX}`,
+                    end: ()=>`center  -${endTrigger}`
+                }
+            });
+            //-- MAP ANIMATION //
+            const tl = (0, _gsapDefault.default).timeline();
+            tl.add("start").from(map, {
+                opacity: 0,
+                duration: 2
+            }, "start").from(pallini, {
+                opacity: 0,
+                duration: 2
+            }, "start").from(cities, {
+                opacity: 0,
+                duration: 2
+            }).from(primaEra, {
+                opacity: 0,
+                duration: 2
+            }).from(secondaEra, {
+                opacity: 0,
+                duration: 2
+            }).from(terzaEra, {
+                opacity: 0,
+                duration: 2
+            }).from(after1830, {
+                opacity: 0,
+                duration: 2
+            });
+            (0, _all.ScrollTrigger).create({
+                animation: tl,
+                containerAnimation: scrollTween,
+                trigger: ".p-03",
+                start: "left center",
+                end: "+=200"
+            });
+            const tl1 = (0, _gsapDefault.default).timeline();
+            const ages = (0, _gsapDefault.default).utils.toArray(".ageMap ");
+            const animationAges = tl1.from(ages, {
+                y: -50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.7,
+                ease: "power3.inOut"
+            }).to(ages, {
+                x: -50,
+                duration: 1,
+                stagger: 0.7,
+                ease: "power3.inOut"
+            });
+            (0, _all.ScrollTrigger).create({
+                animation: animationAges,
+                containerAnimation: scrollTween,
+                pinSpacing: false,
+                trigger: ".mapdiff",
+                start: "left center",
+                // markers: true,
+                end: "+=200"
+            });
+        };
+        window.addEventListener("resize", gifMoving());
+        requestAnimationFrame(updateCanvas);
+    });
+};
+
+},{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","426c7e0688609b44":"6rkt6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6rkt6":[function(require,module,exports) {
+class Cover {
+    /**
+   * Provides a mechanism to draw an image in canvas such that it will cover the
+   * area provided exactly.
+   *
+   * @param {Canvas.Image} img the image to render
+   * @param {number} x offset x coordinate on the canvas
+   * @param {number} y offset y coordinate on the canvas
+   * @param {number} width width to fit to on the canvas
+   * @param {number} height height to fit to on the canvas
+   * @returns {Cover}
+   */ constructor(img, x, y, width, height){
+        const ir = img.width / img.height;
+        const r = width / height;
+        this.img = img;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.bounds = [
+            {
+                width: img.width,
+                height: img.height,
+                sx: 0,
+                sy: 0
+            }
+        ];
+        this.sw = ir < r ? img.width : img.height * r;
+        this.sh = ir < r ? img.width / r : img.height;
+        this.pan(0.5, 0.5);
+    }
+    /**
+   * Doesn't actually crop the input image but does redefine the bounds of the
+   * image for the sake of panning. ie. after a crop, the pan cx and cy will
+   * be with regard to the currently defined area rather than the whole image
+   * or previously cropped area.
+   *
+   * @returns {Cover}
+   */ crop() {
+        const { sw: width, sh: height, sx, sy } = this;
+        this.bounds.push({
+            width,
+            height,
+            sx,
+            sy
+        });
+        return this;
+    }
+    /**
+   * Change the center point of the image.
+   *
+   * @param {number} cx value between 0 and 1 representing the left or right
+   *   side of the image bounds. The bounds will be the whole image or the
+   *   defined source area at the time of the last crop().
+   * @param {number} cy value between 0 and 1 representing the top or the
+   *   bottom of the image bounds.
+   * @returns {Cover}
+   */ pan(cx, cy) {
+        if (cx < 0 || cx > 1) throw new Error("make sure 0 < cx < 1 ");
+        if (cy < 0 || cy > 1) throw new Error("make sure 0 < cy < 1 ");
+        const { width, height, sx, sy } = this.bounds[this.bounds.length - 1];
+        this.sx = sx + (width - this.sw) * cx;
+        this.sy = sy + (height - this.sh) * cy;
+        return this;
+    }
+    /**
+   * Zoom in at the current location.
+   *
+   * @param {number} factor how much to zoom in by (>0).
+   * @returns {Cover}
+   */ zoom(factor) {
+        if (factor <= 0) throw new Error("zoom not > 0");
+        this.sx += (this.sw - this.sw / factor) / 2;
+        this.sy += (this.sh - this.sh / factor) / 2;
+        this.sw /= factor;
+        this.sh /= factor;
+        return this;
+    }
+    /**
+   * Render to the provided context.
+   *
+   * @param {CanvasRenderingContext2D} ctx canvas context to render to
+   * @returns {Cover}
+   */ render(ctx) {
+        ctx.drawImage(this.img, this.sx, this.sy, this.sw, this.sh, this.x, this.y, this.width, this.height); // destination
+        return this;
+    }
+}
+module.exports = (img, x, y, width, height)=>{
+    return new Cover(img, x, y, width, height);
+};
+
+},{}]},["kx4kz","f2QDv"], "f2QDv", "parcelRequire7f5a")
 
 //# sourceMappingURL=index.js.map

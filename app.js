@@ -10,6 +10,7 @@ app.use("/", viewRoute);
 // Configurare la directory dei file statici
 app.use(express.static(path.join(__dirname, "build")));
 
+app.use(express.static(path.join(__dirname, "public")));
 // Utilizzare la rotta definita
 // Definire la rotta per la root prima del middleware statico
 // Avviare il server sulla porta 5000
