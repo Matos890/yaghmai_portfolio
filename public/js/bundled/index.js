@@ -634,9 +634,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
 if (document.title.includes("|")) document.addEventListener("DOMContentLoaded", ()=>{
     (0, _pageTransitionWorks.initializeTransitionAbout)();
 });
-if (document.title.includes("Telegraph")) document.addEventListener("DOMContentLoaded", ()=>{
-    (0, _telegraphAnimation.initializeTelegraphAnimation)();
-});
+// Controlla il titolo per determinare se attivare l'animazione specifica
+if (document.title.includes("Telegraph")) {
+    const loading1 = document.getElementById("loading");
+    const loader1 = document.getElementById("loader");
+    document.addEventListener("DOMContentLoaded", ()=>{
+        // Mostra il contenuto principale solo dopo aver nascosto il loader
+        (0, _telegraphAnimation.initializeTelegraphAnimation)();
+    });
+}
+// Nasconde il loader e mostra il contenuto quando la pagina è completamente caricata
+window.onload = function() {
+    loading.remove();
+    loader.remove();
+};
 
 },{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","./modules/nav":"fLOTs","./modules/scrollingTitleAnimation":"b19BA","./modules/animazioneHome":"fVMw1","./modules/menu":"7FeRP","./modules/pageTranstionHome":"85FTH","./modules/pageTransitionWorks":"iquZy","./modules/telegraphAnimation":"8g7WW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

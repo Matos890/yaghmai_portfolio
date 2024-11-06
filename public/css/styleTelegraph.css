@@ -19,6 +19,43 @@ body {
   /* height: 26865px !important; */
   overflow-x: hidden !important;
 }
+/* Imposta lo stile per il loader */
+#loading{
+  background-color: #ffffeb;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+#loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
+    background-color:#fefce3;
+ ;
+}
+#content {
+    display: none;
+}
+/* Animazione di rotazione */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Nascondi il contenuto mentre il loader è visibile */
+#content {
+    display: none;
+}
+
 .libre-baskerville-regular {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;

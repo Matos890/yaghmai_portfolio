@@ -25,11 +25,12 @@ initializeAnimation();
 ///////////////////////////MENU////////////////////////////////////
 /////////////////////////////////////////////////////////////////
 import { initializeMenu } from "./modules/menu";
-  const nav1 = document.querySelector(".nav1");
-  if(nav1){
-document.addEventListener("DOMContentLoaded", () => {
-  initializeMenu();
-});}
+const nav1 = document.querySelector(".nav1");
+if (nav1) {
+  document.addEventListener("DOMContentLoaded", () => {
+    initializeMenu();
+  });
+}
 /////////////////////////////PAGE TRANSITION HOME////////////
 import { initializeTransitionHome } from "./modules/pageTranstionHome";
 document.addEventListener("DOMContentLoaded", () => {
@@ -50,7 +51,21 @@ if (document.title.includes("|"))
 // })
 
 import { initializeTelegraphAnimation } from "./modules/telegraphAnimation";
-if (document.title.includes("Telegraph"))
+
+// Controlla il titolo per determinare se attivare l'animazione specifica
+if (document.title.includes("Telegraph")) {
+  const loading = document.getElementById("loading");
+  const loader = document.getElementById("loader");
+  
   document.addEventListener("DOMContentLoaded", () => {
+  
+    // Mostra il contenuto principale solo dopo aver nascosto il loader
     initializeTelegraphAnimation();
   });
+}
+
+// Nasconde il loader e mostra il contenuto quando la pagina è completamente caricata
+window.onload = function () {
+  loading.remove();
+  loader.remove();
+};
