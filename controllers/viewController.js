@@ -35,5 +35,5 @@ exports.telegraphPage = (req, res) => {
   process.env.IS_HOMEPAGE = "false";
   res
     .status(200)
-    .sendFile(path.join(__dirname, "../build/indexTelegraph.html"));
+    .sendFile(path.join(__dirname, "../build/telegraph.html"));
 };
