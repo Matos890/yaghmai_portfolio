@@ -33,7 +33,9 @@ export function initializeMenu() {
 
     modalMenu.classList.add("hideMenu");
 
+    
     burgerMenu.addEventListener("click", () => {
+      navModal.style.visibility = 'visible'
       modalMenu.classList.toggle("hideMenu");
       modalMenu.classList.toggle("showModal");
       modalMenu.style.opacity = "1";
