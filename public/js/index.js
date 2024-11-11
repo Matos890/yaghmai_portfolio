@@ -3,6 +3,10 @@ import { ScrollTrigger } from "gsap/all";
 import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
 const logoNav = document.querySelector(".animatedLogo");
+window.onload = function () {
+  loading.remove();
+  loader.remove();
+};
 document.addEventListener("DOMContentLoaded", () => {});
 //////////////////////////////////////////////////////////////////////
 ////////////////////////////// NAV ///////////////////////////////////
@@ -21,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 ////////////////ANIMAZIONE ALTERNATIVA
 //////////////////////////////////////////////////////////////////
 import { initializeAnimation } from "./modules/animazioneHome";
+
 initializeAnimation();
 ///////////////////////////MENU////////////////////////////////////
 /////////////////////////////////////////////////////////////////
@@ -65,7 +70,3 @@ if (document.title.includes("Telegraph")) {
 }
 
 // Nasconde il loader e mostra il contenuto quando la pagina è completamente caricata
-window.onload = function () {
-  loading.remove();
-  loader.remove();
-};

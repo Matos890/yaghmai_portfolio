@@ -616,6 +616,10 @@ var _pageTransitionWorks = require("./modules/pageTransitionWorks");
 var _telegraphAnimation = require("./modules/telegraphAnimation");
 (0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
 const logoNav = document.querySelector(".animatedLogo");
+window.onload = function() {
+    loading.remove();
+    loader.remove();
+};
 document.addEventListener("DOMContentLoaded", ()=>{});
 document.addEventListener("DOMContentLoaded", ()=>{
     (0, _nav.initializeNav)();
@@ -642,12 +646,7 @@ if (document.title.includes("Telegraph")) {
         // Mostra il contenuto principale solo dopo aver nascosto il loader
         (0, _telegraphAnimation.initializeTelegraphAnimation)();
     });
-}
-// Nasconde il loader e mostra il contenuto quando la pagina è completamente caricata
-window.onload = function() {
-    loading.remove();
-    loader.remove();
-};
+} // Nasconde il loader e mostra il contenuto quando la pagina è completamente caricata
 
 },{"gsap":"fPSuC","gsap/all":"3UJRo","gsap/gsap-core":"05eeC","./modules/nav":"fLOTs","./modules/scrollingTitleAnimation":"b19BA","./modules/animazioneHome":"fVMw1","./modules/menu":"7FeRP","./modules/pageTranstionHome":"85FTH","./modules/pageTransitionWorks":"iquZy","./modules/telegraphAnimation":"8g7WW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
