@@ -7615,6 +7615,9 @@ var _all = require("gsap/all");
 var _gsapCore = require("gsap/gsap-core");
 (0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
 (0, _all.ScrollTrigger).normalizeScroll(true);
+(0, _all.ScrollTrigger).config({
+    ignoreMobileResize: true
+});
 const initializeTelegraphAnimation = ()=>{
     const cover = require("426c7e0688609b44");
     const canvas = document.getElementById("myCanvas");

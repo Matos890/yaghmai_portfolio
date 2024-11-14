@@ -133,7 +133,7 @@ section {
   z-index: 2;
 }
 .controlNave {
-  width: 100%;
+ aspect-ratio: 2.36;
 }
 .imgNave {
   width: 100%;
