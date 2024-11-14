@@ -3,8 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.normalizeScroll(true);
-ScrollTrigger.config({ ignoreMobileResize: true });
 export const initializeTelegraphAnimation = () => {
   const cover = require("canvas-image-cover");
   const canvas = document.getElementById("myCanvas");
