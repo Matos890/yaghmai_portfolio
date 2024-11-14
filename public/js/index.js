@@ -1,6 +1,8 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Timeline } from "gsap/gsap-core";
+  const loading = document.getElementById("loading");
+  const loader = document.getElementById("loader");
 gsap.registerPlugin(ScrollTrigger);
 const modalMenu = document.querySelector(".modalWrapper");
 window.onload = function () {
@@ -59,8 +61,6 @@ import { initializeTelegraphAnimation } from "./modules/telegraphAnimation";
 
 // Controlla il titolo per determinare se attivare l'animazione specifica
 if (document.title.includes("Telegraph")) {
-  const loading = document.getElementById("loading");
-  const loader = document.getElementById("loader");
 
   document.addEventListener("DOMContentLoaded", () => {
     // Mostra il contenuto principale solo dopo aver nascosto il loader
