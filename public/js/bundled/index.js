@@ -615,7 +615,7 @@ var _pageTransitionWorks = require("./modules/pageTransitionWorks");
 // })
 var _telegraphAnimation = require("./modules/telegraphAnimation");
 (0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
-const logoNav = document.querySelector(".animatedLogo");
+const modalMenu = document.querySelector(".modalWrapper");
 window.onload = function() {
     loading.remove();
     loader.remove();
@@ -7414,7 +7414,6 @@ function initializeMenu() {
     const nav = document.querySelector(".nav");
     const nav1 = document.querySelector(".nav1");
     const screenWidth = window.innerWidth;
-    const navModal = document.querySelector(".modalWrapper");
     const showModal = document.querySelector(".showModal");
     const burgerMenu = document.getElementById("menuToggle");
     const modalMenu = document.querySelector(".modalWrapper");
@@ -7439,7 +7438,8 @@ function initializeMenu() {
         addMenu();
         modalMenu.classList.add("hideMenu");
         burgerMenu.addEventListener("click", ()=>{
-            navModal.style.visibility = "visible";
+            modalMenu.style.visibility = "visible";
+            modalMenu.style.opacity = "1";
             modalMenu.classList.toggle("hideMenu");
             modalMenu.classList.toggle("showModal");
             modalMenu.style.opacity = "1";
@@ -7457,11 +7457,13 @@ function initializeMenu() {
         });
         const closeBtn = document.querySelector(".close-btn");
         closeBtn.addEventListener("click", ()=>{
+            modalMenu.style.visibility = "hidden";
+            modalMenu.style.opacity = "0";
             modalMenu.classList.remove("showModal");
             modalMenu.classList.add("hideMenu");
         });
     }
-    if (screenWidth >= 900) navModal.classList.add("hideMenu");
+    if (screenWidth >= 900) modalMenu.classList.add("hideMenu");
 }
 
 },{"gsap":"fPSuC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"85FTH":[function(require,module,exports) {
@@ -7613,6 +7615,7 @@ var _gsapDefault = parcelHelpers.interopDefault(_gsap);
 var _all = require("gsap/all");
 var _gsapCore = require("gsap/gsap-core");
 (0, _gsapDefault.default).registerPlugin((0, _all.ScrollTrigger));
+(0, _all.ScrollTrigger).normalizeScroll(true);
 const initializeTelegraphAnimation = ()=>{
     const cover = require("426c7e0688609b44");
     const canvas = document.getElementById("myCanvas");
@@ -7632,20 +7635,20 @@ const initializeTelegraphAnimation = ()=>{
     ctx.globalCompositeOperation = "source-over";
     //IMAGES
     const imageSources = [
-        "/imgTelegraphWEBP/Emblemata_1624_bookmark_1.webp",
-        "/imgTelegraphWEBP/Franklin_hand_bookmark_2.webp",
-        "/imgTelegraphWEBP/Faraday.webp",
-        "/imgTelegraphWEBP/henry.webp",
-        "/imgTelegraphWEBP/railwaymap.webp",
-        "/imgTelegraphWEBP/giornalisti_bookmark_3.webp",
-        "/imgTelegraphWEBP/morse.webp",
-        "/imgTelegraphWEBP/morseNotes.webp",
-        "/imgTelegraphWEBP/submarine_bookmark_4.webp",
-        "/imgTelegraphWEBP/cyrus.webp",
-        "/imgTelegraphWEBP/messagequeen.webp",
-        "/imgTelegraphWEBP/1871Telegraphlines.webp",
-        "/imgTelegraphWEBP/1880Telegraphlines.webp",
-        "/imgTelegraphWEBP/1901Telegraphlines.webp"
+        "./Emblemata_1624_bookmark_1.webp",
+        "./Franklin_hand_bookmark_2.webp",
+        "./Faraday.webp",
+        "./henry.webp",
+        "./railwaymap.webp",
+        "./giornalisti_bookmark_3.webp",
+        "./morse.webp",
+        "./morseNotes.webp",
+        "./submarine_bookmark_4.webp",
+        "./cyrus.webp",
+        "./messagequeen.webp",
+        "./1871Telegraphlines.webp",
+        "./1880Telegraphlines.webp",
+        "./1901Telegraphlines.webp"
     ];
     const images = [];
     const bookmark = [];

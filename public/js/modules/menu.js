@@ -4,7 +4,6 @@ export function initializeMenu() {
   const nav = document.querySelector(".nav");
   const nav1 = document.querySelector(".nav1");
   const screenWidth = window.innerWidth;
-  const navModal = document.querySelector(".modalWrapper");
   const showModal = document.querySelector(".showModal");
   const burgerMenu = document.getElementById("menuToggle");
   const modalMenu = document.querySelector(".modalWrapper");
@@ -35,7 +34,8 @@ export function initializeMenu() {
 
     
     burgerMenu.addEventListener("click", () => {
-      navModal.style.visibility = 'visible'
+      modalMenu.style.visibility = 'visible'
+      modalMenu.style.opacity = "1"
       modalMenu.classList.toggle("hideMenu");
       modalMenu.classList.toggle("showModal");
       modalMenu.style.opacity = "1";
@@ -55,12 +55,15 @@ export function initializeMenu() {
 
     const closeBtn = document.querySelector(".close-btn");
     closeBtn.addEventListener("click", () => {
+
+      modalMenu.style.visibility = 'hidden'
+      modalMenu.style.opacity = "0"
       modalMenu.classList.remove("showModal");
       modalMenu.classList.add("hideMenu");
     });
   }
 
   if (screenWidth >= 900) {
-    navModal.classList.add("hideMenu");
+    modalMenu.classList.add("hideMenu");
   }
 }

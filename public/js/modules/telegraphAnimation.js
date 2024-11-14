@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.normalizeScroll(true);
 export const initializeTelegraphAnimation = () => {
   const cover = require("canvas-image-cover");
   const canvas = document.getElementById("myCanvas");
@@ -22,20 +23,20 @@ export const initializeTelegraphAnimation = () => {
   ctx.globalCompositeOperation = "source-over";
   //IMAGES
   const imageSources = [
-    "/imgTelegraphWEBP/Emblemata_1624_bookmark_1.webp",
-    "/imgTelegraphWEBP/Franklin_hand_bookmark_2.webp",
-    "/imgTelegraphWEBP/Faraday.webp",
-    "/imgTelegraphWEBP/henry.webp",
-    "/imgTelegraphWEBP/railwaymap.webp",
-    "/imgTelegraphWEBP/giornalisti_bookmark_3.webp",
-    "/imgTelegraphWEBP/morse.webp",
-    "/imgTelegraphWEBP/morseNotes.webp",
-    "/imgTelegraphWEBP/submarine_bookmark_4.webp",
-    "/imgTelegraphWEBP/cyrus.webp",
-    "/imgTelegraphWEBP/messagequeen.webp",
-    "/imgTelegraphWEBP/1871Telegraphlines.webp",
-    "/imgTelegraphWEBP/1880Telegraphlines.webp",
-    "/imgTelegraphWEBP/1901Telegraphlines.webp",
+    "./Emblemata_1624_bookmark_1.webp",
+    "./Franklin_hand_bookmark_2.webp",
+    "./Faraday.webp",
+    "./henry.webp",
+    "./railwaymap.webp",
+    "./giornalisti_bookmark_3.webp",
+    "./morse.webp",
+    "./morseNotes.webp",
+    "./submarine_bookmark_4.webp",
+    "./cyrus.webp",
+    "./messagequeen.webp",
+    "./1871Telegraphlines.webp",
+    "./1880Telegraphlines.webp",
+    "./1901Telegraphlines.webp",
   ];
 
   const images = [];

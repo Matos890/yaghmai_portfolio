@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Timeline } from "gsap/gsap-core";
 gsap.registerPlugin(ScrollTrigger);
-const logoNav = document.querySelector(".animatedLogo");
+const modalMenu = document.querySelector(".modalWrapper");
 window.onload = function () {
   loading.remove();
   loader.remove();
@@ -61,9 +61,8 @@ import { initializeTelegraphAnimation } from "./modules/telegraphAnimation";
 if (document.title.includes("Telegraph")) {
   const loading = document.getElementById("loading");
   const loader = document.getElementById("loader");
-  
+
   document.addEventListener("DOMContentLoaded", () => {
-  
     // Mostra il contenuto principale solo dopo aver nascosto il loader
     initializeTelegraphAnimation();
   });
