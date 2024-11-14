@@ -7416,6 +7416,8 @@ function initializeMenu() {
     const showModal = document.querySelector(".showModal");
     const burgerMenu = document.getElementById("menuToggle");
     const modalMenu = document.querySelector(".modalWrapper");
+    modalMenu.style.visibility = "hidden";
+    modalMenu.style.display = "none";
     modalMenu.style.opacity = "0";
     if (nav1) {
         const addMenu = function() {
@@ -7437,6 +7439,7 @@ function initializeMenu() {
         addMenu();
         modalMenu.classList.add("hideMenu");
         burgerMenu.addEventListener("click", ()=>{
+            modalMenu.style.display = "block";
             modalMenu.style.visibility = "visible";
             modalMenu.style.opacity = "1";
             modalMenu.classList.toggle("hideMenu");
@@ -7456,6 +7459,7 @@ function initializeMenu() {
         });
         const closeBtn = document.querySelector(".close-btn");
         closeBtn.addEventListener("click", ()=>{
+            modalMenu.style.display = "none";
             modalMenu.style.visibility = "hidden";
             modalMenu.style.opacity = "0";
             modalMenu.classList.remove("showModal");
