@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Utilizzare la rotta definita
 // Definire la rotta per la root prima del middleware statico
 // Avviare il server sulla porta 5000
-app.listen(5000, () => {
-    console.log("Server is running on http://localhost:5000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is running on ${port}`);
 });
