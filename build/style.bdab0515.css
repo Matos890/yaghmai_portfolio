@@ -1128,6 +1128,14 @@ footer {
   height: 100%;
   left: 0;
 }
+.imgContainer .mapContainerWork:nth-child(4) .mapWrapper  {
+  aspect-ratio: 1.5;
+  padding: 22%;
+}
+.imgContainer .mapContainerWork:nth-child(4) .mapWrapper .imgMap {
+  height: 100%;
+  left: 0;
+}
 .motionGraphicsPage .wrapperTextAbout {
   margin-top: 10rem;
 }
