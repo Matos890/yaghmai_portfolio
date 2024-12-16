@@ -303,7 +303,6 @@ picture {
   position: absolute;
   z-index: -1;
 }
-
 /* nav and stickly class at the same time */
 .nav.sticky {
   top: 2rem;

@@ -23,9 +23,12 @@ export function initializeNav() {
       const stickyNav = function (entries) {
         const [entry] = entries;
 
-        if (!entry.isIntersecting) nav.classList.add("sticky");
-        else {
+        if (!entry.isIntersecting) {
+          nav.classList.add("sticky");
+          console.log("added");
+        } else {
           nav.classList.remove("sticky");
+          console.log("qualcosa");
         }
       };
       const headerObserver = new IntersectionObserver(stickyNav, {
