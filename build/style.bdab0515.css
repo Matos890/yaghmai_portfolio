@@ -517,7 +517,7 @@ button {
 }
 .linkPages {
   color: var(--shape-titles-color);
-  font-size: calc(1.8rem + 0.5vw);
+  font-size: 2rem;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
@@ -531,11 +531,13 @@ button {
   text-align: center;
   background-color: #fcce80;
   border-radius: 0.8rem;
-  height: calc(5.8rem + 0.5vh);
   margin: 3rem 0;
-  padding: 0 2.2rem;
+  padding: 1rem 1.5rem 1rem;
   position: relative;
+  display: inline-block;
+  line-height: 3rem;
 }
+
 .btn:hover {
   box-shadow: -17px 10px #f2c787;
 }
@@ -1128,7 +1130,7 @@ footer {
   height: 100%;
   left: 0;
 }
-.imgContainer .mapContainerWork:nth-child(4) .mapWrapper  {
+.imgContainer .mapContainerWork:nth-child(4) .mapWrapper {
   aspect-ratio: 1.5;
   padding: 22%;
 }
